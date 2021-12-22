@@ -79,3 +79,4 @@ yarn-error.log
 composer.lock
 package-lock.json
 composer.lock
+symfony.lock
