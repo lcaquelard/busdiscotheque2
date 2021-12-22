@@ -80,3 +80,4 @@ composer.lock
 package-lock.json
 composer.lock
 symfony.lock
+yarn.lock
