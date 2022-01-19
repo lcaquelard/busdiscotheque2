@@ -1,3 +1,28 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+bus:
+    path: /bus
+    controller: App\Controller\DefaultController::bus
+
+bus_mini:
+    path: /bus_mini
+    controller: App\Controller\DefaultController::bus_mini
+
+bus_simple:
+    path: /bus_simple
+    controller: App\Controller\DefaultController::bus_simple
+
+bus_double:
+    path: /bus_double
+    controller: App\Controller\DefaultController::bus_double
+
+program:
+    path: /program
+    controller: App\Controller\DefaultController::program
+
+pricing:
+    path: /pricing
+    controller: App\Controller\DefaultController::pricing
+

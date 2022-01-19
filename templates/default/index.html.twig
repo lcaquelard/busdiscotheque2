@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ current_path }}{% endblock %}
+{% block video_bg %}{% include 'default/layouts/video-bg.html.twig' with {'asset' : asset('build/images/bg.mp4')} %}{% endblock %}
+{% block main %}
+    <img src="{{ asset('build/images/logo.webp')}}" alt="logo busdiscotheque"/>
+    <h1>Luxury private party bus</h1>
+    <div class="shadow column">
+        <h2>Illuminez la capitale</h2>
+        <p>
+            Avec ses véhicules entièrement réaménagés et son concept totalement inédit, Bus Discotheque Paris offre un décor prestigieux pour la tenue de vos événements les plus marquants. En privatisant l'un des bus de notre flotte, c’est une visite inédite de la capitale que vous vous offrirez le temps d’une soirée, en réunissant tous les éléments pour faire votre bonheur : vos proches, vos musiques préférées, un verre à la main, Paris !
+        </p>
+        <p>
+            Fondé il y a plus de 10 ans, Bus Discotheque révolutionne la fête mondaine parisienne en vous offrant une expérience inoubliable entièrement à votre image, pour que vos yeux scintillent comme les milliers de lumières de la Tour Eiffel...
+        </p>
+    </div>
+    <div class="slider">
+        <img src="{{ asset('build/images/index/21.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/22.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/1.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/2.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/3.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/23.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/24.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/4.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/5.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/26.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/27.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/6.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/7.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/8.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/9.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/10.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/11.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/12.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/13.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/14.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/15.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/16.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/17.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/18.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/index/25.png') }}" alt="Image défilant horizontalement">
+    </div>
+    <div class="shadow bothsides">
+        <div>
+            <h3>Votre événement commence ici !</h3>
+            <p>Bus Discotheque Paris est à l'écoute de toutes vos demandes et vous propose de personnaliser entièrement votre événement. Pour plus d'infos sur le déroulé complet de l'une de nos soirées, rendez-vous dans l'onglet "Votre événement" !</p>
+
+            <p class="contact">
+                <span class="contact-tel">06 58 31 18 77</span>
+                <span class="contact-open">Du lundi au samedi de 10h à 19h</span>
+                <span class="contact-email">commercial@busdiscotheque.com</span>
+                <span class="contact-social-message">Retrouvez nous sur nos réseaux sociaux !</span>
+            </p>
+            <div class="contact-social-icons"></div>
+        </div>
+        <div><video preload="none" muted autoplay loop><source src="{{ asset('build/images/video_index.mp4') }}" type="video/mp4"/></video></div>
+    </div>
+    <div class="shadow column">
+        <h3 class="yellow">Contactez-nous :</h3>
+        <div class="contact-form">
+            <input class="half" type="text" name="firstname" placeholder="Prénom">
+            <input class="half" type="text" name="lastname" placeholder="Nom de famille">
+            <input class="half" type="email" name="email" placeholder="E-mail">
+            <input class="half" type="tel" name="tel" placeholder="Téléphone">
+            <input class="full" type="text" name="address" placeholder="Addresse">
+            <textarea class="full" type="text" name="message" placeholder="Rédigez votre message ici"></textarea>
+        </div>
+    </div>
+{% endblock %}

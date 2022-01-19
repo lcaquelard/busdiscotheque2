@@ -1,0 +1,56 @@
+nav {
+  position:sticky;
+  top:0;
+  z-index:1;
+  > ul{
+    display: flex;
+    height: 45px;
+    align-items: stretch;
+    max-width:$main_width;
+    margin:30px auto 0;
+
+    > li:nth-of-type(1){
+      background-image:url(../../images/logo.webp);
+      background-position:center;
+      background-repeat:no-repeat;
+      background-size:contain;
+      border-left:none;
+    }
+  }
+  li{
+    background-color: #F1F1F1;
+    transition: all .6s;
+    flex-basis: 25%;
+    list-style: none;
+    border-left:1px solid #FFF;
+
+    .drop{
+      visibility:hidden;
+      transition: all .2s;
+      width:100%;
+      li{
+        border-left:none;
+      }
+    }
+
+    &.current,
+    &:hover{
+      background-color:#323232;
+      > a {
+        color: #FFF;
+      }
+
+      .drop{
+        visibility:visible;
+      }
+    }
+
+    a{
+      display:inline-block;
+      height:100%;
+      width:100%;
+      text-align:center;
+      font:normal normal normal 17px/45px $nav_font;
+    }
+  }
+}

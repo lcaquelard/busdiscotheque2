@@ -1,0 +1,27 @@
+// Importing utilities
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
+@import './utils/extensions';
+
+// Importing vendors
+@import 'vendors/slick/slick';
+@import 'vendors/slick/slick-theme';
+
+// Importing bases
+@import './base/normalize';
+@import './base/fonts';
+@import './base/base';
+
+// Importing components
+
+// Importing layouts
+@import './layouts/videobg';
+@import './layouts/header';
+@import './layouts/nav';
+
+// Importing pages
+@import './pages/index';
+@import './pages/bus';
+@import './pages/program';
+@import './pages/pricing';

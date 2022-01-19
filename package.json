@@ -26,6 +26,7 @@
         "jqvmap": "^1.0.1",
         "node-sass": "^7.0.0",
         "nodejs": "^0.0.0",
+        "normalize-scss": "^7.0.1",
         "slick-carousel": "^1.8.1",
         "yarn": "^1.22.17"
     }
