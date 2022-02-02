@@ -14,11 +14,13 @@
 @import './base/base';
 
 // Importing components
+@import './components/reversible';
 
 // Importing layouts
 @import './layouts/videobg';
 @import './layouts/header';
 @import './layouts/nav';
+@import './layouts/bus';
 
 // Importing pages
 @import './pages/index';

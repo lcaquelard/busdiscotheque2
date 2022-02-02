@@ -1,0 +1,106 @@
+#bus{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+
+  main{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:flex-start;
+    width:$main_width;
+    align-self:center;
+
+    .bus_range {
+      &-frame {
+        height: 300px;
+        width: 300px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin:25px 0 0 0;
+        transition:margin .2s ease-in-out;
+
+        &:hover{
+          margin:80px 0 0 0;
+          .bus_range-hidden{
+            visibility:visible;
+            opacity:1;
+            height:auto;
+          }
+        }
+
+        &:nth-of-type(1) {
+          background-image: url(../../images/photo/bus/mini/1.webp);
+        }
+
+        &:nth-of-type(2) {
+          background-image: url(../../images/photo/bus/classic/1.webp);
+        }
+
+        &:nth-of-type(3) {
+          background-image: url(../../images/photo/bus/double/1.webp);
+        }
+
+        a {
+          height: 100%;
+          width: 100%;
+          display: inline-block;
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #FFF;
+        }
+      }
+
+      &-content {
+        height:100%;
+        width:100%;
+        color:#FFF;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+      }
+      &-title{
+        text-transform:uppercase;
+      }
+      &-capacity{
+        font-family:$nav_font;
+        margin:20px 0;
+      }
+      &-icon{
+        background-image:url(../../images/icons/zoom.webp);
+        background-size:contain;
+        background-position:center center;
+        background-repeat:no-repeat;
+        height:50px;
+        width:50px;
+      }
+      &-hidden{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        visibility:hidden;
+        opacity:0;
+        height:0;
+        transition:all .2s ease-in-out;
+      }
+    }
+  }
+}
+
+#bus_mini{
+  background-image:url(../../images/background/micro.webp);
+  @include background-prs(center -150px);
+}
+#bus_mini,#bus_simple,#bus_double{
+  main{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    align-items:center;
+    max-width:$main_width;
+    align-self:center;
+  }
+}

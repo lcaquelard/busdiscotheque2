@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ current_path }}{% endblock %}
-{% block video_bg %}{% include 'default/layouts/video-bg.html.twig' with {'asset' : asset('build/images/bg.mp4')} %}{% endblock %}
+{% block video_bg %}{% include 'default/layouts/video-bg.html.twig' with {'content' : 'index'} %}{% endblock %}
 {% block main %}
     <img src="{{ asset('build/images/logo.webp')}}" alt="logo busdiscotheque"/>
     <h1>Luxury private party bus</h1>
@@ -14,31 +14,31 @@
         </p>
     </div>
     <div class="slider">
-        <img src="{{ asset('build/images/index/21.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/22.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/1.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/2.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/3.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/23.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/24.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/4.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/5.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/26.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/27.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/6.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/7.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/8.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/9.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/10.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/11.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/12.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/13.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/14.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/15.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/16.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/17.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/18.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/index/25.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/21.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/22.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/1.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/2.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/3.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/23.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/24.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/4.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/5.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/26.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/27.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/6.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/7.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/8.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/9.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/10.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/11.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/12.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/13.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/14.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/15.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/16.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/17.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/18.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/25.png') }}" alt="Image défilant horizontalement">
     </div>
     <div class="shadow bothsides">
         <div>
@@ -53,7 +53,7 @@
             </p>
             <div class="contact-social-icons"></div>
         </div>
-        <div><video preload="none" muted autoplay loop><source src="{{ asset('build/images/video_index.mp4') }}" type="video/mp4"/></video></div>
+        <div><video preload="none" muted autoplay loop><source src="{{ asset('build/images/video/video_index.mp4') }}" type="video/mp4"/></video></div>
     </div>
     <div class="shadow column">
         <h3 class="yellow">Contactez-nous :</h3>

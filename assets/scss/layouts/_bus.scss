@@ -1,0 +1,92 @@
+.bus{
+  min-width:$bus_width;
+  min-height:$bus_height;
+  margin:45px (($main_width - ($bus_width * $buses_row)) / (2 * $buses_row)) 0;
+  position:relative;
+  .front,.back {
+    @include background-prs();
+  }
+  .front{
+    .content {
+      @include position();
+      background-color:rgba(0,0,0,.5);
+      padding-top:100px;
+      color:#FFF;
+      display: flex;
+      flex-flow: row wrap;
+      h3 {
+        width:100%;
+        text-align:center;
+        background-image:url(../../images/icons/new.webp);
+        @include background-prs(80% top, no-repeat, auto);
+      }
+    }
+  }
+  .back{
+    .content{
+      @include position();
+      background-color:rgba(0,0,0,.5);
+      padding-top:100px;
+      color:#FFF;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      .zoom{
+        background-image:url(../../images/icons/zoom.webp);
+        @include background-prs($size:contain);
+        height:50px;
+        width:50px;
+        cursor:pointer;
+      }
+    }
+  }
+  &-icon {
+    width:calc(50% - 39px);
+    padding-left:39px;
+    font-family:$serif;
+    @include background-prs(15px top, no-repeat, auto);
+    &.capacity{background-image:url(../../images/icons/capacity.webp);background-position:8px top;}
+    &.carpet{background-image:url(../../images/icons/carpet.webp);background-position:3px top;}
+    &.dj{background-image:url(../../images/icons/dj.webp);background-position:9px top;}
+    &.fridge{background-image:url(../../images/icons/fridge.webp);background-position:8px top;}
+    &.karaoke{background-image:url(../../images/icons/karaoke.webp);background-position:8px top;}
+    &.screen{background-image:url(../../images/icons/screen.webp);background-position:-5px top;}
+    &.soft{background-image:url(../../images/icons/soft.webp);background-position:12px top;}
+  }
+  &.lalulu {
+    .front {background-image: url(../../images/photo/bus/mini/lalulu/front.webp);}
+    .back {background-image: url(../../images/photo/bus/mini/lalulu/back.webp);}
+  }
+  &.slinone {
+    .front {background-image: url(../../images/photo/bus/classic/slinone/1.jpg);}
+    .back {background-image: url(../../images/photo/bus/classic/slinone/2.jpg);}
+  }
+  &.sodade {
+    .front {background-image: url(../../images/photo/bus/classic/sodade/1.jpg);}
+    .back {background-image: url(../../images/photo/bus/classic/sodade/2.jpg);}
+  }
+  &.angec6 {
+    .front {background-image: url(../../images/photo/bus/classic/angec6/1.jpg);}
+    .back {background-image: url(../../images/photo/bus/classic/angec6/2.jpg);}
+  }
+  &.poowood {
+    .front {background-image: url(../../images/photo/bus/classic/poowood/1.jpg);}
+    .back {background-image: url(../../images/photo/bus/classic/poowood/2.jpg);}
+  }
+  &.condor {
+    .front {background-image: url(../../images/photo/bus/double/condor/1.jpg);}
+    .back {background-image: url(../../images/photo/bus/double/condor/2.jpg);}
+  }
+  &.bigben {
+    .front {background-image: url(../../images/photo/bus/double/bigben/1.jpg);}
+    .back {background-image: url(../../images/photo/bus/double/bigben/2.jpg);}
+  }
+  &.darkkiss {
+    .front {background-image: url(../../images/photo/bus/double/darkkiss/1.jpg);}
+    .back {background-image: url(../../images/photo/bus/double/darkkiss/2.jpg);}
+  }
+  &.seven7 {
+    .front {background-image: url(../../images/photo/bus/double/seven7/1.jpg);}
+    .back {background-image: url(../../images/photo/bus/double/seven7/2.jpg);}
+  }
+}

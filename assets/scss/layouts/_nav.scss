@@ -1,6 +1,7 @@
 nav {
   position:sticky;
-  top:0;
+  align-self:stretch;
+  top:-40px;
   z-index:1;
   > ul{
     display: flex;
@@ -10,11 +11,15 @@ nav {
     margin:30px auto 0;
 
     > li:nth-of-type(1){
-      background-image:url(../../images/logo.webp);
+      background-image:url(../../images/logo_dark.webp);
       background-position:center;
       background-repeat:no-repeat;
       background-size:contain;
       border-left:none;
+      &.current,
+      &:hover{
+        background-image:url(../../images/logo.webp);
+      }
     }
   }
   li{
@@ -39,10 +44,10 @@ nav {
       > a {
         color: #FFF;
       }
+    }
 
-      .drop{
-        visibility:visible;
-      }
+    &:hover .drop{
+      visibility:visible;
     }
 
     a{

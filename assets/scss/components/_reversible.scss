@@ -1,0 +1,18 @@
+.rev{
+  .front,.back{
+    @include position();
+    backface-visibility:hidden;
+    transition:transform .5s;
+  }
+  &:hover{
+    .front{
+      transform: rotateY(180deg);
+    }
+    .back{
+      transform:rotateY(360deg);
+    }
+  }
+  .back{
+    transform:rotateY(180deg);
+  }
+}

@@ -1,4 +1,37 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ current_path }}{% endblock %}
 {% block main %}
+    <section class="bus_range-frame">
+        <a href="{{ path('bus_mini') }}">
+            <div class="bus_range-content">
+                <h4 class="bus_range-title">mini bus</h4>
+                <div class="bus_range-hidden">
+                    <span class="bus_range-capacity">de 1 à 9 personnes</span>
+                    <div class="bus_range-icon"></div>
+                </div>
+            </div>
+        </a>
+    </section>
+    <section class="bus_range-frame">
+        <a href="{{ path('bus_simple') }}">
+            <div class="bus_range-content">
+                <h4 class="bus_range-title">classic bus</h4>
+                <div class="bus_range-hidden">
+                    <span class="bus_range-capacity">de 10 à 35 personnes</span>
+                    <div class="bus_range-icon"></div>
+                </div>
+            </div>
+        </a>
+    </section>
+    <section class="bus_range-frame">
+        <a href="{{ path('bus_double') }}">
+            <div class="bus_range-content">
+                <h4 class="bus_range-title">double bus</h4>
+                <div class="bus_range-hidden">
+                    <span class="bus_range-capacity">de 36 à 65 personnes</span>
+                    <div class="bus_range-icon"></div>
+                </div>
+            </div>
+        </a>
+    </section>
 {% endblock %}
