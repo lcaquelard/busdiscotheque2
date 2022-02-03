@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ current_path }}{% endblock %}
+{% block video_bg %}{% include 'default/layouts/video-bg.html.twig' with {'content' : 'index'} %}{% endblock %}
 {% block main %}
     <section class="bus rev condor">
         <div class="front">
