@@ -1,5 +1,104 @@
 #program{
   background-image:url(../../images/background/program.webp);
   background-attachment: fixed;
-  @include background-prs(center -150px);
+  @include background-prs();
+  color:$program_color;
+  main{
+    width:$main_width;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-around;
+    align-items:flex-start;
+    section{
+      background-color:rgba(255,255,255,.67);
+      height:338px;
+      &.both-sides{
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-start;
+        align-items:stretch;
+        > div {
+          display:flex;
+          flex-direction:column;
+          align-items:flex-start;
+          justify-content:space-between;
+          font-size:12px;
+          padding:15px;
+        }
+      }
+      &.column{
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+      }
+      &.full-width{
+        max-width:70%;
+        text-align:center;
+        font-size:17px;
+        font-weight:bold;
+        margin:100px 0 70px;
+        padding:30px 30px 0;
+        p{
+          margin:5px 0;
+          &:last-of-type{
+            margin:5px 0 -10px;
+          }
+        }
+        .arrow-next{
+          background-image:url(../../images/icons/arrow_down.png);
+          position:relative;
+          top:50px;
+        }
+      }
+      &.half-width {
+        max-width: 48.5%;
+        margin: 10px 0 0;
+        &.column{
+          >div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items:center;
+            padding:15px;
+            height:100%;
+            font-weight:bold;
+          }
+        }
+        p{
+          margin:0;
+        }
+        .arrow-next{
+          background-image:url(../../images/icons/arrow_right.png);
+        }
+      }
+      &.video{
+        width:100%;
+        background:#000;
+        display:flex;
+        flex-direction: column;
+        align-items:stretch;
+        justify-content:center;
+      }
+      h1{
+        font-size:75px;
+        line-height:70px;
+        font-family:helvetica,sans-serif;
+        color:inherit;
+        padding:5px;
+      }
+      h2{
+        font-weight:bold;
+        font-size:18px;
+        line-height:20px;
+        font-family: helvetica, sans-serif;
+        color:$program_color;
+        text-align:center;
+      }
+      .arrow-next{
+        width:80px;
+        height:80px;
+      }
+    }
+  }
 }

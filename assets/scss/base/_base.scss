@@ -6,7 +6,7 @@ body{
   align-items:center;
 
   main{
-    align-self:stretch;
+    align-self:center;
   }
 }
 a{
@@ -38,10 +38,10 @@ h3{
   padding:15px 0;
 }
 
-.yellow{color:#E8D207}
-
 main{
   display:flex;
   flex-direction:column;
   align-items:center;
 }
+.yellow{color:#E8D207}
+.bold{font-weight:bold;}

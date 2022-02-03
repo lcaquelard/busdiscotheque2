@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ current_path }}{% endblock %}
 {% block main %}
-    <section class="full-width">
+    <section class="full-width column">
         <h1>Le déroulé de votre soirée 🥳</h1>
         <p>
             Plongez au coeur de votre événement Bus Discothèque ! 🤩
@@ -13,97 +13,97 @@
         <p>
             Prêts à monter à bord ? 😎
         </p>
-        <div class="arrow_next"></div>
+        <div class="arrow-next"></div>
     </section>
-    <section class="half-width">
-        <div class="half-width">
+    <section class="half-width both-sides">
+        <div>
             <h2>1.Votre réservation</h2>
             <p>
-                Vous choisissez : 👨🏻‍💻/👩🏼‍💻
+                <span class="bold">Vous choisissez : 👨🏻‍💻/👩🏼‍💻</span>
             </p>
             <p>
-                La date 📅
+                La <span class="bold">date</span> 📅
             </p>
             <p>
-                Le bus adapté à vos envies 🚎/🚌
+                Le <span class="bold">bus</span> adapté à vos envies 🚎/🚌
             </p>
             <p>
-                L'heure de départ et l'heure d'arrivée 🕙
+                L'<span class="bold">heure de départ</span> et l'<span class="bold">heure d'arrivée</span> 🕙
             </p>
             <p>
-                Le lieu de prise en charge (supplément hors monument parisien) et le lieu de retour 🗼
+                <span class="bold">Le lieu de prise en charge</span> (supplément hors monument parisien) et <span class="bold">le lieu de retour</span> 🗼
             </p>
             <p>
-                Pour valider votre réservation, vous versez un acompte de 30% par virement ou CB. Le reste du solde sera à verser 3 jours avant l'événement 💳/💶
+                Pour valider votre réservation, vous versez <span class="bold">un acompte de 30%</span> par virement ou CB. Le reste du solde sera à verser 3 jours avant l'événement 💳/💶
             </p>
         </div>
         <img src="{{ asset('build/images/photo/program/1.webp') }}" alt="">
     </section>
-    <section class="half-width">
-        <div class="half-width">
+    <section class="half-width both-sides">
+        <div>
             <h2>2. Au moment de votre arrivée</h2>
             <p>
-                Votre bus vous attendra 30 min avant le début de la prestation ⌚️
+                Votre bus vous attendra <span class="bold">30 min</span> avant le début de la prestation ⌚️
             </p>
             <p>
                 Le chauffeur vous appellera pour vous informer de son arrivée 📲
             </p>
             <p>
-                Après un état des lieux et la remise d'un chèque de caution de 2000€, ainsi que la mise en place des derniers préparatifs, vous pourrez accueillir vos invités sur notre tapis rouge !🟥
+                Après un <span class="bold">état des lieux et la remise d'un chèque de caution de 2000€</span>, ainsi que la mise en place des derniers préparatifs, vous pourrez accueillir vos invités sur notre <span class="bold">tapis rouge</span> !🟥
             </p>
         </div>
         <img src="{{ asset('build/images/photo/program/2.webp') }}" alt="">
     </section>
-    <section class="half-width">
-        <div class="half-width">
+    <section class="half-width both-sides">
+        <div>
             <h2>3. L'équipage à votre service</h2>
             <p>
-                Un chauffeur pour vous faire découvrir les plus beaux monuments parisiens, avec un itinéraire à votre guise ! 👨🏻‍✈️
+                <span class="bold">Un chauffeur</span> pour vous faire découvrir les plus beaux monuments parisiens, avec un itinéraire à votre guise ! 👨🏻‍✈️
             </p>
             <p>
-                Un DJ à votre écoute et prêt à enflammer l'ambiance de votre soirée 🎧/ 🎵/ 🎤
+                <span class="bold">Un DJ</span> à votre écoute et prêt à enflammer l'ambiance de votre soirée 🎧/ 🎵/ 🎤
             </p>
             <p>
-                Un serveur (dans les bus doubles uniquement) pour assurer l'accueil de vos convives et le service de boissons tout au long du parcours 🤵🏼‍♀️/🤵🏻‍♂️
+                <span class="bold">Un serveur</span> (dans les bus doubles uniquement) pour assurer l'accueil de vos convives et le service de boissons tout au long du parcours 🤵🏼‍♀️/🤵🏻‍♂️
             </p>
         </div>
         <img src="{{ asset('build/images/photo/program/3.webp') }}" alt="">
     </section>
-    <section class="half-width">
-        <div class="half-width">
+    <section class="half-width both-sides">
+        <div>
             <h2>4. Ce qui vous attend à bord</h2>
             <p>
-                Toutes les boissons softs en illimité jusqu'à la fin de votre soirée🍹<br>
-                Les consommables gobelets, serviettes, glaçons et coupes de champagnes sont fournis. 🥤/🧊/🥂
+                <span class="bold">Toutes les boissons softs en illimité</span> jusqu'à la fin de votre soirée🍹<br>
+                <span class="bold">Les consommables</span> gobelets, serviettes, glaçons et coupes de champagnes sont fournis. 🥤/🧊/🥂
             </p>
             <p class="italic">
                 Attention : nous ne fournissons pas assiettes et couverts ! ❌
             </p>
             <p>
-                Libre à vous d'apporter votre propre traiteur et vos boissons alcoolisés sans droit de bouchons ni frais de bouche. 🍱/🍾
+                Libre à vous d'apporter votre propre traiteur et vos boissons alcoolisés <span class="bold">sans droit de bouchons ni frais de bouche</span>. 🍱/🍾
             </p>
             <p>
-                Frigos et toilettes sont également à votre disposition à bord du bus 🚾
+                <span class="bold">Frigos et toilettes</span> sont également à votre disposition à bord du bus 🚾
             </p>
         </div>
         <img src="{{ asset('build/images/photo/program/4.webp') }}" alt="">
     </section>
-    <section class="half-width">
-        <div class="half-width">
+    <section class="half-width both-sides">
+        <div>
             <h2>5. Le déroulé de votre soirée</h2>
             <p>
-                Les conditions de circulation définiront votre itinéraire, au cours du quel vous attendent des lieux de prestige : Concorde, Madeleine, Invalides, l'Arc de Triomphe, les Champs-Elysées, Opéra, Vendôme et bien sûr la Tour Eiffel ! 🛣/🤩
+                Les conditions de circulation définiront <span class="bold">votre itinéraire</span>, au cours du quel vous attendent des <span class="bold">lieux de prestige</span> : Concorde, Madeleine, Invalides, l'Arc de Triomphe, les Champs-Elysées, Opéra, Vendôme et bien sûr la Tour Eiffel ! 🛣/🤩
             </p>
             <p>
-                Le bus, effectuera des pauses toutes les 45 minutes environ pour fumer une cigarette, prendre des photos et profiter de l'air frais de la nuit parisienne 📸/🚬
+                Le bus, effectuera des <span class="bold">pauses toutes les 45 minutes</span> environ pour fumer une cigarette, prendre des photos et profiter de l'air frais de la nuit parisienne 📸/🚬
             </p>
             <p>
-                Des suppléments à la carte sont là pour satisfaire vos envies dans les moindre détails : photographe, traiteur, bâches, bonbons, ballons... 🎈/📷/🍭
+                <span class="bold">Des suppléments</span> à la carte sont là pour satisfaire vos envies dans les moindre détails : photographe, traiteur, bâches, bonbons, ballons... 🎈/📷/🍭
             </p>
         </div>
         <img src="{{ asset('build/images/photo/program/5.webp') }}" alt="">
     </section>
-    <section class="half-width">
+    <section class="half-width column">
         <div>
             <p>
                 Il ne nous reste plus qu'à vous souhaiter une magnifique soirée à bord de votre bus discothèque. L'ensemble de nos équipes reste à votre entière disposition pour vous garantir un moment de rêve, comme nous l'avons imaginé il y a plus de 10 ans !
@@ -116,16 +116,18 @@
             </p>
         </div>
     </section>
-    <section class="half-width">
-        <p>
-            Toujours pas convaincu ?
-        </p>
-        <p>
-            Un petit aperçu de ce que nous appelons "Faire la fête" chez Bus Discothèque
-        </p>
-        <div class="arrow-next"></div>
+    <section class="half-width column">
+        <div>
+            <p>
+                Toujours pas convaincu ?
+            </p>
+            <p>
+                Un petit aperçu de ce que nous appelons "Faire la fête" chez Bus Discothèque
+            </p>
+            <div class="arrow-next"></div>
+        </div>
     </section>
-    <section class="half-width">
+    <section class="half-width video">
         <video muted loop autoplay preload="auto">
             <source src="{{ asset('build/images/video/video_program.mp4') }}" type="video/mp4"/>
         </video>
