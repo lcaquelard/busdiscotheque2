@@ -1,0 +1,106 @@
+#options{
+  background-image:url(../../images/background/options.webp);
+  background-attachment: fixed;
+  @include background-prs(center top);
+  main{
+    align-self:stretch;
+    section{
+      color:#FAFAFA;
+      width: 100%;
+      margin: 40px 0 0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      &.shadow{
+        background-color: rgba(0,0,0,.67);
+        padding-bottom:50px;
+      }
+      h1,h2{
+        margin:40px 0;
+        font-size:20px;
+        text-transform: uppercase;
+      }
+      table{
+        font-size:18px;
+        text-align:center;
+        tr{
+          height:35px;
+        }
+      }
+      >p{
+        border-bottom:1px solid #333333;
+        padding:15px;
+        font-size:17px;
+        text-align:center;
+      }
+      &:first-of-type>*{
+        width:$main_width;
+        animation-duration:2s;
+        animation-name:slide-center;
+      }
+      @keyframes slide-center {
+        from {
+          margin-left:-400px;
+        }
+
+        to {
+          margin-left:0;
+        }
+      }
+      div.row{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:flex-start;
+        text-align:center;
+        width:$main_width;
+        >div{
+          display:flex;
+          flex-direction:column;
+          justify-content:flex-start;
+          align-items:center;
+          width:30%;
+          .icon{
+            width:44px;
+            height:44px;
+            @include background-prs();
+          }
+          &:nth-of-type(1) div.icon{
+            background-image:url(../../images/icons/camera.webp);
+          }
+          &:nth-of-type(2) div.icon{
+            width:70px;
+            background-image:url(../../images/icons/cake-bottle.webp);
+          }
+          &:nth-of-type(3) div.icon{
+            background-image:url(../../images/icons/controler.webp);
+          }
+          h3{
+            font-size:12px;
+            text-transform:uppercase;
+          }
+          h4{
+            font-size:18px;
+            text-transform:uppercase;
+          }
+          p{
+            font-size:12px;
+            text-transform:uppercase;
+            line-height:20px;
+          }
+        }
+      }
+      div.slider{
+        opacity:0;
+        width:100%;
+        max-width:$main_width;
+        img.slick-slide{
+          width:168px;
+          height:480px;
+          object-fit: cover;
+          cursor:pointer;
+        }
+      }
+    }
+  }
+}

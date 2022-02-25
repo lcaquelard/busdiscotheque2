@@ -81,4 +81,14 @@ class DefaultController extends AbstractController
             'current_page' => 'pricing',
         ]);
     }
+    /**
+     * @Route("/options", name="options")
+     * @return Response
+     */
+    public function options(): \Symfony\Component\HttpFoundation\Response
+    {
+        return $this->render('default/options.html.twig', [
+            'current_page' => 'options',
+        ]);
+    }
 }

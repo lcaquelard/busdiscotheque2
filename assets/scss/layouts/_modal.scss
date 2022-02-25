@@ -1,0 +1,67 @@
+div.modal{
+  display:none;
+  visibility:hidden;
+  opacity:0;
+  @include position(fixed);
+  background:#FFF;
+  z-index:1;
+  overflow:hidden;
+  .close{
+    @include background-prs();
+    background-image: url(../../images/icons/close.png);
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:26px;
+    height:26px;
+    cursor:pointer;
+  }
+  .slider{
+    margin-left:50px;
+    width:90%;
+    .slick-prev,.slick-next{
+      top:50vh;
+      width:14px;
+      height:26px;
+      @include background-prs();
+      &:before{
+        content:"";
+      }
+    }
+    .slick-prev{background-image:url(../../images/icons/prev.png);}
+    .slick-next{background-image:url(../../images/icons/next.png);left:calc(70% + 15px);}
+    .slick-slide{
+      position:relative;
+      display:flex;
+      img{
+        width:70%;
+      }
+      p{
+        padding-top:200px;
+        width:calc(30% - 50px);
+        font-size:28px;
+        text-align:center;
+      }
+    }
+  }
+}
+div.modal.active{
+  animation: APPEAR .5s;
+  animation-fill-mode: both;
+
+  opacity:1;
+  display:block;
+  visibility:visible;
+}
+@keyframes APPEAR{
+  from{
+    opacity:0;
+    display:none;
+    visibility:hidden;
+  }
+  to{
+    opacity:1;
+    display:block;
+    visibility:visible;
+  }
+}

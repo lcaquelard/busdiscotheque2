@@ -26,3 +26,7 @@ pricing:
     path: /pricing
     controller: App\Controller\DefaultController::pricing
 
+options:
+    path: /options
+    controller: App\Controller\DefaultController::options
+

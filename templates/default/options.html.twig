@@ -1,0 +1,175 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ current_path }}{% endblock %}
+{% block main %}
+    <section id="traiteur" class="shadow">
+        <h1>traiteur</h1>
+        <p>
+            Vos hôtes sont affamés par leur tour de la capitale ?<br>
+            Nous vous proposons notre service traiteur sous la forme de délicieux plateaux, dressés par nos équipes et mis à disposition tout au long de votre soirée.<br>
+            Un moyen idéal de savourer la nuit parisienne !
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <td>Pièces</td>
+                    <td>Composition</td>
+                    <td>Prix</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>7 salés / 3 sucrés</td>
+                    <td>15€</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>10 salés / 5 sucrés</td>
+                    <td>22€</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>15 salés / 5 sucrés</td>
+                    <td>30€</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>20 salés / 5 sucrés</td>
+                    <td>35€</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="traiteur_slider">
+        <div class="slider">
+            <img src="{{ asset('build/images/photo/options/traiteur/1.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/traiteur/2.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/traiteur/3.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/traiteur/4.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/traiteur/5.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/traiteur/6.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/traiteur/7.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/traiteur/8.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/traiteur/9.jpg') }}" alt="Image défilant horizontalement">
+        </div>
+    </section>
+    <section id="other_options" class="shadow">
+        <h2>Les options en plus</h2>
+        <div class="row">
+            <div>
+                <div class="icon"></div>
+                <h3>photographe</h3>
+                <h4>200€</h4>
+                <p>
+                    IMMORTALISEZ LES PLUS BEAUX<br>
+                    SOUVENIRS DE VOTRE SOIRÉE !<br>
+                    NOUS VOUS FOURNISSONS LE PHOTOGRAPHE POUR RENDRE CHAQUE INSTANT UNIQUE<br>
+                    DE QUOI ALIMENTER VOS ALBUMS PHOTOS ET VOS RÉSAUX SOCIAUX !
+                </p>
+            </div>
+            <div>
+                <div class="icon"></div>
+                <h3>pack anniversaire</h3>
+                <h4>175€</h4>
+                <p>
+                    1 GÂTEAU DE BONBONS ET 2 BOUTEILLES DE CHAMPAGNE POUR AJOUTER LA TOUCHE FINALE ET QUE VOTRE SOIRÉE SOIT<br>
+                    LA PLUS BELLE QUI SOIT ...<br>
+                    ON PEUT LE DIRE, C'EST LA CERISE SUR LE GÂTEAU !
+                </p>
+            </div>
+            <div>
+                <div class="icon"></div>
+                <h3>pack arcade</h3>
+                <h4>78€</h4>
+                <p>
+                    POUR LES PLUS JOUEURS D'ENTRE VOUS, LES VRAIS COMPÉTITEURS !<br>
+                    DÉFIEZ VOS AMIS SUR DES JEUX MYTHIQUES COMME PAC-MAN OU STREET FIGHTER !<br>
+                    CHAUFFEZ VOS DOIGTS,<br>
+                    LA PARTIE VA BIENTÔT COMMENCER...
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="other_options_slider">
+        <div class="slider">
+            <img src="{{ asset('build/images/photo/options/autres/1.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/autres/2.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/autres/3.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/autres/4.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/autres/5.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/autres/6.png') }}" alt="Image défilant horizontalement">
+        </div>
+    </section>
+{% endblock %}
+{% block modals %}
+    <div class="modal traiteur" role="dialog" aria-modal="true" aria-label="Galerie de photos du traiteur agrandie">
+        <div class="close"></div>
+        <div class="slider">
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/1.jpg') }}" alt="Image défilant horizontalement">
+                <p>Pagnote Alpages</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/2.jpg') }}" alt="Image défilant horizontalement">
+                <p>Mini Wraps USA</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/3.jpg') }}" alt="Image défilant horizontalement">
+                <p>Pagnote Scandinave</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/4.jpg') }}" alt="Image défilant horizontalement">
+                <p>Mini Burger</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/5.jpg') }}" alt="Image défilant horizontalement">
+                <p>Wraps Végétarien</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/6.jpg') }}" alt="Image défilant horizontalement">
+                <p>Pagnote Française</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/7.jpg') }}" alt="Image défilant horizontalement">
+                <p>Pagnote Mini Gougère</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/8.jpg') }}" alt="Image défilant horizontalement">
+                <p>Pagnote Gourmandises</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/traiteur/9.jpg') }}" alt="Image défilant horizontalement">
+                <p>Pagnote Macaron</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal other_options" role="dialog" aria-modal="true" aria-label="Galerie de photos d'autres options agrandie">
+        <div class="close"></div>
+        <div class="slider">
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/1.png') }}" alt="Image défilant horizontalement">
+                <p>Soufflez vos bougies 🎂</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/2.png') }}" alt="Image défilant horizontalement">
+                <p>Faites vos plus belles photos</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/3.png') }}" alt="Image défilant horizontalement">
+                <p>Gâteau De bonbon</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/4.png') }}" alt="Image défilant horizontalement">
+                <p>Décorez le bus selon vos envies</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/5.png') }}" alt="Image défilant horizontalement">
+                <p>Pack Arcade Pac Man</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/6.png') }}" alt="Image défilant horizontalement">
+                <p>Pack Arcade Mortal Combat</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

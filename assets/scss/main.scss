@@ -17,6 +17,7 @@
 @import './components/reversible';
 
 // Importing layouts
+@import './layouts/modal';
 @import './layouts/videobg';
 @import './layouts/header';
 @import './layouts/nav';
@@ -27,3 +28,4 @@
 @import './pages/bus';
 @import './pages/program';
 @import './pages/pricing';
+@import './pages/options';
