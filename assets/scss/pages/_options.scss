@@ -59,20 +59,17 @@
           flex-direction:column;
           justify-content:flex-start;
           align-items:center;
-          width:30%;
+          width:48%;
           .icon{
             width:44px;
             height:44px;
             @include background-prs();
           }
           &:nth-of-type(1) div.icon{
-            background-image:url(../../images/icons/camera.webp);
-          }
-          &:nth-of-type(2) div.icon{
             width:70px;
             background-image:url(../../images/icons/cake-bottle.webp);
           }
-          &:nth-of-type(3) div.icon{
+          &:nth-of-type(2) div.icon{
             background-image:url(../../images/icons/controler.webp);
           }
           h3{
