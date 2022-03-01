@@ -14,11 +14,19 @@
       &.shadow{
         background-color: rgba(0,0,0,.67);
       }
+      >*{
+        animation-duration:2s;
+        animation-name:slide-center;
+      }
       h1{
+        width:$main_width;
+        @include mobile-width();
         margin:40px 0;
         font-size:20px;
       }
       table{
+        width:$main_width;
+        @include mobile-width();
         font-size:18px;
         text-align:center;
         tr{
@@ -26,16 +34,13 @@
         }
       }
       >p{
+        width:$main_width - 30px;
+        @include mobile-width(calc(100% - 30px));
         font-style:italic;
         border-bottom:1px solid #333333;
         padding:15px;
         font-size:13px;
         text-align:center;
-      }
-      >h1,>table,>p{
-        width:$main_width;
-        animation-duration:2s;
-        animation-name:slide-center;
       }
       @keyframes slide-center {
         from {

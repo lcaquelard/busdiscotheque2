@@ -5,13 +5,16 @@
   color:$program_color;
   main{
     width:$main_width;
+    @include mobile-width();
     display:flex;
     flex-flow:row wrap;
     justify-content:space-around;
     align-items:flex-start;
     section{
       background-color:rgba(255,255,255,.67);
-      height:338px;
+      @media screen and (min-width:$mobile-width){
+        height:338px;
+      }
       &.both-sides{
         display:flex;
         flex-direction:row;
@@ -34,6 +37,7 @@
       }
       &.full-width{
         max-width:70%;
+        @include mobile-width();
         text-align:center;
         font-size:17px;
         font-weight:bold;
@@ -53,6 +57,7 @@
       }
       &.half-width {
         max-width: 48.5%;
+        @include mobile-width();
         margin: 10px 0 0;
         &.column{
           >div {
@@ -67,9 +72,17 @@
         }
         p{
           margin:0;
+          &:last-of-type{
+            margin-bottom:-50px;
+          }
         }
         .arrow-next{
           background-image:url(../../images/icons/arrow_right.png);
+          @media all and (max-width:$mobile_width){
+            background-image:url(../../images/icons/arrow_down.png);
+            position: relative;
+            top: 50px;
+          }
         }
       }
       &.video{

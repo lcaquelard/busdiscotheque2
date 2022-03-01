@@ -6,10 +6,11 @@
 
   main{
     display:flex;
-    flex-direction:row;
+    flex-flow:row wrap;
     justify-content:space-around;
     align-items:flex-start;
     width:$main_width;
+    @include mobile-width();
     align-self:center;
 
     .bus_range {
@@ -92,15 +93,17 @@
 
 #bus_mini{
   background-image:url(../../images/background/micro.webp);
-  @include background-prs(center -150px);
+  background-attachment: fixed;
+  @include background-prs();
 }
 #bus_mini,#bus_simple,#bus_double{
   main{
     display:flex;
     flex-flow:row wrap;
-    justify-content:flex-start;
+    justify-content:space-around;
     align-items:center;
     max-width:$main_width;
+    @include mobile-width();
     align-self:center;
   }
 }

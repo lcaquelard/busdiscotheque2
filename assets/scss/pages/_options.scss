@@ -4,6 +4,29 @@
   @include background-prs(center top);
   main{
     align-self:stretch;
+    #traiteur {
+      table{
+        width: $main_width;
+        @include mobile-width();
+        font-size:18px;
+        text-align:center;
+        tr{
+          height:35px;
+        }
+      }
+      >p{
+        width: $main_width;
+        @include mobile-width(calc(100% - 30px));
+        border-bottom:1px solid #333333;
+        padding:15px;
+        font-size:17px;
+        text-align:center;
+      }
+      > * {
+        animation-duration: 2s;
+        animation-name: slide-center;
+      }
+    }
     section{
       color:#FAFAFA;
       width: 100%;
@@ -19,24 +42,6 @@
         margin:40px 0;
         font-size:20px;
         text-transform: uppercase;
-      }
-      table{
-        font-size:18px;
-        text-align:center;
-        tr{
-          height:35px;
-        }
-      }
-      >p{
-        border-bottom:1px solid #333333;
-        padding:15px;
-        font-size:17px;
-        text-align:center;
-      }
-      &:first-of-type>*{
-        width:$main_width;
-        animation-duration:2s;
-        animation-name:slide-center;
       }
       @keyframes slide-center {
         from {
@@ -54,6 +59,7 @@
         align-items:flex-start;
         text-align:center;
         width:$main_width;
+        @include mobile-width();
         >div{
           display:flex;
           flex-direction:column;
@@ -91,6 +97,12 @@
         opacity:0;
         width:100%;
         max-width:$main_width;
+        @include mobile-width();
+        @media all and (max-width:$mobile_width){
+          .slick-prev,.slick-next{
+            display:none !important;
+          }
+        }
         img.slick-slide{
           width:168px;
           height:480px;

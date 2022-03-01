@@ -1,7 +1,10 @@
 .bus{
   min-width:$bus_width;
+  width:20vw;
   min-height:$bus_height;
-  margin:45px (($main_width - ($bus_width * $buses_row)) / (2 * $buses_row)) 0;
+  height:20vw;
+  flex-basis:20vw;
+  margin-top:45px;
   position:relative;
   .front,.back {
     @include background-prs();

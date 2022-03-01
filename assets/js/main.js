@@ -28,6 +28,14 @@ $(window).ready(function() {
   autoplay: true,
   autoplaySpeed: 2000,
   swipeToSlide:true,
+  responsive: [
+   {
+    breakpoint:600,
+    settings:{
+     slidesToShow:3
+    }
+   }
+  ],
  }).css('opacity',1);
  $('#options main section .slider img.slick-slide').on('click', function(){
   let index = $(this).data('slick-index');
@@ -43,7 +51,6 @@ $(window).ready(function() {
     slidesToScroll: 1,
     infinite: true,
     swipeToSlide: true,
-    adaptiveHeight: true,
     initialSlide: index,
    });
   }

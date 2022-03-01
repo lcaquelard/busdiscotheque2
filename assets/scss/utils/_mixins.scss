@@ -11,3 +11,10 @@
   background-repeat:$repeat;
   background-size:$size;
 }
+
+@mixin mobile-width($width:100%){
+  @media screen and (max-width:$mobile_width) {
+    max-width:$width;
+    width:$width;
+  }
+}
