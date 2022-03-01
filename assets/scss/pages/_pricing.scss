@@ -7,48 +7,93 @@
     section{
       color:#FAFAFA;
       width: 100%;
-      margin: 40px 0 0;
       display:flex;
-      flex-direction:column;
       align-items:center;
       &.shadow{
-        background-color: rgba(0,0,0,.67);
-      }
-      >*{
-        animation-duration:2s;
-        animation-name:slide-center;
-      }
-      h1{
-        width:$main_width;
-        @include mobile-width();
-        margin:40px 0;
-        font-size:20px;
-      }
-      table{
-        width:$main_width;
-        @include mobile-width();
-        font-size:18px;
-        text-align:center;
-        tr{
-          height:35px;
+        background-color: rgba(0,0,0,.37);
+        &.dark{
+          background-color: rgba(0,0,0,.67);
         }
       }
-      >p{
-        width:$main_width - 30px;
-        @include mobile-width(calc(100% - 30px));
-        font-style:italic;
-        border-bottom:1px solid #333333;
-        padding:15px;
-        font-size:13px;
-        text-align:center;
-      }
-      @keyframes slide-center {
-        from {
-          margin-left:-400px;
+      &#prices {
+        margin: 40px 0 0;
+        flex-direction:column;
+        > * {
+          animation-duration: 2s;
+          animation-name: slide-center;
         }
+        h1 {
+          width: $main_width;
+          @include mobile-width();
+          margin: 40px 0;
+          font-size: 20px;
+        }
+        table {
+          width: $main_width;
+          @include mobile-width();
+          font-size: 18px;
+          text-align: center;
+          tr {
+            height: 35px;
+          }
+        }
+        > p {
+          width: $main_width - 30px;
+          @include mobile-width(calc(100% - 30px));
+          font-style: italic;
+          border-bottom: 1px solid #333333;
+          padding: 15px;
+          font-size: 13px;
+          text-align: center;
+        }
+        @keyframes slide-center {
+          from {
+            margin-left: -400px;
+          }
 
-        to {
-          margin-left:0;
+          to {
+            margin-left: 0;
+          }
+        }
+      }
+      &#crypto{
+        margin:0;
+        justify-content: center;
+        .description{
+          width:$main_width - 325px;
+          font-size:18px;
+          line-height:35px;
+          .big{
+            font-size:25px;
+          }
+          p:last-of-type{
+            padding-right:120px;
+            background-image:url(../../images/icons/champagne.png);
+            @include background-prs(center right,no-repeat,100px);
+          }
+        }
+        .icons{
+          display:flex;
+          justify-content:space-between;
+          width:325px;
+          div{
+            height:100px;
+            width:100px;
+            @include background-prs();
+            &.bitcoin{background-image:url(../../images/icons/bitcoin.webp);}
+            &.ethereum{background-image:url(../../images/icons/ethereum.webp);}
+            &.shiba{background-image:url(../../images/icons/shiba.webp);}
+          }
+        }
+        @media all and (max-width:$mobile_width){
+          flex-direction:column;
+          width:100%;
+          .description{
+            width:calc(100% - 20px);
+            p{
+              padding:10px;
+            }
+          }
         }
       }
     }

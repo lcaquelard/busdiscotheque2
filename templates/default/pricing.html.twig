@@ -2,7 +2,7 @@
 {% block title %}{{ current_path }}{% endblock %}
 {% block video_bg %}{% include 'default/layouts/video-bg.html.twig' with {'content' : 'pricing'} %}{% endblock %}
 {% block main %}
-    <section class="shadow">
+    <section id="prices" class="shadow">
         <h1>nos offres</h1>
         <table>
             <thead>
@@ -62,5 +62,23 @@
             Tous les prix indiqués sont TTC. Retrouvez tous les éléments inclus dans votre sortie dans la rubrique "Votre événement".<br>
             Pour toute demande de devis spécifique et pour tout supplément, veuillez nous contacter ci-dessous.
         </p>
+    </section>
+    <section id="crypto" class="shadow dark">
+        <div class="description">
+            <p class="big">
+                Payez en crypto monnaie et bénéficiez d'un avantage exceptionnel !
+            </p>
+            <p>
+                En plus des moyens de paiements habituels (CB, virement), Bus Discotheque Paris vous offre la possibilité d'utiliser les crypto monnaies Bitcoin, Ethereum et Shiba pour finaliser la réservation votre événement.
+            </p>
+            <p>
+                <span class="bold">Le bonus ?</span> Nous vous offrons un pack VIP comprenant 3 bouteilles de champagne, valable pour toute réservation Classic Bus et Double Bus !
+            </p>
+        </div>
+        <div class="icons">
+            <div class="bitcoin"></div>
+            <div class="ethereum"></div>
+            <div class="shiba"></div>
+        </div>
     </section>
 {% endblock %}
