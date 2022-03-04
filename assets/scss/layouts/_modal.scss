@@ -24,7 +24,7 @@ div.modal{
   }
   .slider{
     margin:60px 0 0 50px;
-    width:100%;
+    width:95%;
     @media all and (max-width:$mobile_width_modal_slider){
       margin:40px 0 0;
       .slick-slide{
@@ -45,7 +45,7 @@ div.modal{
       }
     }
     .slick-prev{background-image:url(../../images/icons/prev.png);}
-    .slick-next{background-image:url(../../images/icons/next.png);left:calc(54% + 15px);}
+    .slick-next{background-image:url(../../images/icons/next.png);}
     .slick-slide{
       position:relative;
       display:flex;
