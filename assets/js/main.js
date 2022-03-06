@@ -11,7 +11,18 @@ import '../scss/main.scss';
 import $ from 'jquery';
 
 $(window).ready(function() {
- $('#index .slider').slick({
+ $('video').on('click', function(){
+  if (this.paused) {
+   $(this).parent().addClass('playing');
+   this.play();
+  } else {
+   $(this).parent().removeClass('playing');
+   this.pause();
+  }
+ });
+
+
+ $('#index #party.slider').slick({
   infinite: true,
   slidesToShow: 5,
   slidesToScroll: 1,
@@ -19,7 +30,35 @@ $(window).ready(function() {
   autoplay: true,
   autoplaySpeed: 2000,
   swipeToSlide:true,
+  responsive: [
+   {
+    breakpoint:600,
+    settings:{
+     slidesToShow:1
+    }
+   }
+  ],
  }).css('opacity',1);
+ $('#index #party.slider img.slick-slide').on('click', function(){
+  let index = $(this).data('slick-index');
+  let id = $(this).closest(".slider").attr('id');
+  let modal = $('.modal.'+id);
+  let slider = modal.find('.slider');
+  console.log(slider);
+  modal.addClass('active');
+  if (slider.hasClass('slick-initialized')){
+   slider.slick('slickGoTo', index, true);
+  } else {
+   slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    swipeToSlide: true,
+    initialSlide: index,
+    adaptiveHeight:true,
+   });
+  }
+ });
  $('#options main section .slider').slick({
   infinite: true,
   slidesToShow: 6,
@@ -55,8 +94,31 @@ $(window).ready(function() {
    });
   }
  });
+ $('section.bus').on('click', function(){
+  let id = $(this).attr('id');
+  let modal = $('.modal.'+id);
+  let slider = modal.find('.slider');
+  modal.addClass('active');
+  if (slider.hasClass('slick-initialized')){
+   slider.slick();
+  } else {
+   //let slidestoshow = (slider.hasClass('h-size-35') || slider.hasClass('h-size-50')) ? 2 : 1;
+   slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    swipeToSlide: true,
+    adaptiveHeight:true,
+   });
+  }
+ });
 
  $('.modal .close').on('click', function(){
   $(this).parent().removeClass('active');
+ });
+ $(document).on('keydown', function(event) {
+  if (event.key === "Escape") {
+   $('.modal.active').removeClass('active');
+  }
  });
 });

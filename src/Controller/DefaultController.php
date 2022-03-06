@@ -91,4 +91,14 @@ class DefaultController extends AbstractController
             'current_page' => 'options',
         ]);
     }
+    /**
+     * @Route("/contact", name="contact")
+     * @return Response
+     */
+    public function contact(): \Symfony\Component\HttpFoundation\Response
+    {
+        return $this->render('default/contact.html.twig', [
+            'current_page' => 'contact',
+        ]);
+    }
 }

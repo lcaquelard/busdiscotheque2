@@ -18,7 +18,7 @@
       &.both-sides{
         display:flex;
         flex-direction:row;
-        justify-content:flex-start;
+        justify-content:space-between;
         align-items:stretch;
         > div {
           display:flex;
@@ -72,9 +72,6 @@
         }
         p{
           margin:0;
-          &:last-of-type{
-            margin-bottom:-50px;
-          }
         }
         .arrow-next{
           background-image:url(../../images/icons/arrow_right.png);

@@ -6,6 +6,7 @@
   flex-basis:20vw;
   margin-top:45px;
   position:relative;
+  cursor:pointer;
   .front,.back {
     @include background-prs();
   }
@@ -13,15 +14,13 @@
     .content {
       @include position();
       background-color:rgba(0,0,0,.5);
-      padding-top:100px;
+      padding-top:65px;
       color:#FFF;
       display: flex;
       flex-flow: row wrap;
       h3 {
         width:100%;
         text-align:center;
-        background-image:url(../../images/icons/new.webp);
-        @include background-prs(80% top, no-repeat, auto);
       }
     }
   }
@@ -29,17 +28,16 @@
     .content{
       @include position();
       background-color:rgba(0,0,0,.5);
-      padding-top:100px;
       color:#FFF;
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:center;
+      justify-content:space-around;
       .zoom{
         background-image:url(../../images/icons/zoom.webp);
         @include background-prs($size:contain);
         height:50px;
         width:50px;
-        cursor:pointer;
       }
     }
   }
@@ -56,39 +54,39 @@
     &.screen{background-image:url(../../images/icons/screen.webp);background-position:-5px top;}
     &.soft{background-image:url(../../images/icons/soft.webp);background-position:12px top;}
   }
-  &.lalulu {
+  &#lalulu {
     .front {background-image: url(../../images/photo/bus/mini/lalulu/front.webp);}
     .back {background-image: url(../../images/photo/bus/mini/lalulu/back.webp);}
   }
-  &.slinone {
+  &#slinone {
     .front {background-image: url(../../images/photo/bus/classic/slinone/1.jpg);}
     .back {background-image: url(../../images/photo/bus/classic/slinone/2.jpg);}
   }
-  &.sodade {
+  &#sodade {
     .front {background-image: url(../../images/photo/bus/classic/sodade/1.jpg);}
     .back {background-image: url(../../images/photo/bus/classic/sodade/2.jpg);}
   }
-  &.angec6 {
+  &#angec6 {
     .front {background-image: url(../../images/photo/bus/classic/angec6/1.jpg);}
     .back {background-image: url(../../images/photo/bus/classic/angec6/2.jpg);}
   }
-  &.poowood {
+  &#poowood {
     .front {background-image: url(../../images/photo/bus/classic/poowood/1.jpg);}
     .back {background-image: url(../../images/photo/bus/classic/poowood/2.jpg);}
   }
-  &.condor {
+  &#condor {
     .front {background-image: url(../../images/photo/bus/double/condor/1.jpg);}
     .back {background-image: url(../../images/photo/bus/double/condor/2.jpg);}
   }
-  &.bigben {
+  &#bigben {
     .front {background-image: url(../../images/photo/bus/double/bigben/1.jpg);}
     .back {background-image: url(../../images/photo/bus/double/bigben/2.jpg);}
   }
-  &.darkkiss {
+  &#darkkiss {
     .front {background-image: url(../../images/photo/bus/double/darkkiss/1.jpg);}
     .back {background-image: url(../../images/photo/bus/double/darkkiss/2.jpg);}
   }
-  &.seven7 {
+  &#seven7 {
     .front {background-image: url(../../images/photo/bus/double/seven7/1.jpg);}
     .back {background-image: url(../../images/photo/bus/double/seven7/2.jpg);}
   }

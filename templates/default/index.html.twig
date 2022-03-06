@@ -13,18 +13,12 @@
             Fondé il y a plus de 10 ans, Bus Discotheque révolutionne la fête mondaine parisienne en vous offrant une expérience inoubliable entièrement à votre image, pour que vos yeux scintillent comme les milliers de lumières de la Tour Eiffel...
         </p>
     </div>
-    <div class="slider">
-        <img src="{{ asset('build/images/photo/index/21.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/photo/index/22.png') }}" alt="Image défilant horizontalement">
+    <div id="party" class="slider">
         <img src="{{ asset('build/images/photo/index/1.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/2.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/3.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/photo/index/23.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/photo/index/24.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/4.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/5.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/photo/index/26.png') }}" alt="Image défilant horizontalement">
-        <img src="{{ asset('build/images/photo/index/27.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/6.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/7.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/8.png') }}" alt="Image défilant horizontalement">
@@ -38,6 +32,12 @@
         <img src="{{ asset('build/images/photo/index/16.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/17.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/18.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/19.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/20.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/21.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/22.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/23.png') }}" alt="Image défilant horizontalement">
+        <img src="{{ asset('build/images/photo/index/24.png') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/25.png') }}" alt="Image défilant horizontalement">
     </div>
     <div class="shadow bothsides">
@@ -53,6 +53,38 @@
             </p>
             <div class="contact-social-icons"></div>
         </div>
-        <div><video preload="none" muted autoplay loop><source src="{{ asset('build/images/video/video_index.mp4') }}" type="video/mp4"/></video></div>
+        <div class="video"><div class="overlay"></div><video preload="auto" loop><source src="{{ asset('build/images/video/video_index.mp4') }}" type="video/mp4"/></video></div>
+    </div>
+{% endblock %}
+{% block modals %}
+    <div class="modal party" role="dialog" aria-modal="true" aria-label="Galerie de photos de soirée agrandies">
+        <div class="close"></div>
+        <div class="slider h-size-50">
+            <img src="{{ asset('build/images/photo/index/1.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/2.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/3.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/4.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/5.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/6.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/7.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/8.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/9.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/10.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/11.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/12.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/13.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/14.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/15.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/16.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/17.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/18.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/19.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/20.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/21.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/22.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/23.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/24.png') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/index/25.png') }}" alt="Image défilant horizontalement">
+        </div>
     </div>
 {% endblock %}

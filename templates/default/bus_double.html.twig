@@ -2,7 +2,7 @@
 {% block title %}{{ current_path }}{% endblock %}
 {% block video_bg %}{% include 'default/layouts/video-bg.html.twig' with {'content' : 'index'} %}{% endblock %}
 {% block main %}
-    <section class="bus rev condor">
+    <section id="condor" class="bus rev">
         <div class="front">
             <div class="content">
                 <h3>le condor</h3>
@@ -16,11 +16,12 @@
         </div>
         <div class="back">
             <div class="content">
+                <h3>le condor</h3>
                 <div class="zoom"></div>
             </div>
         </div>
     </section>
-    <section class="bus rev bigben">
+    <section id="bigben" class="bus rev">
         <div class="front">
             <div class="content">
                 <h3>le big ben</h3>
@@ -34,11 +35,12 @@
         </div>
         <div class="back">
             <div class="content">
+                <h3>le big ben</h3>
                 <div class="zoom"></div>
             </div>
         </div>
     </section>
-    <section class="bus rev darkkiss">
+    <section id="darkkiss" class="bus rev">
         <div class="front">
             <div class="content">
                 <h3>le dark kiss</h3>
@@ -52,11 +54,12 @@
         </div>
         <div class="back">
             <div class="content">
+                <h3>le dark kiss</h3>
                 <div class="zoom"></div>
             </div>
         </div>
     </section>
-    <section class="bus rev seven7">
+    <section id="seven7" class="bus rev">
         <div class="front">
             <div class="content">
                 <h3>le seven 7</h3>
@@ -70,8 +73,55 @@
         </div>
         <div class="back">
             <div class="content">
+                <h3>le seven 7</h3>
                 <div class="zoom"></div>
             </div>
         </div>
     </section>
+{% endblock %}
+{% block modals %}
+    <div class="modal condor" role="dialog" aria-modal="true" aria-label="Galerie de photos du Condor agrandie">
+        <div class="close"></div>
+        <div class="slider">
+            <img src="{{ asset('build/images/photo/bus/double/condor/1.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/condor/2.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/condor/3.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/condor/4.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/condor/5.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/condor/6.jpg') }}" alt="Image défilant horizontalement">
+        </div>
+    </div>
+    <div class="modal bigben" role="dialog" aria-modal="true" aria-label="Galerie de photos du Big Ben agrandie">
+        <div class="close"></div>
+        <div class="slider h-size-60">
+            <img src="{{ asset('build/images/photo/bus/double/bigben/1.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/bigben/2.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/bigben/3.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/bigben/4.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/bigben/5.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/bigben/6.jpg') }}" alt="Image défilant horizontalement">
+        </div>
+    </div>
+    <div class="modal darkkiss" role="dialog" aria-modal="true" aria-label="Galerie de photos du Dark Kiss agrandie">
+        <div class="close"></div>
+        <div class="slider">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/1.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/2.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/3.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/4.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/5.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/6.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/7.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/8.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/darkkiss/9.jpg') }}" alt="Image défilant horizontalement">
+        </div>
+    </div>
+    <div class="modal seven7" role="dialog" aria-modal="true" aria-label="Galerie de photos du Seven 7 agrandie">
+        <div class="close"></div>
+        <div class="slider">
+            <img src="{{ asset('build/images/photo/bus/double/seven7/1.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/seven7/2.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/double/seven7/3.jpg') }}" alt="Image défilant horizontalement">
+        </div>
+    </div>
 {% endblock %}

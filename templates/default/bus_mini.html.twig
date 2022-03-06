@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ current_path }}{% endblock %}
 {% block main %}
-    <section class="bus rev lalulu">
+    <section id="lalulu" class="bus rev">
         <div class="front">
             <div class="content">
                 <h3>la lulu</h3>
@@ -14,8 +14,17 @@
         </div>
         <div class="back">
             <div class="content">
+                <h3>la lulu</h3>
                 <div class="zoom"></div>
             </div>
         </div>
     </section>
+{% endblock %}
+{% block modals %}
+    <div class="modal lalulu" role="dialog" aria-modal="true" aria-label="Galerie de photos de la Lulu agrandies">
+        <div class="close"></div>
+        <div class="slider">
+            <img src="{{ asset('build/images/photo/bus/mini/lalulu/1.webp') }}" alt="Image défilant horizontalement">
+        </div>
+    </div>
 {% endblock %}

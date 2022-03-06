@@ -30,7 +30,7 @@
       flex-direction:column;
     }
 
-    div:nth-of-type(1){
+    >div:nth-of-type(1){
       max-width:$main_width * 0.4;
       @include mobile-width(calc(100% - 14px));
       display:flex;
@@ -39,9 +39,11 @@
     }
     div:nth-of-type(2){
       max-width:$main_width * 0.6;
-      padding-top:60px;
-      @include mobile-width();
-
+      margin-top:60px;
+      @media screen and (max-width:$mobile_width){
+        width:100%;
+        margin-top:0;
+      }
       video{
         width:100%;
       }
@@ -73,12 +75,11 @@
   .contact{
     display:flex;
     flex-direction: column;
-
     &-tel{
       font-size:20px;
     }
   }
-  div.slider{
+  #party.slider{
     opacity:0;
     width:100%;
     max-width:$main_width;
@@ -86,6 +87,9 @@
       .slick-prev,.slick-next{
         display:none !important;
       }
+    }
+    .slick-slide{
+      cursor:pointer;
     }
   }
 }
