@@ -1,7 +1,7 @@
 <nav>
     <ul>
         <li{% if 'index' in current_path %} class="current"{% endif %}><a href="{{ path('index') }}"></a></li>
-        <li{% if 'bus' in current_path %} class="current"{% endif %}>
+        <li class="droppable{% if 'bus' in current_path %} current{% endif %}">
             <a href="{{ path('bus') }}"><span>Nos bus</span></a>
             <ul class="drop">
                 <li{% if 'bus_mini' in current_path %} class="current"{% endif %}><a href="{{ path('bus_mini') }}"><span>Mini bus</span></a></li>
@@ -12,5 +12,6 @@
         <li{% if 'program' in current_path %} class="current"{% endif %}><a href="{{ path('program') }}"><span>Programme</span></a></li>
         <li{% if 'pricing' in current_path %} class="current"{% endif %}><a href="{{ path('pricing') }}"><span>Tarifs</span></a></li>
         <li{% if 'options' in current_path %} class="current"{% endif %}><a href="{{ path('options') }}"><span>Options</span></a></li>
+        <li{% if 'contact' in current_path %} class="current"{% endif %}><a href="{{ path('contact') }}"><span>Contact</span></a></li>
     </ul>
 </nav>
