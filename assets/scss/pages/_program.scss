@@ -75,6 +75,7 @@
         }
         .arrow-next{
           background-image:url(../../images/icons/arrow_right.png);
+          z-index:1;
           @media all and (max-width:$mobile_width){
             background-image:url(../../images/icons/arrow_down.png);
             position: relative;
