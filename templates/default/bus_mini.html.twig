@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ current_path }}{% endblock %}
 {% block main %}
-    <section id="lalulu" class="bus rev">
+    <section id="minibusdisco" class="bus rev">
         <div class="front">
             <div class="content">
-                <h3>la lulu</h3>
+                <h3>Mini Bus Disco</h3>
                 <div class="bus-icon karaoke">Karaoké</div>
                 <div class="bus-icon capacity">1 à 9 pers</div>
                 <div class="bus-icon carpet">Tapis rouge</div>
@@ -14,17 +14,19 @@
         </div>
         <div class="back">
             <div class="content">
-                <h3>la lulu</h3>
+                <h3>Mini Bus Disco</h3>
                 <div class="zoom"></div>
             </div>
         </div>
     </section>
 {% endblock %}
 {% block modals %}
-    <div class="modal lalulu" role="dialog" aria-modal="true" aria-label="Galerie de photos de la Lulu agrandies">
+    <div class="modal minibusdisco" role="dialog" aria-modal="true" aria-label="Galerie de photos du Mini Bus Disco agrandies">
         <div class="close"></div>
         <div class="slider">
-            <img src="{{ asset('build/images/photo/bus/mini/lalulu/1.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/mini/minibusdisco/1.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/mini/minibusdisco/2.jpg') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/mini/minibusdisco/3.jpg') }}" alt="Image défilant horizontalement">
         </div>
     </div>
 {% endblock %}

@@ -54,8 +54,7 @@ $(window).ready(function() {
     slidesToScroll: 1,
     infinite: true,
     swipeToSlide: true,
-    initialSlide: index,
-    adaptiveHeight:true,
+    initialSlide: index
    });
   }
  });

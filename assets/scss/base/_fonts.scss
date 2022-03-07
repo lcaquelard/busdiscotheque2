@@ -1,5 +1,94 @@
-@font-face {font-family: "DINNeuzeitGroteskLTW01-BdCn"; src: url("//db.onlinewebfonts.com/t/bb2e1211dfd31103079dbce7c49e1d4e.eot"); src: url("//db.onlinewebfonts.com/t/bb2e1211dfd31103079dbce7c49e1d4e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/bb2e1211dfd31103079dbce7c49e1d4e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/bb2e1211dfd31103079dbce7c49e1d4e.woff") format("woff"), url("//db.onlinewebfonts.com/t/bb2e1211dfd31103079dbce7c49e1d4e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/bb2e1211dfd31103079dbce7c49e1d4e.svg#DINNeuzeitGroteskLTW01-BdCn") format("svg"); }
-@font-face {font-family: "LuloCleanW01-One"; src: url("//db.onlinewebfonts.com/t/116d187134420de5733c7c45bbc80c46.eot"); src: url("//db.onlinewebfonts.com/t/116d187134420de5733c7c45bbc80c46.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/116d187134420de5733c7c45bbc80c46.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/116d187134420de5733c7c45bbc80c46.woff") format("woff"), url("//db.onlinewebfonts.com/t/116d187134420de5733c7c45bbc80c46.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/116d187134420de5733c7c45bbc80c46.svg#LuloCleanW01-One") format("svg"); }
-@font-face {font-family: "LuloCleanW01-OneBold"; src: url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.eot"); src: url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.woff") format("woff"), url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.svg#LuloCleanW01-OneBold") format("svg"); }
-@font-face {font-family: "Barlow-medium"; src: url('../../fonts/Barlow/Barlow-Medium.ttf');}
-@font-face {font-family: "maitree"; src: url('https://fonts.googleapis.com/css2?family=Maitree:wght@500&display=swap')};
+@font-face {
+  font-family: 'bench nine';
+  src: url('../../fonts/BenchNine/BenchNine-Light.ttf') format('ttf'),
+  url('../../fonts/BenchNine/BenchNine-Light.woff2') format('woff2'),
+  url('../../fonts/BenchNine/BenchNine-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bench nine';
+  src: url('../../fonts/BenchNine/BenchNine-Regular.ttf') format('ttf'),
+  url('../../fonts/BenchNine/BenchNine-Regular.woff2') format('woff2'),
+  url('../../fonts/BenchNine/BenchNine-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bench nine';
+  src: url('../../fonts/BenchNine/BenchNine-Bold.ttf') format('ttf'),
+  url('../../fonts/BenchNine/BenchNine-Bold.woff2') format('woff2'),
+  url('../../fonts/BenchNine/BenchNine-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'lulo clean';
+  src: url('../../fonts/LuloClean/LuloClean-Regular.ttf') format('ttf'),
+  url('../../fonts/LuloClean/LuloClean-Regular.woff2') format('woff2'),
+  url('../../fonts/LuloClean/LuloClean-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'lulo clean';
+  src: url('../../fonts/LuloClean/LuloClean-Bold.ttf') format('ttf'),
+  url('../../fonts/LuloClean/LuloClean-Bold.woff2') format('woff2'),
+  url('../../fonts/LuloClean/LuloClean-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('../../fonts/Barlow/Barlow-Regular.svg') format('svg'),
+  url('../../fonts/Barlow/Barlow-Regular.ttf') format('ttf'),
+  url('../../fonts/Barlow/Barlow-Regular.woff2') format('woff2'),
+  url('../../fonts/Barlow/Barlow-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('../../fonts/Barlow/Barlow-Italic.svg') format('svg'),
+  url('../../fonts/Barlow/Barlow-Italic.ttf') format('ttf'),
+  url('../../fonts/Barlow/Barlow-Italic.woff2') format('woff2'),
+  url('../../fonts/Barlow/Barlow-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('../../fonts/Barlow/Barlow-Bold.svg') format('svg'),
+  url('../../fonts/Barlow/Barlow-Bold.ttf') format('ttf'),
+  url('../../fonts/Barlow/Barlow-Bold.woff2') format('woff2'),
+  url('../../fonts/Barlow/Barlow-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('../../fonts/Barlow/Barlow-Bold-Italic.svg') format('svg'),
+  url('../../fonts/Barlow/Barlow-Bold-Italic.ttf') format('ttf'),
+  url('../../fonts/Barlow/Barlow-Bold-Italic.woff2') format('woff2'),
+  url('../../fonts/Barlow/Barlow-Bold-Italic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'maitree';
+  src: url('../../fonts/Maitree/Maitree-Regular.svg') format('svg'),
+  url('../../fonts/Maitree/Maitree-Regular.ttf') format('ttf'),
+  url('../../fonts/Maitree/Maitree-Regular.woff2') format('woff2'),
+  url('../../fonts/Maitree/Maitree-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'maitree';
+  src: url('../../fonts/Maitree/Maitree-Bold.svg') format('svg'),
+  url('../../fonts/Maitree/Maitree-Bold.ttf') format('ttf'),
+  url('../../fonts/Maitree/Maitree-Bold.woff2') format('woff2'),
+  url('../../fonts/Maitree/Maitree-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}

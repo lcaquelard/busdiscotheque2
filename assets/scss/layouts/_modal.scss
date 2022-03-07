@@ -43,11 +43,17 @@ div.modal{
     }
     .slick-prev {background-image: url(../../images/icons/prev.png);}
     .slick-next {background-image: url(../../images/icons/next.png);}
-    .slick-track {
-      display: flex !important;
-      align-items:flex-start;
-      .slick-slide {
-        height: auto;
+    .slick-list{
+      height:100%;
+      .slick-track {
+        display: flex !important;
+        align-items:flex-start;
+        height:100%;
+        .slick-slide {
+          height: auto;
+          max-height:100%;
+          object-fit:contain;
+        }
       }
     }
     &.side-content {

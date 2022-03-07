@@ -9,6 +9,7 @@ nav {
     align-items: stretch;
     max-width:$main_width;
     margin:30px auto 0;
+    letter-spacing:0;
 
     > li:nth-of-type(1){
       background-image:url(../../images/logo_dark.webp);
