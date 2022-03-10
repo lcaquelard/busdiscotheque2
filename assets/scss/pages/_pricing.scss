@@ -73,11 +73,8 @@
           width:$main_width;
           @media all and (max-width: $mobile_width) {
             width: 100%;
-            .description {
-              width: calc(100% - 20px);
-              p {
-                padding: 10px;
-              }
+            p {
+              padding: 10px;
             }
           }
           .description {
