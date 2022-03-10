@@ -6,7 +6,7 @@ use Doctrine\DBAL\Schema\View;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Form\ContactType;
+use App\Entity\BusType;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends AbstractController
@@ -77,8 +77,15 @@ class DefaultController extends AbstractController
      */
     public function pricing(): \Symfony\Component\HttpFoundation\Response
     {
+        $buses = array(
+            new BusType('Mini Bus', 9, 7, 290),
+            new BusType('Classic Bus', 35, 12, 890),
+            new BusType('Double Bus', 55, 18, 1090),
+            new BusType('Double Bus Terrasse', 55, 18, 1190),
+            //new BusType('Super Double Bus', 70, 18, 1290)
+        );
         return $this->render('default/pricing.html.twig', [
-            'current_page' => 'pricing',
+            'current_page' => 'pricing', 'buses' => $buses
         ]);
     }
     /**
