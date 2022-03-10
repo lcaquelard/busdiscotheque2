@@ -33,6 +33,9 @@
           @include mobile-width();
           font-size: 18px;
           text-align: center;
+          @media screen and (max-width:$mobile_width){
+            font-size:14px;
+          }
           tr {
             height: 35px;
           }
