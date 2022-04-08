@@ -1,5 +1,7 @@
 #index {
-  background-color:#000;
+  background-image:url(../../images/background/index.jpg);
+  background-attachment: fixed;
+  @include background-prs();
   main{
     align-self:stretch;
   }

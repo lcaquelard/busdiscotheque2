@@ -3,6 +3,9 @@
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
+  background-image:url(../../images/background/index.jpg);
+  background-attachment: fixed;
+  @include background-prs();
 
   main{
     display:flex;
@@ -93,6 +96,16 @@
 
 #bus_mini{
   background-image:url(../../images/background/micro.webp);
+  background-attachment: fixed;
+  @include background-prs();
+}
+#bus_simple{
+  background-image:url(../../images/background/index.jpg);
+  background-attachment: fixed;
+  @include background-prs();
+}
+#bus_double{
+  background-image:url(../../images/background/index.jpg);
   background-attachment: fixed;
   @include background-prs();
 }
