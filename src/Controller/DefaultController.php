@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/accueil", name="index")
      * @return Response
      */
     public function index(): \Symfony\Component\HttpFoundation\Response
