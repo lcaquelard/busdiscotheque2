@@ -2,6 +2,10 @@ index:
     path: /
     controller: App\Controller\DefaultController::index
 
+accueil:
+    path: /accueil
+    controller: App\Controller\DefaultController::index
+
 bus:
     path: /bus
     controller: App\Controller\DefaultController::bus
