@@ -11,6 +11,7 @@
     @include background-prs();
   }
   .front{
+    @include position();
     .content {
       @include position();
       background-color:rgba(0,0,0,.5);
@@ -25,6 +26,7 @@
     }
   }
   .back{
+    @include position();
     .content{
       @include position();
       background-color:rgba(0,0,0,.5);
@@ -40,6 +42,11 @@
         width:50px;
       }
     }
+    /*@media screen and (max-width:$mobile_width){
+      display:none;
+      visibility:hidden;
+      opacity:0;
+    }*/
   }
   &-icon {
     width:calc(50% - 39px);
