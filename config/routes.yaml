@@ -14,16 +14,20 @@ bus:
     controller: App\Controller\DefaultController::bus
 
 bus_mini:
-    path: /bus_mini
+    path: /bus/mini
     controller: App\Controller\DefaultController::bus_mini
 
 bus_simple:
-    path: /bus_simple
+    path: /bus/classic
     controller: App\Controller\DefaultController::bus_simple
 
 bus_double:
-    path: /bus_double
+    path: /bus/double
     controller: App\Controller\DefaultController::bus_double
+
+bus_super:
+    path: /bus/super_double
+    controller: App\Controller\DefaultController::bus_super
 
 program:
     path: /program

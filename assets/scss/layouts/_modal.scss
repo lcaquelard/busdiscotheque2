@@ -8,14 +8,14 @@ div.modal{
   overflow:hidden;
   .close{
     @include background-prs();
-    background-image: url(../../images/icons/close.png);
+    background-image: url(../../images/icons/close.webp);
     position:absolute;
     top:10px;
     right:10px;
     width:26px;
     height:26px;
     cursor:pointer;
-    @media all and (max-width:$mobile_width_modal_slider){
+    @media all and (max-width:$mobile_width){
       top:10px;
       right:10px;
       width:20px;
@@ -28,7 +28,7 @@ div.modal{
     display: flex;
     justify-content: center;
     align-items: center;
-    @media all and (max-width: $mobile_width_modal_slider) {
+    @media all and (max-width: $mobile_width) {
       margin: 40px 0 0;
       .slick-slide {
         margin-left: 0;
@@ -37,12 +37,12 @@ div.modal{
       }
     }
     .slick-prev, .slick-next {
-      @media all and (max-width: $mobile_width_modal_slider) {display: none !important;}
+      @media all and (max-width: $mobile_width) {display: none !important;}
       @include background-prs();
       &:before {content: "";}
     }
-    .slick-prev {background-image: url(../../images/icons/prev.png);}
-    .slick-next {background-image: url(../../images/icons/next.png);}
+    .slick-prev {background-image: url(../../images/icons/prev.webp);}
+    .slick-next {background-image: url(../../images/icons/next.webp);}
     .slick-list{
       height:100%;
       .slick-track {
@@ -59,19 +59,19 @@ div.modal{
     &.side-content {
       .slick-slide {
         display: flex;
-        @media all and (max-width: $mobile_width_modal_slider) {
+        @media all and (max-width: $mobile_width) {
           flex-direction: column;
         }
         > img {
           width: 54%;
-          @media all and (max-width: $mobile_width_modal_slider) {
+          @media all and (max-width: $mobile_width) {
             width: 100%
           }
         }
         > p {
           padding-top: 200px;
           width: calc(46% - 50px);
-          @media all and (max-width: $mobile_width_modal_slider) {
+          @media all and (max-width: $mobile_width) {
             padding-top: 0;
             width: 100%
           }

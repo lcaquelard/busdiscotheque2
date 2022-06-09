@@ -50,7 +50,7 @@
           }
         }
         .arrow-next{
-          background-image:url(../../images/icons/arrow_down.png);
+          background-image:url(../../images/icons/arrow_down.webp);
           position:relative;
           top:50px;
         }
@@ -74,10 +74,10 @@
           margin:0;
         }
         .arrow-next{
-          background-image:url(../../images/icons/arrow_right.png);
+          background-image:url(../../images/icons/arrow_right.webp);
           z-index:1;
-          @media all and (max-width:$mobile_width){
-            background-image:url(../../images/icons/arrow_down.png);
+          @media all and (max-width:$tablet_width){
+            background-image:url(../../images/icons/arrow_down.webp);
             position: relative;
             top: 50px;
           }

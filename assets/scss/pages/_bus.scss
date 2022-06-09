@@ -3,7 +3,7 @@
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
-  background-image:url(../../images/background/index.jpg);
+  background-image:url(../../images/background/index.webp);
   background-attachment: fixed;
   @include background-prs();
 
@@ -23,7 +23,7 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        margin:25px 0 0 0;
+        margin:25px 0 55px 0;
         transition:margin .2s ease-in-out;
 
         &:hover{
@@ -36,7 +36,7 @@
         }
 
         &:nth-of-type(1) {
-          background-image: url(../../images/photo/bus/mini/1.jpg);
+          background-image: url(../../images/photo/bus/mini/1.webp);
         }
 
         &:nth-of-type(2) {
@@ -45,6 +45,10 @@
 
         &:nth-of-type(3) {
           background-image: url(../../images/photo/bus/double/1.webp);
+        }
+
+        &:nth-of-type(4) {
+          background-image: url(../../images/photo/bus/super/1.webp);
         }
 
         a {
@@ -99,17 +103,12 @@
   background-attachment: fixed;
   @include background-prs();
 }
-#bus_simple{
-  background-image:url(../../images/background/index.jpg);
+#bus_simple,#bus_double,#bus_super{
+  background-image:url(../../images/background/index.webp);
   background-attachment: fixed;
   @include background-prs();
 }
-#bus_double{
-  background-image:url(../../images/background/index.jpg);
-  background-attachment: fixed;
-  @include background-prs();
-}
-#bus_mini,#bus_simple,#bus_double{
+#bus_mini,#bus_simple,#bus_double,#bus_super{
   main{
     display:flex;
     flex-flow:row wrap;

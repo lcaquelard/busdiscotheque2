@@ -1,4 +1,4 @@
-@media screen and (min-width:$mobile_width) {
+@media screen and (min-width:$tablet_width) {
   .rev {
     .front, .back {
       @include position();

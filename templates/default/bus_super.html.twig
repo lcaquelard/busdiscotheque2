@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %}Les super bus doubles{% endblock %}
+{% block main %}
+    <section id="leviator" class="bus rev">
+        <div class="front">
+            <div class="content">
+                <h3>le léviator</h3>
+                <div class="bus-icon dj">DJ</div>
+                <div class="bus-icon capacity">70 max</div>
+                <div class="bus-icon carpet">Tapis rouge</div>
+                <div class="bus-icon soft">Softs inclus</div>
+                <div class="bus-icon screen">Ecran HD</div>
+                <div class="bus-icon fridge">Espace frigorifié</div>
+                <div class="bus-icon bubble">Machine à bulles</div>
+                <div class="bus-icon arcade">Pack Arcade</div>
+                <div class="bus-icon smoke">Machine à fumée</div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="content">
+                <h3>le léviator</h3>
+                <div class="zoom"></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block modals %}
+    <div class="modal leviator" role="dialog" aria-modal="true" aria-label="Galerie de photos du Léviator agrandie">
+        <div class="close"></div>
+        <div class="slider">
+            <img src="{{ asset('build/images/photo/bus/super/leviator/1.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/super/leviator/2.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/super/leviator/3.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/super/leviator/4.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/super/leviator/5.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/super/leviator/6.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/super/leviator/7.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/bus/super/leviator/8.webp') }}" alt="Image défilant horizontalement">
+        </div>
+    </div>
+{% endblock %}

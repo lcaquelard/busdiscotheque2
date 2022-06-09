@@ -1,5 +1,5 @@
 #index {
-  background-image:url(../../images/background/index.jpg);
+  background-image:url(../../images/background/index.webp);
   background-attachment: fixed;
   @include background-prs();
   main{
@@ -29,7 +29,7 @@
   .bothsides{
     display:flex;
     flex-direction:row;
-    @media screen and (max-width:$mobile_width){
+    @media screen and (max-width:$tablet_width){
       flex-direction:column;
     }
 
@@ -43,7 +43,8 @@
     >div:nth-of-type(2){
       max-width:$main_width * 0.6;
       margin-top:90px;
-      @media screen and (max-width:$mobile_width){
+      background-color:#000;
+      @media screen and (max-width:$tablet_width){
         width:100%;
         margin-top:0;
       }
@@ -101,15 +102,19 @@
    }
   }
   #party.slider{
-    opacity:0;
     width:100%;
     max-width:$main_width;
-    @media all and (max-width:$mobile_width){
+    @media all and (max-width:$tablet_width){
       .slick-prev,.slick-next{
         display:none !important;
       }
     }
-    .slick-slide{
+    .slick-track
+    {
+    }
+    .slick-slide
+    {
+      height:100%;
       cursor:pointer;
     }
   }

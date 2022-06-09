@@ -7,11 +7,12 @@
                 <li{% if 'bus_mini' in current_path %} class="current"{% endif %}><a href="{{ path('bus_mini') }}"><span>Mini bus</span></a></li>
                 <li{% if 'bus_simple' in current_path %} class="current"{% endif %}><a href="{{ path('bus_simple') }}"><span>Classic bus</span></a></li>
                 <li{% if 'bus_double' in current_path %} class="current"{% endif %}><a href="{{ path('bus_double') }}"><span>Double bus</span></a></li>
+                <li{% if 'bus_super' in current_path %} class="current"{% endif %}><a href="{{ path('bus_super') }}"><span>Super Double bus</span></a></li>
             </ul>
         </li>
-        <li{% if 'program' in current_path %} class="current"{% endif %}><a href="{{ path('program') }}"><span>Programme</span></a></li>
+        <li{% if 'program' in current_path %} class="current"{% endif %}><a href="{{ path('program') }}"><span>Votre soirée</span></a></li>
         <li{% if 'pricing' in current_path %} class="current"{% endif %}><a href="{{ path('pricing') }}"><span>Tarifs</span></a></li>
         <li{% if 'options' in current_path %} class="current"{% endif %}><a href="{{ path('options') }}"><span>Options</span></a></li>
-        <li{% if 'contact' in current_path %} class="current"{% endif %}><a href="{{ path('contact') }}"><span>Réservation</span></a></li>
+        <li{% if 'contact' in current_path %} class="current"{% endif %}><a href="{{ path('contact') }}"><span>Devis</span></a></li>
     </ul>
 </nav>

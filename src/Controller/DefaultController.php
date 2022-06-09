@@ -32,7 +32,7 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
-     * @Route("/bus_mini", name="bus_mini")
+     * @Route("/bus/mini", name="bus_mini")
      * @return Response
      */
     public function bus_mini(): \Symfony\Component\HttpFoundation\Response
@@ -42,7 +42,7 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
-     * @Route("/bus_simple", name="bus_simple")
+     * @Route("/bus/classic", name="bus_simple")
      * @return Response
      */
     public function bus_simple(): \Symfony\Component\HttpFoundation\Response
@@ -52,13 +52,23 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
-     * @Route("/bus_double", name="bus_double")
+     * @Route("/bus/double", name="bus_double")
      * @return Response
      */
     public function bus_double(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_double.html.twig', [
             'current_page' => 'bus_double',
+        ]);
+    }
+    /**
+     * @Route("/bus/super_double", name="bus_super")
+     * @return Response
+     */
+    public function bus_super(): \Symfony\Component\HttpFoundation\Response
+    {
+        return $this->render('default/bus_super.html.twig', [
+            'current_page' => 'bus_super',
         ]);
     }
     /**
@@ -82,7 +92,7 @@ class DefaultController extends AbstractController
             new BusType('Classic Bus', 35, 12, 890),
             new BusType('Double Bus', 55, 18, 1090),
             new BusType('Double Bus Terrasse', 55, 18, 1190),
-            //new BusType('Super Double Bus', 70, 18, 1290)
+            new BusType('Super Double Bus', 70, 18, 1190)
         );
         return $this->render('default/pricing.html.twig', [
             'current_page' => 'pricing', 'buses' => $buses

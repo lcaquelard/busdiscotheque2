@@ -54,9 +54,9 @@
       }
       div.row{
         display:flex;
-        flex-direction:row;
-        justify-content:space-between;
-        align-items:flex-start;
+        flex-flow:row wrap;
+        justify-content:space-around;
+        align-items:center;
         text-align:center;
         width:$main_width;
         @include mobile-width();
@@ -65,18 +65,33 @@
           flex-direction:column;
           justify-content:flex-start;
           align-items:center;
-          width:48%;
+          max-width:30%;
           .icon{
-            width:44px;
-            height:44px;
+            width:140px;
+            height:60px;
             @include background-prs();
           }
           &:nth-of-type(1) div.icon{
-            width:70px;
-            background-image:url(../../images/icons/cake-bottle.webp);
+            background-image:url(../../images/icons/options/birthday_kid.webp);
           }
           &:nth-of-type(2) div.icon{
-            background-image:url(../../images/icons/controler.webp);
+            width:70px;
+            height:44px;
+            background-image:url(../../images/icons/options/birthday_adult.webp);
+          }
+          &:nth-of-type(3) div.icon{
+            width:70px;
+            height:44px;
+            background-image:url(../../images/icons/options/arcade.webp);
+          }
+          &:nth-of-type(4) div.icon{
+            background-image:url(../../images/icons/options/hostess.webp);
+          }
+          &:nth-of-type(5) div.icon{
+            background-image:url(../../images/icons/options/karaoke.webp);
+          }
+          &:nth-of-type(6) div.icon{
+            background-image:url(../../images/icons/options/free.webp);
           }
           h3{
             font-size:12px;
@@ -91,6 +106,12 @@
             text-transform:uppercase;
             line-height:20px;
           }
+          @media all and (max-width:$tablet_width){
+            min-width:45%;
+          }
+          @media all and (max-width:$mobile_width){
+            min-width:80%;
+          }
         }
       }
       div.slider{
@@ -98,7 +119,7 @@
         width:100%;
         max-width:$main_width;
         @include mobile-width();
-        @media all and (max-width:$mobile_width){
+        @media all and (max-width:$tablet_width){
           .slick-prev,.slick-next{
             display:none !important;
           }

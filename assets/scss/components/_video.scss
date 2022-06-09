@@ -2,7 +2,7 @@
   position:relative;
   >div.overlay{
     pointer-events: none;
-    background-image:url(../../images/icons/play.png);
+    background-image:url(../../images/icons/play.webp);
     @include background-prs(center center, no-repeat, 15%);
     @include position();
   }

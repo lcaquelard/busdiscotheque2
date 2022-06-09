@@ -30,6 +30,7 @@ $(window).ready(function() {
   autoplay: true,
   autoplaySpeed: 2000,
   swipeToSlide:true,
+  variableWidth: true,
   responsive: [
    {
     breakpoint:600,
@@ -38,7 +39,7 @@ $(window).ready(function() {
     }
    }
   ],
- }).css('opacity',1);
+ });
  $('#index #party.slider img.slick-slide').on('click', function(){
   let index = $(this).data('slick-index');
   let id = $(this).closest(".slider").attr('id');

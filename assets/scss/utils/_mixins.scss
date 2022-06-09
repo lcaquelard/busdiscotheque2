@@ -13,7 +13,7 @@
 }
 
 @mixin mobile-width($width:100%){
-  @media screen and (max-width:$mobile_width) {
+  @media screen and (max-width:$tablet_width) {
     max-width:$width;
     width:$width;
   }
