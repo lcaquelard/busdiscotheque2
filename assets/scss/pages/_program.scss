@@ -85,13 +85,15 @@
       }
       &.video{
         width:100%;
-        background:#000;
+        background-color:#000;
         display:flex;
         flex-direction: column;
         align-items:stretch;
         justify-content:center;
-        background:url(../../images/video/video_program_still.webp);
-        @include background-prs();
+
+        video{
+          background-image:url(../../images/video/video_program_still.webp);
+        }
       }
       h1{
         font-size:75px;
