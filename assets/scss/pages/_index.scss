@@ -43,7 +43,8 @@
     >div:nth-of-type(2){
       max-width:$main_width * 0.6;
       margin-top:90px;
-      background-color:#000;
+      background:url(../../images/video/video_index_still.webp);
+      @include background-prs();
       @media screen and (max-width:$tablet_width){
         width:100%;
         margin-top:0;
