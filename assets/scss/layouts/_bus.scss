@@ -19,12 +19,15 @@
       color:#FFF;
       display: flex;
       flex-flow: row wrap;
+      justify-content:space-around;
       h3 {
         width:100%;
         text-align:center;
+        padding:0;
       }
       h4 {
         text-transform: uppercase;
+        margin-top:-25px;
       }
     }
   }
@@ -55,6 +58,7 @@
     width:calc(50% - 39px);
     padding-left:39px;
     font-family:$serif;
+    font-weight:bold;
     @include background-prs(15px top, no-repeat, auto);
     &.capacity{background-image:url(../../images/icons/bus/capacity.webp);background-position:8px top;}
     &.carpet{background-image:url(../../images/icons/bus/carpet.webp);background-position:3px top;}
