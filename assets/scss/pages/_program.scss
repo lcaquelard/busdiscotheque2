@@ -83,6 +83,11 @@
           }
         }
       }
+      &.total-width{
+        min-width:100%;
+        background:none;
+        height:1px;
+      }
       &.video{
         width:100%;
         background-color:#000;
