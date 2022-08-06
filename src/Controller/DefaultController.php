@@ -12,13 +12,14 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/accueil", name="index")
+     * @Route("/", name="index")
      * @return Response
      */
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/index.html.twig', [
             'current_page' => 'index',
+            'meta_content' => 'Busdiscothèque est le meilleur choix'
         ]);
     }
     /**
