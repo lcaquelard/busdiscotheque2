@@ -110,13 +110,13 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/booking", name="booking")
      * @return Response
      */
-    public function contact(): \Symfony\Component\HttpFoundation\Response
+    public function booking(): \Symfony\Component\HttpFoundation\Response
     {
-        return $this->render('default/contact.html.twig', [
-            'current_page' => 'contact',
+        return $this->render('default/booking.html.twig', [
+            'current_page' => 'booking',
         ]);
     }
 }

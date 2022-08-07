@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 {% set title = "Bus Discothèque Paris" %}
-{% set meta_description = "Bus Discothèque Paris organise votre soirée à travers les plus belles avenues de la capitale grace à notre éventail de bus remodelés pour la fête !" %}
+{% set meta_description = "Bus Discothèque Paris organise votre soirée à travers les plus belles avenues de la capitale grace à notre éventail de bus réaménagés pour la fête !" %}
 {% block main %}
     <img src="{{ asset('build/images/logo.webp')}}" alt="logo busdiscotheque"/>
-    <h1>Luxury private party bus</h1>
+    <h1>Bus Discothèque Paris</h1>
     <div class="shadow column">
-        <h2>Illuminez la capitale</h2>
+        <h2>Sillonnez Paris dans nos bus discothèques dédiés à vos soirées !</h2>
         <p>
-            Avec ses véhicules entièrement réaménagés et son concept totalement inédit, Bus Discotheque Paris offre un décor prestigieux pour la tenue de vos événements les plus marquants. En privatisant l'un des bus de notre flotte, c’est une visite inédite de la capitale que vous vous offrirez le temps d’une soirée, en réunissant tous les éléments pour faire votre bonheur : vos proches, vos musiques préférées, un verre à la main, Paris !
+            Avec <a href="{{ path('bus') }}">ses véhicules</a> entièrement réaménagés et son concept totalement inédit, Bus Discotheque Paris offre un décor prestigieux pour la tenue de vos événements les plus marquants. En privatisant l'un des bus de notre flotte, c’est une visite inédite de la capitale que vous vous offrirez le temps d’une soirée, en réunissant tous les éléments pour faire votre bonheur : vos proches, vos musiques préférées, un verre à la main, Paris !
         </p>
         <p>
-            Fondé il y a plus de 10 ans, Bus Discotheque révolutionne la fête mondaine parisienne en vous offrant une expérience inoubliable entièrement à votre image, pour que vos yeux scintillent comme les milliers de lumières de la Tour Eiffel...
+            Fondé il y a plus de 10 ans, Bus Discotheque révolutionne la fête mondaine parisienne en <a href="{{ path('pricing') }}">vous offrant</a> une expérience inoubliable entièrement à votre image, pour que vos yeux scintillent comme les milliers de lumières de la Tour Eiffel...
         </p>
     </div>
     <div id="party" class="slider">
@@ -48,9 +48,10 @@
     <div class="shadow bothsides">
         <div>
             <h3>Votre soirée commence ici !</h3>
-            <p>Bus Discotheque Paris est à l'écoute de toutes vos demandes et vous propose de personnaliser entièrement votre programme. Pour plus d'infos sur le déroulé complet de l'une de nos soirées, rendez-vous dans la page "Votre soirée" !</p>
+            <p>Bus Discotheque Paris est à l'écoute de toutes vos demandes et vous propose de <a href="{{ path('options') }}">personnaliser</a> entièrement votre programme. Plus d'infos sur le déroulé complet de <a href="{{ path('program') }}">votre soirée</a> !</p>
 
             <p class="contact">
+                <span class="contact-booking"><a href="{{ path('booking') }}">Réservation</a></span>
                 <span class="contact-tel">01 89 47 07 40</span>
                 {% if "now"|date('m-d') >= '08-01' and "now"|date('m-d') <= '08-31' %}
                 <span class="contact-holiday">Notre réception étant en vacances entre le <span class="bold">1er et le 31 août</span>, il n'est pas possible de faire de réservation par téléphone entre ces dates. Vous recevrez en revanche toujours une réponse personnalisée en nous joignant par email.</span>

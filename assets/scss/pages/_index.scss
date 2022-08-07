@@ -19,6 +19,9 @@
       line-height: 1.3em;
       padding:0 10px;
       @include mobile-width(calc(100% - 20px));
+      a {
+        text-shadow: 0 0 5px #FFF;
+      }
     }
   }
   .column{

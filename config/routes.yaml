@@ -41,7 +41,7 @@ options:
     path: /options
     controller: App\Controller\DefaultController::options
 
-contact:
-    path: /contact
-    controller: App\Controller\DefaultController::contact
+booking:
+    path: /booking
+    controller: App\Controller\DefaultController::booking
 
