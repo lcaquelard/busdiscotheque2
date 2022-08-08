@@ -18,7 +18,7 @@ bus_mini:
     controller: App\Controller\DefaultController::bus_mini
 
 bus_simple:
-    path: /bus/classic
+    path: /bus/classique
     controller: App\Controller\DefaultController::bus_simple
 
 bus_double:
@@ -30,11 +30,11 @@ bus_super:
     controller: App\Controller\DefaultController::bus_super
 
 program:
-    path: /program
+    path: /soirée
     controller: App\Controller\DefaultController::program
 
 pricing:
-    path: /pricing
+    path: /prix
     controller: App\Controller\DefaultController::pricing
 
 options:
@@ -42,6 +42,6 @@ options:
     controller: App\Controller\DefaultController::options
 
 booking:
-    path: /booking
+    path: /réservation
     controller: App\Controller\DefaultController::booking
 

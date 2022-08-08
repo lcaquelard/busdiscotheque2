@@ -73,7 +73,7 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
-     * @Route("/program", name="program")
+     * @Route("/soirée", name="program")
      * @return Response
      */
     public function program(): \Symfony\Component\HttpFoundation\Response
@@ -83,7 +83,7 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
-     * @Route("/pricing", name="pricing")
+     * @Route("/prix", name="pricing")
      * @return Response
      */
     public function pricing(): \Symfony\Component\HttpFoundation\Response
@@ -110,7 +110,7 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
-     * @Route("/booking", name="booking")
+     * @Route("/réservation", name="booking")
      * @return Response
      */
     public function booking(): \Symfony\Component\HttpFoundation\Response
