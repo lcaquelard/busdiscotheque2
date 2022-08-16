@@ -1,10 +1,3 @@
-root:
-    path: /index
-    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
-    defaults:
-        path: /
-        permanent: true
-
 index:
     path: /
     controller: App\Controller\DefaultController::index
@@ -45,3 +38,65 @@ booking:
     path: /réservation
     controller: App\Controller\DefaultController::booking
 
+old_index:
+    path: /index
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /
+        permanent: true
+
+old_booking:
+    path: /booking
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /réservation
+        permanent: true
+
+old_bus_mini:
+    path: /bus_mini
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /bus/mini
+        permanent: true
+
+old_bus_simple:
+    path: /bus_simple
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /bus/classique
+        permanent: true
+
+old_bus_double:
+    path: /bus_double
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /bus/double
+        permanent: true
+
+old_bus_super:
+    path: /bus_super
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /bus/super_double
+        permanent: true
+
+old_contact:
+    path: /contact
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /réservation
+        permanent: true
+
+old_pricing:
+    path: /pricing
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /prix
+        permanent: true
+
+old_program:
+    path: /program
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /soirée
+        permanent: true
