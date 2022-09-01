@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
-{% set title = "Nos bus doubles" %}
-{% set meta_description = "Découvrez nos bus doubles en location, pour accueillir jusqu'à 55 personnes, avec DJ et frigos !"%}
-{% block main %}
-    {% for bus in buses %}
+{% set title = "Nos middle bus" %}
+{% set meta_description = "Découvrez nos bus de taille moyenne en location !"%}
+    {% block main %}
+        {% for bus in buses %}
         <section id="{{ bus.getShortName() }}" class="bus rev">
             <div class="front">
                 <div class="content">
@@ -20,15 +20,15 @@
                 </div>
             </div>
         </section>
-    {% endfor %}
-{% endblock %}
+        {% endfor %}
+    {% endblock %}
 {% block modals %}
     {% for bus in buses %}
         <div class="modal {{ bus.getShortName }}" role="dialog" aria-modal="true" aria-label="Galerie de photos du {{ bus.getShortName()}} agrandies">
             <div class="close"></div>
             <div class="slider">
                 {% for i in 1..bus.getPictures() %}
-                    <img src="{{ asset('build/images/photo/bus/double/' ~ bus.getShortName() ~ '/' ~ i ~ '.webp') }}" alt="Image défilant horizontalement">
+                    <img src="{{ asset('build/images/photo/bus/middle/' ~ bus.getShortName() ~ '/' ~ i ~ '.webp') }}" alt="Image défilant horizontalement">
                 {% endfor %}
             </div>
         </div>

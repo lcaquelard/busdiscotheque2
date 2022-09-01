@@ -69,29 +69,47 @@
           .icon{
             width:140px;
             height:60px;
-            @include background-prs();
+            @include background-prs(center center, no-repeat, contain);
           }
-          &:nth-of-type(1) div.icon{
+          &#birthday_kid div.icon{
             background-image:url(../../images/icons/options/birthday_kid.webp);
+            background-size:cover;
           }
-          &:nth-of-type(2) div.icon{
-            width:70px;
-            height:44px;
+          &#birthday_adult div.icon{
             background-image:url(../../images/icons/options/birthday_adult.webp);
           }
-          &:nth-of-type(3) div.icon{
-            width:70px;
-            height:44px;
+          &#arcade div.icon{
             background-image:url(../../images/icons/options/arcade.webp);
           }
-          &:nth-of-type(4) div.icon{
+          &#hostess div.icon{
             background-image:url(../../images/icons/options/hostess.webp);
+            background-size:cover;
           }
-          &:nth-of-type(5) div.icon{
+          &#karaoke div.icon{
             background-image:url(../../images/icons/options/karaoke.webp);
+            background-size:cover;
           }
-          &:nth-of-type(6) div.icon{
+          &#free div.icon{
             background-image:url(../../images/icons/options/free.webp);
+            background-size:cover;
+          }
+          &#agent div.icon{
+            background-image:url(../../images/icons/options/agent.webp);
+          }
+          &#insurance div.icon{
+            background-image:url(../../images/icons/options/insurance.webp);
+          }
+          &#necklace div.icon{
+            background-image:url(../../images/icons/options/necklace.webp);
+          }
+          &#glasses div.icon{
+            background-image:url(../../images/icons/options/glasses.webp);
+          }
+          &#sticks div.icon{
+            background-image:url(../../images/icons/options/sticks.webp);
+          }
+          &#bracelets div.icon{
+            background-image:url(../../images/icons/options/bracelets.webp);
           }
           h3{
             font-size:12px;

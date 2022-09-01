@@ -1,33 +1,36 @@
 {% extends 'base.html.twig' %}
 {% set title = "Nos minibus" %}
-{% set meta_description = "Découvrez notre sélection de minibus de fête enb lcoation pour 1 à 9 personnes, plus l'option karaoké !"%}
+{% set meta_description = "Découvrez notre sélection de minibus de fête en location pour 1 à 9 personnes, plus l'option karaoké !"%}
     {% block main %}
-    <section id="minibusdisco" class="bus rev">
-        <div class="front">
-            <div class="content">
-                <h3>Mini Bus Disco</h3>
-                <div class="bus-icon karaoke">Karaoké</div>
-                <div class="bus-icon capacity">1 à 9 pers</div>
-                <div class="bus-icon carpet">Tapis rouge</div>
-                <div class="bus-icon soft">Softs inclus</div>
-                <div class="bus-icon screen">Ecran HD</div>
-            </div>
-        </div>
-        <div class="back">
-            <div class="content">
-                <h3>Mini Bus Disco</h3>
-                <div class="zoom"></div>
-            </div>
-        </div>
-    </section>
-{% endblock %}
+        {% for bus in buses %}
+            <section id="{{ bus.getShortName() }}" class="bus rev">
+                <div class="front">
+                    <div class="content">
+                        <h3>{{ bus.getName() }}</h3>
+                        <div class="bus-icon capacity">{{ bus.getRoom() }} max</div>
+                        {% for name, option in bus.getOptions() %}
+                            <div class="bus-icon {{ name }}">{{ option }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="content">
+                        <h3>{{ bus.getName() }}</h3>
+                        <div class="zoom"></div>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+    {% endblock %}
 {% block modals %}
-    <div class="modal minibusdisco" role="dialog" aria-modal="true" aria-label="Galerie de photos du Mini Bus Disco agrandies">
-        <div class="close"></div>
-        <div class="slider">
-            <img src="{{ asset('build/images/photo/bus/mini/minibusdisco/1.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/mini/minibusdisco/2.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/mini/minibusdisco/3.webp') }}" alt="Image défilant horizontalement">
+    {% for bus in buses %}
+        <div class="modal {{ bus.getShortName }}" role="dialog" aria-modal="true" aria-label="Galerie de photos du {{ bus.getShortName()}} agrandies">
+            <div class="close"></div>
+            <div class="slider">
+                {% for i in 1..bus.getPictures() %}
+                    <img src="{{ asset('build/images/photo/bus/mini/' ~ bus.getShortName() ~ '/' ~ i ~ '.webp') }}" alt="Image défilant horizontalement">
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    {% endfor %}
 {% endblock %}

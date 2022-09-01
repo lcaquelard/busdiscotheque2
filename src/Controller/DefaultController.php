@@ -2,15 +2,47 @@
 
 namespace App\Controller;
 
-use Doctrine\DBAL\Schema\View;
+use App\Entity\BusType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\BusType;
-use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends AbstractController
 {
+    const default_options = array(
+        'mini'      => array('karaoke', 'soft', 'carpet', 'screen'),
+        'middle'    => array('agent', 'bluetooth', 'carpet', 'soft', 'screen', 'fridge'),
+        'classic'   => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
+        'double'    => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
+        'terrasse'  => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
+        'super'    => array('dj', 'carpet', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke')
+    );
+
+    private $bus_types;
+
+    public function __construct(){
+        $this->bus_types = array(
+            'mini'      => new BusType('Mini Bus', 9, 7, 290, self::default_options['mini'], 9, 1),
+            'middle'    => new BusType('Middle Bus', 20, 10, 690, self::default_options['middle'], 20, 10),
+            'classic'   => new BusType('Classic Bus', 35, 12, 890, self::default_options['classic'], 35, 21),
+            'double'    => new BusType('Double Bus', 55, 18, 1090, self::default_options['double'], 55, 36),
+            'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1190, self::default_options['terrasse'], 55, 36),
+            'super'     => new BusType('Super Double Bus', 70, 18, 1190, self::default_options['super'], 70, 36)
+        );
+        $this->bus_types["mini"]->addBus('mini bus disco', 'minibusdisco', 9, 3);
+        $this->bus_types["middle"]->addBus('mini boss', 'miniboss', 20, 3);
+        $this->bus_types["classic"]->addBus('le sodade', 'sodade', 35, 3);
+        $this->bus_types["classic"]->addBus('le poowood', 'poowood', 35, 3);
+        $this->bus_types["classic"]->addBus("l'ange c6", 'angec6', 35, 4);
+        $this->bus_types["classic"]->addBus('le s linone', 'slinone', 35, 4);
+        $this->bus_types["classic"]->addBus('le carnaval', 'carnaval', 35, 3);
+        $this->bus_types["classic"]->addBus('le star-lord', 'starlord', 35, 4);
+        $this->bus_types["double"]->addBus('le condor', 'condor', 55, 6);
+        $this->bus_types["double"]->addBus('le big ben', 'bigben', 55, 6);
+        $this->bus_types["double"]->addBus('le dark kiss', 'darkkiss', 55, 9);
+        $this->bus_types["double"]->addBus('le sevel 7', 'seven7', 55, 3);
+        $this->bus_types["super"]->addBus('le léviator', 'leviator', 70, 8);
+    }
     /**
      * @Route("/", name="index")
      * @return Response
@@ -39,17 +71,27 @@ class DefaultController extends AbstractController
     public function bus_mini(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_mini.html.twig', [
-            'current_page' => 'bus_mini',
+            'current_page' => 'bus_mini', 'buses' => $this->bus_types['mini']->getBuses()
         ]);
     }
     /**
-     * @Route("/bus/classic", name="bus_simple")
+     * @Route("/bus/middle", name="bus_middle")
      * @return Response
      */
-    public function bus_simple(): \Symfony\Component\HttpFoundation\Response
+    public function bus_middle(): \Symfony\Component\HttpFoundation\Response
     {
-        return $this->render('default/bus_simple.html.twig', [
-            'current_page' => 'bus_simple',
+        return $this->render('default/bus_middle.html.twig', [
+            'current_page' => 'bus_middle', 'buses' => $this->bus_types['middle']->getBuses()
+        ]);
+    }
+    /**
+     * @Route("/bus/classic", name="bus_classic")
+     * @return Response
+     */
+    public function bus_classic(): \Symfony\Component\HttpFoundation\Response
+    {
+        return $this->render('default/bus_classic.html.twig', [
+            'current_page' => 'bus_classic', 'buses' => $this->bus_types['classic']->getBuses()
         ]);
     }
     /**
@@ -59,7 +101,7 @@ class DefaultController extends AbstractController
     public function bus_double(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_double.html.twig', [
-            'current_page' => 'bus_double',
+            'current_page' => 'bus_double', 'buses' => $this->bus_types['double']->getBuses()
         ]);
     }
     /**
@@ -69,7 +111,7 @@ class DefaultController extends AbstractController
     public function bus_super(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_super.html.twig', [
-            'current_page' => 'bus_super',
+            'current_page' => 'bus_super', 'buses' => $this->bus_types['super']->getBuses()
         ]);
     }
     /**
@@ -88,15 +130,8 @@ class DefaultController extends AbstractController
      */
     public function pricing(): \Symfony\Component\HttpFoundation\Response
     {
-        $buses = array(
-            new BusType('Mini Bus', 9, 7, 290),
-            new BusType('Classic Bus', 35, 12, 890),
-            new BusType('Double Bus', 55, 18, 1090),
-            new BusType('Double Bus Terrasse', 55, 18, 1190),
-            new BusType('Super Double Bus', 70, 18, 1190)
-        );
         return $this->render('default/pricing.html.twig', [
-            'current_page' => 'pricing', 'buses' => $buses
+            'current_page' => 'pricing', 'bus_types' => $this->bus_types
         ]);
     }
     /**

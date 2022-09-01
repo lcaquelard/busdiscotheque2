@@ -9,22 +9,22 @@
             <thead>
                 <tr>
                     <td></td>
-                    {% for bus in buses %}
-                        <td>{{ bus.getName() }}</td>
+                    {% for bus_type in bus_types %}
+                        <td>{{ bus_type.getName() }}</td>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Places</td>
-                    {% for bus in buses %}
-                        <td>{{ bus.getSize() }}</td>
+                    {% for bus_type in bus_types %}
+                        <td>{{ bus_type.getSize() }}</td>
                     {% endfor %}
                 </tr>
                 <tr>
                     <td>Longueur</td>
-                    {% for bus in buses %}
-                        <td>{{ bus.getLength() }} m</td>
+                    {% for bus_type in bus_types %}
+                        <td>{{ bus_type.getLength() }} m</td>
                     {% endfor %}
                 </tr>
                 <tr>
@@ -33,8 +33,8 @@
                 {% for i in 1..4 %}
                     <tr>
                         <td>{{ i }}h</td>
-                        {% for bus in buses %}
-                            <td>{{ bus.getPrice(i) }}€</td>
+                        {% for bus_type in bus_types %}
+                            <td>{{ bus_type.getPrice(i) }}€</td>
                         {% endfor %}
                     </tr>
                 {% endfor %}

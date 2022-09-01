@@ -10,9 +10,13 @@ bus_mini:
     path: /bus/mini
     controller: App\Controller\DefaultController::bus_mini
 
-bus_simple:
+bus_middle:
+    path: /bus/middle
+    controller: App\Controller\DefaultController::bus_middle
+
+bus_classic:
     path: /bus/classique
-    controller: App\Controller\DefaultController::bus_simple
+    controller: App\Controller\DefaultController::bus_classic
 
 bus_double:
     path: /bus/double
@@ -59,8 +63,8 @@ old_bus_mini:
         path: /bus/mini
         permanent: true
 
-old_bus_simple:
-    path: /bus_simple
+old_bus_classic:
+    path: /bus_classic
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
     defaults:
         path: /bus/classique

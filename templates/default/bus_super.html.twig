@@ -2,41 +2,35 @@
 {% set title = "Nos super bus doubles" %}
 {% set meta_description = "Busdiscothèque sort les grands moyens avec ses bus super doubles en location. Jusqu'à 70 personnes, frigos, machines à bulles et à fumée et même bornes d'arcade !"%}
 {% block main %}
-    <section id="leviator" class="bus rev">
-        <div class="front">
-            <div class="content">
-                <h3>le léviator</h3>
-                <div class="bus-icon dj">DJ</div>
-                <div class="bus-icon capacity">70 max</div>
-                <div class="bus-icon carpet">Tapis rouge</div>
-                <div class="bus-icon soft">Softs inclus</div>
-                <div class="bus-icon screen">Ecran HD</div>
-                <div class="bus-icon fridge">Espace frigorifié</div>
-                <div class="bus-icon bubble">Machine à bulles</div>
-                <div class="bus-icon arcade">Pack Arcade</div>
-                <div class="bus-icon smoke">Machine à fumée</div>
+    {% for bus in buses %}
+        <section id="{{ bus.getShortName() }}" class="bus rev">
+            <div class="front">
+                <div class="content">
+                    <h3>{{ bus.getName() }}</h3>
+                    <div class="bus-icon capacity">{{ bus.getRoom() }} max</div>
+                    {% for name, option in bus.getOptions() %}
+                        <div class="bus-icon {{ name }}">{{ option }}</div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <div class="back">
-            <div class="content">
-                <h3>le léviator</h3>
-                <div class="zoom"></div>
+            <div class="back">
+                <div class="content">
+                    <h3>{{ bus.getName() }}</h3>
+                    <div class="zoom"></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endfor %}
 {% endblock %}
 {% block modals %}
-    <div class="modal leviator" role="dialog" aria-modal="true" aria-label="Galerie de photos du Léviator agrandie">
-        <div class="close"></div>
-        <div class="slider">
-            <img src="{{ asset('build/images/photo/bus/super/leviator/1.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/super/leviator/2.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/super/leviator/3.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/super/leviator/4.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/super/leviator/5.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/super/leviator/6.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/super/leviator/7.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/bus/super/leviator/8.webp') }}" alt="Image défilant horizontalement">
+    {% for bus in buses %}
+        <div class="modal {{ bus.getShortName }}" role="dialog" aria-modal="true" aria-label="Galerie de photos du {{ bus.getShortName()}} agrandies">
+            <div class="close"></div>
+            <div class="slider">
+                {% for i in 1..bus.getPictures() %}
+                    <img src="{{ asset('build/images/photo/bus/super/' ~ bus.getShortName() ~ '/' ~ i ~ '.webp') }}" alt="Image défilant horizontalement">
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    {% endfor %}
 {% endblock %}

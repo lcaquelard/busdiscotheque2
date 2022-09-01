@@ -57,7 +57,7 @@
     <section id="other_options" class="shadow">
         <h2>Les options en plus</h2>
         <div class="row">
-            <div>
+            <div id="birthday_kid">
                 <div class="icon"></div>
                 <h3>pack anniversaire enfant</h3>
                 <h4>150€</h4>
@@ -65,7 +65,7 @@
                     1 GÂTEAU DE BONBONS, 3 BOUTEILLES DE CHAMPOMY ET UN BUS REMPLI DE BALLONS  POUR LE PLUS GRAND BONHEUR DE VOS ENFANTS !
                 </p>
             </div>
-            <div>
+            <div id="birthday_adult">
                 <div class="icon"></div>
                 <h3>pack anniversaire adulte</h3>
                 <h4>175€</h4>
@@ -73,7 +73,7 @@
                     1 GÂTEAU DE BONBONS, 2 BOUTEILLES DE CHAMPAGNE NICOLAS FEUILLATE ET UN BUS REMPLI DE BALLONS POUR AJOUTER LA TOUCHE FINALE À VOTRE SOIRÉE !
                 </p>
             </div>
-            <div>
+            <div id="arcade">
                 <div class="icon"></div>
                 <h3>pack arcade</h3>
                 <h4>75€</h4>
@@ -83,7 +83,7 @@
                     LA PARTIE VA BIENTÔT COMMENCER...
                 </p>
             </div>
-            <div>
+            <div id="hostess">
                 <div class="icon"></div>
                 <h3>hôtesse</h3>
                 <h4>150€</h4>
@@ -92,7 +92,7 @@
                     NOUS METTONS À VOTRE DISPOSITION L' UNE DE NOS HÔTESSES POUR RÉPONDRE AUX BESOINS DE VOS CONVIVES, POUR VOUS GARANTIR PLUS DE SÉRENITÉ.
                 </p>
             </div>
-            <div>
+            <div id="karaoke">
                 <div class="icon"></div>
                 <h3>karaoké</h3>
                 <h4>10€</h4>
@@ -102,12 +102,70 @@
                     CERTAINS VÉHICULES)
                 </p>
             </div>
-            <div>
+            <div id="free">
                 <div class="icon"></div>
-                <h3>gratuit</h3>
+                <h3>entrepôt</h3>
+                <h4>gratuit</h4>
                 <p>
                     VOUS AVEZ ÉGALEMENT LA POSSIBILITÉ DE DÉPOSER ALCOOLS ET BOISSONS DIRECTEMENT À NOTRE ENTREPÔT,<br>
                     AFIN QUE NOUS PUISSIONS PRÉPARER AU MIEUX VOTRE BUS !
+                </p>
+            </div>
+            <div id="agent">
+                <div class="icon"></div>
+                <h3>agent de sécurité</h3>
+                <h4>200€</h4>
+                <p>
+                    La sécurité est votre priorité ?<br>
+                    Nos agents vous proposent un filtrage renforcé à l'entrée de votre bus et veilleront au bon déroulement de votre soirée.
+                </p>
+            </div>
+            <div id="insurance">
+                <div class="icon"></div>
+                <h3>assurance annulation</h3>
+                <h4>100€</h4>
+                <p>
+                    Un imprévu vous oblige à annuler votre prestation quelques jours avant l'événement ? Avec l'assurance annulation, vous êtes entièrement remboursé, sans justificatif !
+                </p>
+            </div>
+            <div id="necklace">
+                <div class="icon"></div>
+                <h3>colliers hawaïens</h3>
+                <h4>À partir de 70€</h4>
+                <p>
+                    Soirée à thème ou simple cadeau de bienvenue pour vos convives, pour les faire voyager jusqu'au bout du monde le temps d'une soirée !<br>
+                    <br>
+                    Pack (35) : 70€ - Pack (55) : 110€ - Pack (70) : 140€
+                </p>
+            </div>
+            <div id="glasses">
+                <div class="icon"></div>
+                <h3>lunettes lumineuses led</h3>
+                <h4>180€</h4>
+                <p>
+                    Illuminez la nuit parisienne avec des accessoires lumineux et capturez des moments inoubliables !<br>
+                    <br>
+                    Pack (35) : 180€ - Pack (55) : 280€ - Pack (70) : 350€
+                </p>
+            </div>
+            <div id="sticks">
+                <div class="icon"></div>
+                <h3>bâtons lumineux led</h3>
+                <h4>150€</h4>
+                <p>
+                    Illuminez la nuit parisienne avec des accessoires lumineux et capturez des moments inoubliables !<br>
+                    <br>
+                    Pack (35) : 150€ - Pack (55) : 200€ - Pack (70) : 250€
+                </p>
+            </div>
+            <div id="bracelets">
+                <div class="icon"></div>
+                <h3>bracelets lumineux led</h3>
+                <h4>100€</h4>
+                <p>
+                    Illuminez la nuit parisienne avec des accessoires lumineux et capturez des moments inoubliables !<br>
+                    <br>
+                    Pack (35) : 100€ - Pack (55) : 150€ - Pack (70) : 200€
                 </p>
             </div>
         </div>
@@ -120,6 +178,9 @@
             <img src="{{ asset('build/images/photo/options/autres/4.webp') }}" alt="Image défilant horizontalement">
             <img src="{{ asset('build/images/photo/options/autres/5.webp') }}" alt="Image défilant horizontalement">
             <img src="{{ asset('build/images/photo/options/autres/6.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/autres/7.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/autres/8.webp') }}" alt="Image défilant horizontalement">
+            <img src="{{ asset('build/images/photo/options/autres/9.webp') }}" alt="Image défilant horizontalement">
         </div>
     </section>
 {% endblock %}
@@ -170,27 +231,39 @@
         <div class="slider side-content">
             <div>
                 <img src="{{ asset('build/images/photo/options/autres/1.webp') }}" alt="Image défilant horizontalement">
-                <p>Soufflez vos bougies 🎂</p>
+                <p>Bracelets Lumineux Led 🟡</p>
             </div>
             <div>
                 <img src="{{ asset('build/images/photo/options/autres/2.webp') }}" alt="Image défilant horizontalement">
-                <p>Faites vos plus belles photos</p>
+                <p>Bâtons Lumineux Led 🔵</p>
             </div>
             <div>
                 <img src="{{ asset('build/images/photo/options/autres/3.webp') }}" alt="Image défilant horizontalement">
-                <p>Gâteau De bonbon</p>
+                <p>Lunettes lumineuse led 🟣</p>
             </div>
             <div>
                 <img src="{{ asset('build/images/photo/options/autres/4.webp') }}" alt="Image défilant horizontalement">
-                <p>Décorez le bus selon vos envies</p>
+                <p>Colliers Hawaïens 🟤</p>
             </div>
             <div>
                 <img src="{{ asset('build/images/photo/options/autres/5.webp') }}" alt="Image défilant horizontalement">
-                <p>Pack Arcade Pac Man</p>
+                <p>Gâteau De bonbon 🍬🍭</p>
             </div>
             <div>
                 <img src="{{ asset('build/images/photo/options/autres/6.webp') }}" alt="Image défilant horizontalement">
-                <p>Pack Arcade Mortal Combat</p>
+                <p>Faites vos plus belles photos 📸</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/7.webp') }}" alt="Image défilant horizontalement">
+                <p>Pack Arcade Pac Man 🕹🎮</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/8.webp') }}" alt="Image défilant horizontalement">
+                <p>Pack Arcade Mortal Kombat 🕹🎮</p>
+            </div>
+            <div>
+                <img src="{{ asset('build/images/photo/options/autres/9.webp') }}" alt="Image défilant horizontalement">
+                <p>Décorez le bus selon vos envies 😍</p>
             </div>
         </div>
     </div>

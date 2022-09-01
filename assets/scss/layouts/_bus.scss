@@ -61,19 +61,25 @@
     font-weight:bold;
     @include background-prs(15px top, no-repeat, auto);
     &.capacity{background-image:url(../../images/icons/bus/capacity.webp);background-position:8px top;}
+    &.agent{background-image:url(../../images/icons/bus/agent.webp);background-position:7px -2px;background-size: 28px;}
+    &.arcade{background-image:url(../../images/icons/bus/arcade.webp);background-position:-20px -25px;}
+    &.bluetooth{background-image:url(../../images/icons/bus/bluetooth.webp);background-position: 6px -2px;background-size: 30px;}
+    &.bubble{background-image:url(../../images/icons/bus/bubble.webp);background-position:-8px -17px;}
     &.carpet{background-image:url(../../images/icons/bus/carpet.webp);background-position:3px top;}
     &.dj{background-image:url(../../images/icons/bus/dj.webp);background-position:9px top;}
     &.fridge{background-image:url(../../images/icons/bus/fridge.webp);background-position:8px top;}
     &.karaoke{background-image:url(../../images/icons/bus/karaoke.webp);background-position:8px top;}
     &.screen{background-image:url(../../images/icons/bus/screen.webp);background-position:-5px top;}
     &.soft{background-image:url(../../images/icons/bus/soft.webp);background-position:12px top;}
-    &.bubble{background-image:url(../../images/icons/bus/bubble.webp);background-position:-8px -17px;}
-    &.arcade{background-image:url(../../images/icons/bus/arcade.webp);background-position:-20px -25px;}
     &.smoke{background-image:url(../../images/icons/bus/smoke.webp);background-position:-21px -29px;}
   }
   &#minibusdisco {
     .front {background-image: url(../../images/photo/bus/mini/minibusdisco/front.webp);}
     .back {background-image: url(../../images/photo/bus/mini/minibusdisco/back.webp);}
+  }
+  &#miniboss {
+    .front {background-image: url(../../images/photo/bus/middle/miniboss/front.webp);}
+    .back {background-image: url(../../images/photo/bus/middle/miniboss/back.webp);}
   }
   &#slinone {
     .front {background-image: url(../../images/photo/bus/classic/slinone/front.webp);}
