@@ -22,26 +22,26 @@ class DefaultController extends AbstractController
 
     public function __construct(){
         $this->bus_types = array(
-            'mini'      => new BusType('Mini Bus', 9, 7, 290, self::default_options['mini'], 9, 1),
-            'middle'    => new BusType('Middle Bus', 20, 10, 690, self::default_options['middle'], 20, 10),
+            'mini'      => new BusType('Mini Bus', 9, 7, 290, self::default_options['mini'], 9, 1, "(sans dj)"),
+            'middle'    => new BusType('Middle Bus', 20, 10, 690, self::default_options['middle'], 20, 10, "(sans dj)"),
             'classic'   => new BusType('Classic Bus', 35, 12, 890, self::default_options['classic'], 35, 21),
             'double'    => new BusType('Double Bus', 55, 18, 1090, self::default_options['double'], 55, 36),
-            'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1190, self::default_options['terrasse'], 55, 36),
+            //'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1190, self::default_options['terrasse'], 55, 36),
             'super'     => new BusType('Super Double Bus', 70, 18, 1190, self::default_options['super'], 70, 36)
         );
-        $this->bus_types["mini"]->addBus('mini bus disco', 'minibusdisco', 9, 3);
-        $this->bus_types["middle"]->addBus('mini boss', 'miniboss', 20, 3);
-        $this->bus_types["classic"]->addBus('le sodade', 'sodade', 35, 3);
-        $this->bus_types["classic"]->addBus('le poowood', 'poowood', 35, 3);
-        $this->bus_types["classic"]->addBus("l'ange c6", 'angec6', 35, 4);
-        $this->bus_types["classic"]->addBus('le s linone', 'slinone', 35, 4);
-        $this->bus_types["classic"]->addBus('le carnaval', 'carnaval', 35, 3);
-        $this->bus_types["classic"]->addBus('le star-lord', 'starlord', 35, 4);
-        $this->bus_types["double"]->addBus('le condor', 'condor', 55, 6);
-        $this->bus_types["double"]->addBus('le big ben', 'bigben', 55, 6);
-        $this->bus_types["double"]->addBus('le dark kiss', 'darkkiss', 55, 9);
-        $this->bus_types["double"]->addBus('le sevel 7', 'seven7', 55, 3);
-        $this->bus_types["super"]->addBus('le léviator', 'leviator', 70, 8);
+        $this->bus_types["mini"]->addBus(   'mini bus disco',   'minibusdisco', 9,  3);
+        $this->bus_types["middle"]->addBus( 'mini boss',        'miniboss',     20, 3);
+        $this->bus_types["classic"]->addBus('le sodade',        'sodade',       35, 3);
+        $this->bus_types["classic"]->addBus('le poowood',       'poowood',      35, 3);
+        $this->bus_types["classic"]->addBus("l'ange c6",        'angec6',       35, 4);
+        $this->bus_types["classic"]->addBus('le s linone',      'slinone',      35, 4);
+        $this->bus_types["classic"]->addBus('le carnaval',      'carnaval',     35, 3);
+        $this->bus_types["classic"]->addBus('le star-lord',     'starlord',     35, 4);
+        $this->bus_types["double"]->addBus( 'le condor',        'condor',       55, 6,  'double bus terrasse');
+        $this->bus_types["double"]->addBus( 'le big ben',       'bigben',       55, 6);
+        $this->bus_types["double"]->addBus( 'le dark kiss',     'darkkiss',     55, 9);
+        $this->bus_types["double"]->addBus( 'le seven 7',       'seven7',       55, 3);
+        $this->bus_types["super"]->addBus(  'le léviator',      'leviator',     70, 8);
     }
     /**
      * @Route("/", name="index")
@@ -61,7 +61,7 @@ class DefaultController extends AbstractController
     public function bus(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus.html.twig', [
-            'current_page' => 'bus',
+            'current_page' => 'bus', 'bus_types' => $this->bus_types
         ]);
     }
     /**

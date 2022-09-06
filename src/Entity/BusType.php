@@ -17,28 +17,30 @@ class BusType
         'smoke'     => 'Machine à fumée',
         'soft'      => 'Softs inclus'
     );
-    private string $name = '';
-    private int $size = 0;
-    private int $size_min = 0;
-    private int $size_max = 0;
-    private int $length = 0;
-    private array $prices = array();
-    private array $buses = array();
-    private array $default_options = array();
+    private string $name            = '';
+    private string $subtitle        = '';
+    private int $size               = 0;
+    private int $size_min           = 0;
+    private int $size_max           = 0;
+    private int $length             = 0;
+    private array $prices           = array();
+    private array $buses            = array();
+    private array $default_options  = array();
 
-    public function __construct(string $name, int $size, int $length, int $price, array $default_options, int $size_max = NULL, int $size_min = NULL){
-        $this->name = $name;
-        $this->size = $size;
-        $this->size_max = $size_max?:$this->size;
-        $this->size_min = $size_min?:$this->size_max;
-        $this->length = $length;
-        $this->prices = array(
+    public function __construct(string $name, int $size, int $length, int $price, array $default_options, int $size_max = NULL, int $size_min = NULL, string $subtitle = ''){
+        $this->name             = $name;
+        $this->subtitle         = $subtitle;
+        $this->size             = $size;
+        $this->size_max         = $size_max?:$this->size;
+        $this->size_min         = $size_min?:$this->size_max;
+        $this->length           = $length;
+        $this->prices           = array(
             1 => $price,
             2 => $price + 100,
             3 => $price + 200,
             4 => $price + 300,
         );
-        $this->default_options = $default_options;
+        $this->default_options  = $default_options;
     }
 
     public function getName(): string
@@ -49,6 +51,16 @@ class BusType
     public function setName(string $name)
     {
         $this->name = $name;
+    }
+
+    public function getSubtitle(): string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(string $subtitle)
+    {
+        $this->subtitle = $subtitle;
     }
 
     public function getSize(): int
@@ -107,7 +119,7 @@ class BusType
 
     public function setPrice(int $time, int $price)
     {
-        $this->price[$time] = $price;
+        $this->prices[$time] = $price;
     }
 
     public function getBuses(): array
@@ -115,9 +127,14 @@ class BusType
         return $this->buses;
     }
 
-    public function addBus(string $name, string $short_name, int $room, int $pictures, $options = NULL)
+    public function addBus(string $name, string $shortname, int $room, int $pictures, string $subtitle = '', $options = NULL)
     {
-        $this->buses[] = new Bus($name, $short_name, $room, $pictures, $options?:$this->default_options);
+        $this->buses[$shortname] = new Bus($name, $shortname, $room, $pictures, $subtitle, $options?:$this->default_options);
+    }
+
+    public function removeBus(string $shortname)
+    {
+        unset($this->buses[$shortname]);
     }
 
     public function getDefaultOptions(): array

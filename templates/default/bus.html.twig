@@ -2,61 +2,18 @@
 {% set title = "Nos différentes offres de bus" %}
 {% set meta_description = "Jetez un oeil à notre séléction variée de bus minis, simples, doubles et plus encore en location, de 9 à 70 personnes, pour trouver l'offre qui correspond à votre soirée parfaite !" %}
 {% block main %}
-    <section class="bus_range-frame" id="mini_bus">
-        <a href="{{ path('bus_mini') }}">
+    {% for type, bus in bus_types %}
+    <section class="bus_range-frame" id="{{ type }}_bus">
+        <a href="{{ path('bus_'~type) }}">
             <div class="bus_range-content">
-                <h4 class="bus_range-title">mini bus</h4>
-                <h5>(Sans DJ)</h5>
+                <h4 class="bus_range-title">{{ bus.getName() }}</h4>
+                {% if bus.getSubtitle() != '' %}<h5>{{ bus.getSubtitle() }}</h5>{% endif %}
                 <div class="bus_range-hidden">
-                    <span class="bus_range-capacity">de 1 à 9 personnes</span>
+                    <span class="bus_range-capacity">de {{ bus.getSizeMin() }} à {{ bus.getSizeMax() }} personnes</span>
                     <div class="bus_range-icon"></div>
                 </div>
             </div>
         </a>
     </section>
-    <section class="bus_range-frame" id="middle_bus">
-        <a href="{{ path('bus_middle') }}">
-            <div class="bus_range-content">
-                <h4 class="bus_range-title">middle bus</h4>
-                <h5>(Sans DJ)</h5>
-                <div class="bus_range-hidden">
-                    <span class="bus_range-capacity">de 10 à 20 personnes</span>
-                    <div class="bus_range-icon"></div>
-                </div>
-            </div>
-        </a>
-    </section>
-    <section class="bus_range-frame" id="classic_bus">
-        <a href="{{ path('bus_classic') }}">
-            <div class="bus_range-content">
-                <h4 class="bus_range-title">classic bus</h4>
-                <div class="bus_range-hidden">
-                    <span class="bus_range-capacity">de 21 à 35 personnes</span>
-                    <div class="bus_range-icon"></div>
-                </div>
-            </div>
-        </a>
-    </section>
-    <section class="bus_range-frame" id="double_bus">
-        <a href="{{ path('bus_double') }}">
-            <div class="bus_range-content">
-                <h4 class="bus_range-title">double bus</h4>
-                <div class="bus_range-hidden">
-                    <span class="bus_range-capacity">de 36 à 55 personnes</span>
-                    <div class="bus_range-icon"></div>
-                </div>
-            </div>
-        </a>
-    </section>
-    <section class="bus_range-frame" id="super_bus">
-        <a href="{{ path('bus_super') }}">
-            <div class="bus_range-content">
-                <h4 class="bus_range-title">super double bus</h4>
-                <div class="bus_range-hidden">
-                    <span class="bus_range-capacity">de 36 à 70 personnes</span>
-                    <div class="bus_range-icon"></div>
-                </div>
-            </div>
-        </a>
-    </section>
+    {% endfor %}
 {% endblock %}

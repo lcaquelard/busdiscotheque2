@@ -1,34 +1,36 @@
 {% extends 'base.html.twig' %}
 {% set title = "Nos minibus" %}
 {% set meta_description = "Découvrez notre sélection de minibus de fête en location pour 1 à 9 personnes, plus l'option karaoké !"%}
-    {% block main %}
-        {% for bus in buses %}
-            <section id="{{ bus.getShortName() }}" class="bus rev">
-                <div class="front">
-                    <div class="content">
-                        <h3>{{ bus.getName() }}</h3>
-                        <div class="bus-icon capacity">{{ bus.getRoom() }} max</div>
-                        {% for name, option in bus.getOptions() %}
-                            <div class="bus-icon {{ name }}">{{ option }}</div>
-                        {% endfor %}
-                    </div>
+{% block main %}
+    {% for bus in buses %}
+        <section id="{{ bus.getShortname() }}" class="bus rev">
+            <div class="front">
+                <div class="content">
+                    <h3>{{ bus.getName() }}</h3>
+                    {% if bus.getSubtitle() != '' %}<h4>{{ bus.getSubtitle() }}</h4>{% endif %}
+                    <div class="bus-icon capacity">{{ bus.getRoom() }} max</div>
+                    {% for name, option in bus.getOptions() %}
+                        <div class="bus-icon {{ name }}">{{ option }}</div>
+                    {% endfor %}
                 </div>
-                <div class="back">
-                    <div class="content">
-                        <h3>{{ bus.getName() }}</h3>
-                        <div class="zoom"></div>
-                    </div>
+            </div>
+            <div class="back">
+                <div class="content">
+                    <h3>{{ bus.getName() }}</h3>
+                    {% if bus.getSubtitle() != '' %}<h4>{{ bus.getSubtitle() }}</h4>{% endif %}
+                    <div class="zoom"></div>
                 </div>
-            </section>
-        {% endfor %}
-    {% endblock %}
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}
 {% block modals %}
     {% for bus in buses %}
-        <div class="modal {{ bus.getShortName }}" role="dialog" aria-modal="true" aria-label="Galerie de photos du {{ bus.getShortName()}} agrandies">
+        <div class="modal {{ bus.getShortName }}" role="dialog" aria-modal="true" aria-label="Galerie de photos du {{ bus.getShortname()}} agrandies">
             <div class="close"></div>
             <div class="slider">
                 {% for i in 1..bus.getPictures() %}
-                    <img src="{{ asset('build/images/photo/bus/mini/' ~ bus.getShortName() ~ '/' ~ i ~ '.webp') }}" alt="Image défilant horizontalement">
+                    <img src="{{ asset('build/images/photo/bus/mini/' ~ bus.getShortname() ~ '/' ~ i ~ '.webp') }}" alt="Image défilant horizontalement">
                 {% endfor %}
             </div>
         </div>

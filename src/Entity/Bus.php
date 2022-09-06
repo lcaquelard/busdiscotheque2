@@ -5,20 +5,24 @@ use App\Entity\BusType;
 
 class Bus
 {
-    private string $name = '';
-    private string $short_name = '';
-    private int $room = 0;
-    private int $pictures = 0;
-    private array $options = array();
+    private string $name        = '';
+    private string $shortname   = '';
+    private string $subtitle    = '';
+    private int $room           = 0;
+    private int $pictures       = 0;
+    private array $options      = array();
 
-    public function __construct(string $name, string $short_name, int $room, int $pictures, array $options)
+    public function __construct(string $name, string $shortname, int $room, int $pictures, string $subtitle = '', array $options = array())
     {
         $this->name         = $name;
-        $this->short_name   = $short_name;
+        $this->shortname    = $shortname;
+        $this->subtitle     = $subtitle;
         $this->room         = $room;
         $this->pictures     = $pictures;
-        foreach ($options as $option){
-            $this->options[$option] = BusType::options[$option];
+        if (count($options) > 0) {
+            foreach ($options as $option) {
+                $this->options[$option] = BusType::options[$option];
+            }
         }
     }
 
@@ -27,19 +31,29 @@ class Bus
         return $this->name;
     }
 
-    public function setName(string $short_name)
+    public function setName(string $name)
     {
-        $this->short_name = $short_name;
+        $this->name = $name;
     }
 
-    public function getShortName(): string
+    public function getShortname(): string
     {
-        return $this->short_name;
+        return $this->shortname;
     }
 
-    public function setShortName(string $short_name)
+    public function setShortname(string $shortname)
     {
-        $this->short_name = $short_name;
+        $this->shortname = $shortname;
+    }
+
+    public function getSubtitle(): string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(string $subtitle)
+    {
+        $this->subtitle = $subtitle;
     }
 
     public function getRoom(): int

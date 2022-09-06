@@ -3,10 +3,11 @@
 {% set meta_description = "Busdiscothèque sort les grands moyens avec ses bus super doubles en location. Jusqu'à 70 personnes, frigos, machines à bulles et à fumée et même bornes d'arcade !"%}
 {% block main %}
     {% for bus in buses %}
-        <section id="{{ bus.getShortName() }}" class="bus rev">
+        <section id="{{ bus.getShortname() }}" class="bus rev">
             <div class="front">
                 <div class="content">
                     <h3>{{ bus.getName() }}</h3>
+                    {% if bus.getSubtitle() != '' %}<h4>{{ bus.getSubtitle() }}</h4>{% endif %}
                     <div class="bus-icon capacity">{{ bus.getRoom() }} max</div>
                     {% for name, option in bus.getOptions() %}
                         <div class="bus-icon {{ name }}">{{ option }}</div>
@@ -16,6 +17,7 @@
             <div class="back">
                 <div class="content">
                     <h3>{{ bus.getName() }}</h3>
+                    {% if bus.getSubtitle() != '' %}<h4>{{ bus.getSubtitle() }}</h4>{% endif %}
                     <div class="zoom"></div>
                 </div>
             </div>
@@ -24,11 +26,11 @@
 {% endblock %}
 {% block modals %}
     {% for bus in buses %}
-        <div class="modal {{ bus.getShortName }}" role="dialog" aria-modal="true" aria-label="Galerie de photos du {{ bus.getShortName()}} agrandies">
+        <div class="modal {{ bus.getShortName }}" role="dialog" aria-modal="true" aria-label="Galerie de photos du {{ bus.getShortname()}} agrandies">
             <div class="close"></div>
             <div class="slider">
                 {% for i in 1..bus.getPictures() %}
-                    <img src="{{ asset('build/images/photo/bus/super/' ~ bus.getShortName() ~ '/' ~ i ~ '.webp') }}" alt="Image défilant horizontalement">
+                    <img src="{{ asset('build/images/photo/bus/super/' ~ bus.getShortname() ~ '/' ~ i ~ '.webp') }}" alt="Image défilant horizontalement">
                 {% endfor %}
             </div>
         </div>
