@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     const default_options = array(
-        'mini'      => array('karaoke', 'soft', 'carpet', 'screen'),
+        'mini'      => array('karaoke', 'soft', 'fridge', 'screen', 'bluetooth'),
         'middle'    => array('agent', 'bluetooth', 'carpet', 'soft', 'screen', 'fridge'),
         'classic'   => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
         'double'    => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
