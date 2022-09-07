@@ -151,10 +151,4 @@ class BusType
     {
         $this->default_options[$option] = self::options[$option];
     }
-
-    public function removeDefaultOption(string $option)
-    {
-        if (array_key_exists($option, $this->default_options))
-            unset($this->default_options[$option]);
-    }
 }

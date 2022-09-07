@@ -5,8 +5,8 @@
 @import './utils/extensions';
 
 // Importing vendors
-@import 'vendors/slick/slick';
-@import 'vendors/slick/slick-theme';
+@import './vendors/slick/slick';
+@import './vendors/slick/slick-theme';
 
 // Importing bases
 @import './base/normalize';
@@ -23,6 +23,7 @@
 @import './layouts/header';
 @import './layouts/nav';
 @import './layouts/bus';
+@import './layouts/footer';
 
 // Importing pages
 @import './pages/index';
@@ -30,4 +31,6 @@
 @import './pages/program';
 @import './pages/pricing';
 @import './pages/options';
-@import 'pages/booking';
+@import './pages/booking';
+@import './pages/legal';
+@import './pages/cgv';

@@ -41,6 +41,7 @@
       @include mobile-width(calc(100% - 14px));
       display:flex;
       flex-direction: column;
+      justify-content: space-around;
       padding:0 7px;
     }
     >div:nth-of-type(2){
@@ -84,30 +85,6 @@
          }
        }
      }
-    &-social{
-      &-icons{
-        display:flex;
-        flex-direction:row;
-        justify-content:space-around;
-        width:100%;
-        min-height:60px;
-        >div{
-          flex-basis:60px;
-          @include background-prs(center center, no-repeat, contain);
-          a{
-            display:inline-block;
-            width:100%;
-            height:100%;
-          }
-        }
-        &-facebook{
-          background-image:url(../../images/icons/facebook.svg);
-        }
-        &-instagram{
-          background-image:url(../../images/icons/instagram.svg);
-        }
-      }
-   }
   }
   #party.slider{
     width:100%;

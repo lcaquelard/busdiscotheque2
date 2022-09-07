@@ -1,0 +1,35 @@
+footer{
+  background-color:rgba(0, 0, 0, .85);
+  width:100%;
+  .social-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px 0;
+    width: 100%;
+    min-height: 60px;
+    gap: 60px;
+    >div{
+      flex-basis:60px;
+      @include background-prs(center center, no-repeat, contain);
+      a{
+        display:inline-block;
+        width:100%;
+        height:100%;
+      }
+    }
+    &-facebook{
+      background-image:url(../../images/icons/facebook.svg);
+    }
+    &-instagram{
+      background-image:url(../../images/icons/instagram.svg);
+    }
+  }
+  ul{
+    color:#FFF;
+    list-style: none;
+    display:flex;
+    justify-content: center;
+    gap:60px;
+  }
+}
