@@ -60,8 +60,10 @@ class DefaultController extends AbstractController
      */
     public function bus(): \Symfony\Component\HttpFoundation\Response
     {
+        $bus_types = $this->bus_types;
+        unset($bus_types['terrasse']);
         return $this->render('default/bus.html.twig', [
-            'current_page' => 'bus', 'bus_types' => $this->bus_types
+            'current_page' => 'bus', 'bus_types' => $bus_types
         ]);
     }
     /**
