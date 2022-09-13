@@ -22,6 +22,18 @@
                     {% endfor %}
                 </tr>
                 <tr>
+                    <td>DJ</td>
+                    {% for bus_type in bus_types %}
+                        <td>
+                            {% if bus_type.hasDefaultOption('dj') %}
+                                Oui
+                            {% else %}
+                                Non
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+                <tr>
                     <td>Longueur</td>
                     {% for bus_type in bus_types %}
                         <td>{{ bus_type.getLength() }} m</td>

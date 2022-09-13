@@ -40,7 +40,11 @@ class BusType
             3 => $price + 200,
             4 => $price + 300,
         );
-        $this->default_options  = $default_options;
+        if (count($default_options) > 0) {
+            foreach ($default_options as $option) {
+                $this->default_options[$option] = self::options[$option];
+            }
+        }
     }
 
     public function getName(): string
@@ -149,6 +153,8 @@ class BusType
 
     public function addDefaultOption(string $option)
     {
-        $this->default_options[$option] = self::options[$option];
+        if (array_key_exists($option, self::options)) {
+            $this->default_options[$option] = self::options[$option];
+        }
     }
 }

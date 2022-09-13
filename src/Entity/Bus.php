@@ -19,11 +19,7 @@ class Bus
         $this->subtitle     = $subtitle;
         $this->room         = $room;
         $this->pictures     = $pictures;
-        if (count($options) > 0) {
-            foreach ($options as $option) {
-                $this->options[$option] = BusType::options[$option];
-            }
-        }
+        $this->options      = $options;
     }
 
     public function getName(): string

@@ -132,6 +132,10 @@ class DefaultController extends AbstractController
      */
     public function pricing(): \Symfony\Component\HttpFoundation\Response
     {
+        /*echo ('<pre>');
+        var_dump($this->bus_types);
+        echo ('</pre>');
+        die();*/
         return $this->render('default/pricing.html.twig', [
             'current_page' => 'pricing', 'bus_types' => $this->bus_types
         ]);
