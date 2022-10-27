@@ -31,6 +31,7 @@ Encore
     .addEntry('jquery', './assets/js/jquery.min.js')
     .addEntry('slick', './assets/js/slick.min.js')
     .addEntry('main', './assets/js/main.js')
+    .addEntry('stripe', './assets/js/stripe.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     //.splitEntryChunks()

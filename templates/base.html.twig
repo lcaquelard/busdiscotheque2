@@ -19,6 +19,10 @@
             {{ encore_entry_script_tags('jquery') }}
             {{ encore_entry_script_tags('slick') }}
             {{ encore_entry_script_tags('main') }}
+            {% if current_page == 'stripe' %}
+                <script src="https://js.stripe.com/v3/"></script>
+                {{ encore_entry_script_tags('stripe') }}
+            {% endif %}
         {% endblock %}
     </head>
     <body id="{{ current_path }}">

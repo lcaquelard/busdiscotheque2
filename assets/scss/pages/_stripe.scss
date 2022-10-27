@@ -1,0 +1,81 @@
+#stripe{
+  .container-cb {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #323232;
+    padding: 10px;
+    line-height: 32px;
+    border-radius: 20px;
+    font-family: sans-serif;
+    img{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .StripeElement {
+      width: calc(100% - 27px);
+      background-color: white;
+      height: 40px;
+      padding: 10px 12px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      box-shadow: 0 1px 3px 0 #000000;
+      -webkit-transition: box-shadow 150ms ease;
+      transition: box-shadow 150ms ease;
+      &.name {
+        margin-bottom: 7px;
+        color:#323232;
+        line-height:18px;
+        font-size:16px;
+        &:first-of-type{
+          opacity:0.7;
+        }
+        &::placeholder {
+          color: #aab7c4;
+        }
+      }
+      &:focus {
+        box-shadow: 0 1px 3px 0 #000000;
+      }
+      &:invalid {
+        border-color: #fa755a;
+      }
+      &:-webkit-autofill {
+        background-color: #fefde5 !important;
+      }
+    }
+    button {
+      border: none;
+      outline: none;
+      color: #fff;
+      background: #a18943;
+      white-space: nowrap;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 14px;
+      box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      text-decoration: none;
+      -webkit-transition: all 150ms ease;
+      transition: all 150ms ease;
+      margin: 15px calc((100% - 100px) / 2) 0;
+      width: 100px;
+      cursor: pointer;
+    }
+  }
+
+  #card-errors,
+  #card-success {
+    display: inline;
+    font-size: 0.8em;
+    padding: 10px;
+    color: #ba4e4e;
+  }
+
+  #card-success {
+    color: #7eae6e;
+  }
+}

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\BusType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -132,10 +133,6 @@ class DefaultController extends AbstractController
      */
     public function pricing(): \Symfony\Component\HttpFoundation\Response
     {
-        /*echo ('<pre>');
-        var_dump($this->bus_types);
-        echo ('</pre>');
-        die();*/
         return $this->render('default/pricing.html.twig', [
             'current_page' => 'pricing', 'bus_types' => $this->bus_types
         ]);
@@ -179,5 +176,65 @@ class DefaultController extends AbstractController
         return $this->render('default/cgv.html.twig', [
             'current_page' => 'cgv',
         ]);
+    }
+
+    /**
+     * @Route("/stripe/{amount}", name="stripe")
+     * @param int $amount
+     * @return Response
+     */
+    public function stripe(int $amount): \Symfony\Component\HttpFoundation\Response
+    {
+
+        $amount = str_replace(',','.',$amount);
+
+        $vars_post = array(
+            'amount'		=> 	$amount,
+            'description'	=> 	'BusDiscotheque by MyCarEvents',
+            'payment_method_types[]' => 'card',
+        );
+        $fields = 'currency=eur';
+        foreach($vars_post as $var_key=>$var_posted) { $fields .= '&'.$var_key.'='.urlencode($var_posted); }
+
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Authorization: Bearer '.$_ENV['STRIPE_SK']
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.stripe.com/v1/payment_intents");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+        //curl_setopt($ch, CURLOPT_USERPWD, $secret_key);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        //curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        $info = curl_getinfo($ch);
+        $output = curl_exec($ch);
+        curl_close($ch);
+
+        //echo ('<pre>'.print_r($info, true).'</pre>');die();
+        $intent = json_decode($output);
+
+        return $this->render('default/stripe.html.twig', [
+            'api_key'       => $_ENV['STRIPE_PK'],
+            'intent'        => $intent,
+            'amount'        => $amount,
+            'current_page'  => 'stripe',
+        ]);
+    }
+
+    /**
+     * @Route("/stripe", name="stripe_get")
+     * @param Request $request
+     * @return Response
+     */
+    public function stripe_get(Request $request): \Symfony\Component\HttpFoundation\Response
+    {
+        $amount = $request->query->get('amount');
+        if (!(isset($amount) && is_numeric($amount))){
+            $amount = 0;
+        }
+        return $this->stripe($amount);
     }
 }

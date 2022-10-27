@@ -50,6 +50,16 @@ cgv:
     path: /cgv
     controller: App\Controller\DefaultController::cgv
 
+stripe:
+    path: /stripe/{amount}
+    controller: App\Controller\DefaultController::stripe
+    requirements:
+        amount: '\d+'
+
+stripe_get:
+    path: /stripe
+    controller: App\Controller\DefaultController::stripe_get
+
 old_index:
     path: /index
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction

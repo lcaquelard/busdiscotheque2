@@ -81,3 +81,8 @@ package-lock.json
 composer.lock
 symfony.lock
 yarn.lock
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

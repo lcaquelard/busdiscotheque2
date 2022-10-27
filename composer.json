@@ -2,9 +2,11 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^8.0",
+        "php": "^7.4",
         "ext-ctype": "*",
+        "ext-curl": "*",
         "ext-iconv": "*",
+        "ext-json": "*",
         "amphp/http-client": "^4.6",
         "composer/package-versions-deprecated": "1.11.99.4",
         "doctrine/annotations": "^1.0",
@@ -44,6 +46,7 @@
         "symfony/webpack-encore-bundle": "^1.13",
         "symfony/yaml": "5.4.*",
         "twig/extra-bundle": "^2.12|^3.0",
+        "twig/intl-extra": "^3.4",
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
@@ -100,7 +103,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "5.4.*"
+            "require": "^5"
         }
     }
 }

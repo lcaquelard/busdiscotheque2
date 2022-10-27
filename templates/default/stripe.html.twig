@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% set title = "Paiement en ligne" %}
+{% block main %}
+    <div class="container-cb" id="container-cb">
+        <img src="{{ asset('build/images/logo.webp') }}">
+        <div class="form-row" id="card-form">
+            <input type="text" readonly class="StripeElement name" placeholder="{{ amount|format_currency('EUR')}} TTC">
+            <input id="cardholder-name" type="text" class="StripeElement name" placeholder="Nom sur la carte / Name on Card">
+            <div id="card-element"></div>
+        </div>
+        {% if amount > 0 %}
+            <button id="card-button" data-secret="AAA">PAYER</button>
+            {# <button id="card-button" data-secret="{{ intent.client_secret }}">PAYER</button> #}
+            <div id="card-errors" role="alert"></div>
+            <div id="card-success" role="alert"></div>
+        {% endif %}
+    </div>
+
+    <div id="card-errors" role="alert"></div>
+    <div id="card-success" role="alert"></div>
+    <script>
+    </script>
+{% endblock %}
