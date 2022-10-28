@@ -185,9 +185,16 @@ class DefaultController extends AbstractController
      */
     public function stripe(int $amount): \Symfony\Component\HttpFoundation\Response
     {
-
+        if (isset($_ENV['STRIPE_TEST'])){
+            if ($_ENV['STRIPE_TEST'] = 'true'){
+                $pk = $_ENV['STRIPE_PK_TEST'];
+                $sk = $_ENV['STRIPE_SK_TEST'];
+            } else {
+                $pk = $_ENV['STRIPE_PK'];
+                $sk = $_ENV['STRIPE_SK'];
+            }
+        }
         $amount = str_replace(',','.',$amount);
-
         $vars_post = array(
             'amount'		=> 	$amount,
             'description'	=> 	'BusDiscotheque by MyCarEvents',
@@ -217,7 +224,7 @@ class DefaultController extends AbstractController
         $intent = json_decode($output);
 
         return $this->render('default/stripe.html.twig', [
-            'api_key'       => $_ENV['STRIPE_PK'],
+            'key'           => $pk,
             'intent'        => $intent,
             'amount'        => $amount,
             'current_page'  => 'stripe',

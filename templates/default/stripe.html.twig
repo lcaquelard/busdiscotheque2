@@ -3,7 +3,7 @@
 {% block main %}
     <div class="container-cb" id="container-cb">
         <img src="{{ asset('build/images/logo.webp') }}">
-        <div class="form-row" id="card-form">
+        <div class="form-row" id="card-form" data-key="{{ key }}">
             <input type="text" readonly class="StripeElement name" placeholder="{{ amount|format_currency('EUR')}} TTC">
             <input id="cardholder-name" type="text" class="StripeElement name" placeholder="Nom sur la carte / Name on Card">
             <div id="card-element"></div>

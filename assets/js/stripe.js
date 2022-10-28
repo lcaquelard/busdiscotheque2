@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 $('#container-cb').ready(function() {
-    const key = 'pk_live_51JU8v5KpEcE8cXMNE65xwQu8zsaKqIQNcfcb5jBohtRa0lA6DcjpgWcdFNvcUDHucaQuujmmY2nZDYqzdlcHVJNP00Q55yRX5D';
+    const key = $('#card-form').first().data('key');
     // Create a Stripe client.
     const stripe = Stripe(key, {
         betas: ['payment_intent_beta_3']
