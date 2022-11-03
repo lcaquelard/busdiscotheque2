@@ -205,7 +205,7 @@ class DefaultController extends AbstractController
 
         $headers = array(
             'Content-Type: application/x-www-form-urlencoded',
-            'Authorization: Bearer '.$_ENV['STRIPE_SK']
+            'Authorization: Bearer '.$sk
         );
 
         $ch = curl_init();
@@ -213,7 +213,7 @@ class DefaultController extends AbstractController
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
-        //curl_setopt($ch, CURLOPT_USERPWD, $secret_key);
+        //curl_setopt($ch, CURLOPT_USERPWD, $sk);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         //curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         $info = curl_getinfo($ch);
