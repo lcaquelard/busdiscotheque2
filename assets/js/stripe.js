@@ -38,6 +38,7 @@ $('#container-cb').ready(function() {
     const cardholderName = document.getElementById('cardholder-name');
     const cardButton = document.getElementById('card-button');
     const clientSecret = cardButton.dataset.secret;
+    console.log(clientSecret);
     cardButton.addEventListener('click', function (ev) {
 
         stripe.handleCardPayment(
@@ -51,7 +52,7 @@ $('#container-cb').ready(function() {
                 document.getElementById('card-errors').textContent = 'Erreur : ' + result.error.message;
             } else {
                 document.getElementById('card-errors').textContent = '';
-                document.getElementById('card_form').textContent = '';
+                document.getElementById('card-form').textContent = '';
                 document.getElementById('card-success').textContent = 'Paiement confirmé. Merci.';
             }
         });

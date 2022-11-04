@@ -193,6 +193,8 @@ class DefaultController extends AbstractController
                 $pk = $_ENV['STRIPE_PK'];
                 $sk = $_ENV['STRIPE_SK'];
             }
+        } else {
+            return $this->redirectToRoute('index');
         }
         $amount = str_replace(',','.',$amount);
         $vars_post = array(
@@ -220,15 +222,17 @@ class DefaultController extends AbstractController
         $output = curl_exec($ch);
         curl_close($ch);
 
-        //echo ('<pre>'.print_r($info, true).'</pre>');die();
         $intent = json_decode($output);
-
-        return $this->render('default/stripe.html.twig', [
-            'key'           => $pk,
-            'intent'        => $intent,
-            'amount'        => $amount,
-            'current_page'  => 'stripe',
-        ]);
+        if (json_last_error() === JSON_ERROR_NONE) {
+            return $this->render('default/stripe.html.twig', [
+                'key' => $pk,
+                'intent' => $intent,
+                'amount' => $amount,
+                'current_page' => 'stripe',
+            ]);
+        } else {
+            return $this->redirectToRoute('index');
+        }
     }
 
     /**
