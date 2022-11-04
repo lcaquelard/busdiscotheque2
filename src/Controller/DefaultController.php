@@ -194,7 +194,7 @@ class DefaultController extends AbstractController
                 $sk = $_ENV['STRIPE_SK'];
             }
         } else {
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('index',);
         }
         $amount = str_replace(',','.',$amount) * 100;
         $vars_post = array(
@@ -244,8 +244,8 @@ class DefaultController extends AbstractController
     {
         $amount = $request->query->get('amount');
         if (!(isset($amount) && is_numeric($amount))){
-            $amount = 0;
+            $amount = 1;
         }
-        return $this->stripe($amount);
+        return $this->redirectToRoute('stripe',array('amount' => $amount));
     }
 }
