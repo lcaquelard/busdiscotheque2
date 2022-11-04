@@ -196,7 +196,7 @@ class DefaultController extends AbstractController
         } else {
             return $this->redirectToRoute('index');
         }
-        $amount = str_replace(',','.',$amount);
+        $amount = str_replace(',','.',$amount) * 100;
         $vars_post = array(
             'amount'		=> 	$amount,
             'description'	=> 	'BusDiscotheque by MyCarEvents',
@@ -227,7 +227,7 @@ class DefaultController extends AbstractController
             return $this->render('default/stripe.html.twig', [
                 'key' => $pk,
                 'intent' => $intent,
-                'amount' => $amount,
+                'amount' => $amount / 100,
                 'current_page' => 'stripe',
             ]);
         } else {
