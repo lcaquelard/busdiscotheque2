@@ -102,7 +102,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/bus_classic.html.twig', [
             'current_page' => 'bus_classic',
-            'route'         => '/bus/classic',
+            'route'         => '/bus/classique',
             'buses' => $this->bus_types['classic']->getBuses()
         ]);
     }
