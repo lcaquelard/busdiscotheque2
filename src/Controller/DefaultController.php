@@ -51,8 +51,9 @@ class DefaultController extends AbstractController
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/index.html.twig', [
-            'current_page' => 'index',
-            'meta_content' => 'Busdiscothèque est le meilleur choix'
+            'current_page'  => 'index',
+            'route'         => '',
+            'meta_content'  => 'Busdiscothèque est le meilleur choix'
         ]);
     }
     /**
@@ -64,7 +65,9 @@ class DefaultController extends AbstractController
         $bus_types = $this->bus_types;
         unset($bus_types['terrasse']);
         return $this->render('default/bus.html.twig', [
-            'current_page' => 'bus', 'bus_types' => $bus_types
+            'current_page' => 'bus',
+            'route'         => '/bus',
+            'bus_types' => $bus_types
         ]);
     }
     /**
@@ -74,7 +77,9 @@ class DefaultController extends AbstractController
     public function bus_mini(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_mini.html.twig', [
-            'current_page' => 'bus_mini', 'buses' => $this->bus_types['mini']->getBuses()
+            'current_page' => 'bus_mini',
+            'route'         => '/bus/mini',
+            'buses' => $this->bus_types['mini']->getBuses()
         ]);
     }
     /**
@@ -84,7 +89,9 @@ class DefaultController extends AbstractController
     public function bus_middle(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_middle.html.twig', [
-            'current_page' => 'bus_middle', 'buses' => $this->bus_types['middle']->getBuses()
+            'current_page' => 'bus_middle',
+            'route'         => '/bus/middle',
+            'buses' => $this->bus_types['middle']->getBuses()
         ]);
     }
     /**
@@ -94,7 +101,9 @@ class DefaultController extends AbstractController
     public function bus_classic(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_classic.html.twig', [
-            'current_page' => 'bus_classic', 'buses' => $this->bus_types['classic']->getBuses()
+            'current_page' => 'bus_classic',
+            'route'         => '/bus/classic',
+            'buses' => $this->bus_types['classic']->getBuses()
         ]);
     }
     /**
@@ -104,7 +113,9 @@ class DefaultController extends AbstractController
     public function bus_double(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_double.html.twig', [
-            'current_page' => 'bus_double', 'buses' => $this->bus_types['double']->getBuses()
+            'current_page' => 'bus_double',
+            'route'         => '/bus/double',
+            'buses' => $this->bus_types['double']->getBuses()
         ]);
     }
     /**
@@ -114,7 +125,9 @@ class DefaultController extends AbstractController
     public function bus_super(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/bus_super.html.twig', [
-            'current_page' => 'bus_super', 'buses' => $this->bus_types['super']->getBuses()
+            'current_page' => 'bus_super',
+            'route'         => '/bus/super_double',
+            'buses' => $this->bus_types['super']->getBuses()
         ]);
     }
     /**
@@ -125,6 +138,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/program.html.twig', [
             'current_page' => 'program',
+            'route'         => '/soirée',
         ]);
     }
     /**
@@ -134,7 +148,9 @@ class DefaultController extends AbstractController
     public function pricing(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/pricing.html.twig', [
-            'current_page' => 'pricing', 'bus_types' => $this->bus_types
+            'current_page' => 'pricing',
+            'route'         => '/prix',
+            'bus_types' => $this->bus_types
         ]);
     }
     /**
@@ -145,6 +161,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/options.html.twig', [
             'current_page' => 'options',
+            'route'         => '/options',
         ]);
     }
     /**
@@ -155,6 +172,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/booking.html.twig', [
             'current_page' => 'booking',
+            'route'         => '/réservation',
         ]);
     }
     /**
@@ -165,6 +183,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/legal.html.twig', [
             'current_page' => 'legal',
+            'route'         => '/mentions_légales',
         ]);
     }
     /**
@@ -175,6 +194,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/cgv.html.twig', [
             'current_page' => 'cgv',
+            'route'         => '/cgv',
         ]);
     }
 
