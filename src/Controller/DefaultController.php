@@ -206,7 +206,7 @@ class DefaultController extends AbstractController
     public function stripe(int $amount): \Symfony\Component\HttpFoundation\Response
     {
         if (isset($_ENV['STRIPE_TEST'])){
-            if ($_ENV['STRIPE_TEST'] = 'true'){
+            if ($_ENV['STRIPE_TEST'] == 'true'){
                 $pk = $_ENV['STRIPE_PK_TEST'];
                 $sk = $_ENV['STRIPE_SK_TEST'];
             } else {
