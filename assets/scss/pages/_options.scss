@@ -52,20 +52,20 @@
         }
       }
       h3{
-        margin:0;
+        margin:20px 0;
         font-size:16px;
         text-transform: uppercase;
         &.christmas{
           background-image:url('../../images/icons/options/christmas_santa.webp');
-          background-position: 110% -100%;
-          padding: 30px;
-          background-size: 30%;
+          background-position: right top;
+          padding: 25px;
+          background-size: 30px;
           background-repeat: no-repeat;
           &::after{
             background-image: url('../../images/icons/options/christmas_string.webp');
             display: block;
             width: 100%;
-            height: 40px;
+            height: 50px;
             background-size: 70%;
             content: " ";
             background-position: center 53%;
@@ -90,7 +90,7 @@
         display:flex;
         flex-flow:row wrap;
         justify-content:space-around;
-        align-items:center;
+        align-items:flex-start;
         text-align:center;
         width:$main_width;
         @include mobile-width();
@@ -104,29 +104,25 @@
             width:140px;
             height:75px;
             margin-bottom:10px;
-            @include background-prs(center center, no-repeat, cover);
+            @include background-prs(center center, no-repeat, contain);
           }
           &#birthday_kid div.icon{
             background-image:url(../../images/icons/options/birthday_kid.webp);
           }
           &#birthday_adult div.icon{
             background-image:url(../../images/icons/options/birthday_adult.webp);
-            background-size:contain;
           }
           &#photobooth div.icon{
             background-image:url(../../images/icons/options/photobooth.webp);
           }
           &#glasses div.icon{
             background-image:url(../../images/icons/options/glasses.webp);
-            background-size:contain;
           }
           &#sticks div.icon{
             background-image:url(../../images/icons/options/sticks.webp);
-            background-size:contain;
           }
           &#bracelets div.icon{
             background-image:url(../../images/icons/options/bracelets.webp);
-            background-size:contain;
           }
           &#hostess div.icon{
             background-image:url(../../images/icons/options/hostess.webp);
@@ -136,7 +132,6 @@
           }
           &#agent div.icon{
             background-image:url(../../images/icons/options/agent.webp);
-            background-size:contain;
           }
           &#champagne div.icon{
             background-image:url(../../images/icons/options/champagne.webp);
@@ -149,18 +144,15 @@
           }
           &#necklace div.icon{
             background-image:url(../../images/icons/options/necklace.webp);
-            background-size:contain;
           }
           &#insurance div.icon{
             background-image:url(../../images/icons/options/insurance.webp);
-            background-size:contain;
           }
           &#karaoke div.icon{
             background-image:url(../../images/icons/options/karaoke.webp);
           }
           &#arcade div.icon{
             background-image:url(../../images/icons/options/arcade.webp);
-            background-size:contain;
           }
           &#card div.icon{
             background-image:url(../../images/icons/options/card.webp);
