@@ -9,98 +9,114 @@
 
   main{
     display:flex;
-    flex-flow:row wrap;
+    flex-flow:column nowrap;
     justify-content:space-around;
     align-items:flex-start;
     width:$main_width;
     @include mobile-width();
     align-self:center;
+    h1{
+      width:100%
+    }
 
-    .bus_range {
-      &-frame {
-        height: 300px;
-        width: 300px;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        margin:25px 0 55px 0;
-        transition:margin .2s ease-in-out;
+    #buses {
+      display:flex;
+      flex-flow:row wrap;
+      justify-content:space-around;
+      align-items:flex-start;
+      width:$main_width;
+      @include mobile-width();
+      align-self:center;
+      .bus_range {
+        &-frame {
+          height: 300px;
+          width: 300px;
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          margin: 25px 0 55px 0;
 
-        &:hover{
-          margin:80px 0 0 0;
-          .bus_range-hidden{
-            visibility:visible;
-            opacity:1;
-            height:auto;
+          .hidden {
+            visibility: hidden;
+            opacity: 0;
+            transition:all .5s;
+          }
+
+          &:hover {
+            .hidden {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+
+          &#mini_bus {
+            background-image: url(../../images/photo/bus/mini/1.webp);
+          }
+
+          &#middle_bus {
+            background-image: url(../../images/photo/bus/middle/1.webp);
+          }
+
+          &#classic_bus {
+            background-image: url(../../images/photo/bus/classic/1.webp);
+          }
+
+          &#classic_bus {
+            background-image: url(../../images/photo/bus/classic/1.webp);
+          }
+
+          &#double_bus {
+            background-image: url(../../images/photo/bus/double/1.webp);
+          }
+
+          &#super_bus {
+            background-image: url(../../images/photo/bus/super/1.webp);
+          }
+
+          a {
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #FFF;
           }
         }
 
-        &#mini_bus {
-          background-image: url(../../images/photo/bus/mini/1.webp);
-        }
-
-        &#middle_bus {
-          background-image: url(../../images/photo/bus/middle/1.webp);
-        }
-
-        &#classic_bus {
-          background-image: url(../../images/photo/bus/classic/1.webp);
-        }
-
-        &#classic_bus {
-          background-image: url(../../images/photo/bus/classic/1.webp);
-        }
-
-        &#double_bus {
-          background-image: url(../../images/photo/bus/double/1.webp);
-        }
-
-        &#super_bus {
-          background-image: url(../../images/photo/bus/super/1.webp);
-        }
-
-        a {
+        &-content {
           height: 100%;
           width: 100%;
-          display: inline-block;
-          background-color: rgba(0, 0, 0, 0.5);
           color: #FFF;
-        }
-      }
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
 
-      &-content {
-        height:100%;
-        width:100%;
-        color:#FFF;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-      }
-      &-title{
-        text-transform:uppercase;
-      }
-      &-capacity{
-        font-family:$nav_font;
-        margin:20px 0;
-      }
-      &-icon{
-        background-image:url(../../images/icons/zoom.webp);
-        background-size:contain;
-        background-position:center center;
-        background-repeat:no-repeat;
-        height:50px;
-        width:50px;
-      }
-      &-hidden{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        visibility:hidden;
-        opacity:0;
-        height:0;
-        transition:all .2s ease-in-out;
+          &-title {
+            padding:18px 0;
+            text-transform: uppercase;
+          }
+          &-maintitle {
+            padding:10px 0;
+            text-transform: uppercase;
+          }
+          &-subtitle {
+            text-transform: uppercase;
+          }
+
+          &-capacity {
+            font-family: $nav_font;
+            margin: 20px 0;
+          }
+
+          &-icon {
+            background-image: url(../../images/icons/zoom.webp);
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 50px;
+            width: 50px;
+          }
+        }
       }
     }
   }

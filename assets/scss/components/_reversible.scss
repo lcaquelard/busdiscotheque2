@@ -2,22 +2,23 @@
   .rev {
     .front, .back {
       @include position();
-      backface-visibility: hidden;
-      transition: transform .5s;
+      transition: opacity .5s;
     }
-
-    &:hover {
-      .front {
-        transform: rotateY(180deg);
-      }
-
-      .back {
-        transform: rotateY(360deg);
-      }
+    .front {
+      opacity:1;
     }
 
     .back {
-      transform: rotateY(180deg);
+      opacity:0;
+    }
+    &:hover {
+      .front {
+        opacity:1;
+      }
+
+      .back {
+        opacity:1;
+      }
     }
   }
 }

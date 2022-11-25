@@ -2,18 +2,23 @@
 {% set title = "Nos différentes offres de bus" %}
 {% set meta_description = "Jetez un oeil à notre séléction variée de bus minis, simples, doubles et plus encore en location, de 9 à 70 personnes, pour trouver l'offre qui correspond à votre soirée parfaite !" %}
 {% block main %}
-    {% for type, bus in bus_types %}
-    <section class="bus_range-frame" id="{{ type }}_bus">
-        <a href="{{ path('bus_'~type) }}">
-            <div class="bus_range-content">
-                <h4 class="bus_range-title">{{ bus.getName() }}</h4>
-                {% if bus.getSubtitle() != '' %}<h5>{{ bus.getSubtitle() }}</h5>{% endif %}
-                <div class="bus_range-hidden">
-                    <span class="bus_range-capacity">de {{ bus.getSizeMin() }} à {{ bus.getSizeMax() }} personnes</span>
-                    <div class="bus_range-icon"></div>
+    <h1>Nos différentes gammes de bus</h1>
+    <div id="buses">
+        {% for type, bus in bus_types %}
+        <section class="bus_range-frame" id="{{ type }}_bus">
+            <a href="{{ path('bus_'~type) }}">
+                <div class="bus_range-content">
+                    {% if bus.getSubtitle() != '' %}
+                        <h4 class="bus_range-content-maintitle">{{ bus.getName() }}</h4>
+                        <h5 class="bus_range-content-subtitle">{{ bus.getSubtitle() }}</h5>
+                    {% else %}
+                        <h4 class="bus_range-content-title">{{ bus.getName() }}</h4>
+                    {% endif %}
+                    <span class="bus_range-content-capacity">de {{ bus.getSizeMin() }} à {{ bus.getSizeMax() }} personnes</span>
+                    <div class="bus_range-content-icon hidden"></div>
                 </div>
-            </div>
-        </a>
-    </section>
-    {% endfor %}
+            </a>
+        </section>
+        {% endfor %}
+    </div>
 {% endblock %}
