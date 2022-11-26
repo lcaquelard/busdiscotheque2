@@ -2,6 +2,7 @@
 {% set title = "Nos middle bus" %}
 {% set meta_description = "Découvrez nos bus de taille moyenne en location !"%}
 {% block main %}
+    <img style="display:none;" src="{{ asset('build/images/background/index.webp')}}" />
     {% for bus in buses %}
         <section id="{{ bus.getShortname() }}" class="bus rev">
             <div class="front">

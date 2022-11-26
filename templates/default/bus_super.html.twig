@@ -2,6 +2,7 @@
 {% set title = "Nos super bus doubles" %}
 {% set meta_description = "Busdiscothèque sort les grands moyens avec ses bus super doubles en location. Jusqu'à 70 personnes, frigos, machines à bulles et à fumée et même bornes d'arcade !"%}
 {% block main %}
+    <img style="display:none;" src="{{ asset('build/images/background/index.webp')}}" />
     {% for bus in buses %}
         <section id="{{ bus.getShortname() }}" class="bus rev">
             <div class="front">

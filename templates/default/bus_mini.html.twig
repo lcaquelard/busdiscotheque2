@@ -2,6 +2,7 @@
 {% set title = "Nos minibus" %}
 {% set meta_description = "Découvrez notre sélection de minibus de fête en location pour 1 à 9 personnes, plus l'option karaoké !"%}
 {% block main %}
+    <img style="display:none;" src="{{ asset('build/images/background/micro.webp')}}" />
     {% for bus in buses %}
         <section id="{{ bus.getShortname() }}" class="bus rev">
             <div class="front">

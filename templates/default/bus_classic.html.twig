@@ -2,6 +2,7 @@
 {% set title = "Nos bus classiques" %}
 {% set meta_description = "Découvrez notre sélection de bus classiques en location, pour faire la fête jusq'à 35 personnes, avec DJ et frigos !"%}
 {% block main %}
+    <img style="display:none;" src="{{ asset('build/images/background/index.webp')}}" />
     {% for bus in buses %}
         <section id="{{ bus.getShortname() }}" class="bus rev">
             <div class="front">
