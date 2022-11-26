@@ -64,7 +64,7 @@ class DefaultController extends AbstractController
         $this->option_groups['default']->addOption('agent', 'agent de sécurité', '200€', 'La sécurité est votre priorité ?<br>Nos agents vous proposent un filtrage renforcé à l\'entrée de votre bus et veilleront au bon déroulement de votre soirée. ');
         $this->option_groups['default']->addOption('champagne', 'Champagne', '39,90€ / bouteille', 'FAVORI DANS LES GRANDES OCCASIONS ,<br>LE CHAMPAGNE EST UN MUST HAVE DANS NOS BUS.<br>NOUS NOUS OCCUPONS DE VOUS FOURNIR TOUT AU LONG DE LA SOIRÉE GRÂCE À NOTRE CUVÉE PRESTIGE<br>NICOLAS FEUILLATE.');
         $this->option_groups['default']->addOption('wine', 'Vins', '19,90€ / bouteille', 'ROUGE, BLANC OU ROSÉ,<br>IL Y EN A POUR TOUS LES GOÛTS !<br>NOUS VOUS PROPOSONS ÉGALEMENT UNE SÉLECTION<br>DE VINS, POUR ACCOMPAGNER VOS PLATEAUX APÉRITIFS ET COMMENCER LA SOIRÉE TOUT EN DOUCEUR.');
-        $this->option_groups['default']->addOption('beer', '1,90€ / bouteille', '100€', 'BREVAGE PRÉFÉRÉ DE NOS ÉTUDIANTS,<br>LA BIÈRE FAIT AUSSI TRÈS BIEN L\'AFFAIRE POUR PARTAGER UN DÉBUT DE SOIRÉE À PETIT BUDGET.<br> OUBLIEZ L\'HAPPY HOUR, CHEZ NOUS, C\'EST BIÈRE PAS CHÈRE À VOLONTÉ TOUTE LA SOIRÉE !');
+        $this->option_groups['default']->addOption('beer', 'Bière', '1,90€ / bouteille', 'BREVAGE PRÉFÉRÉ DE NOS ÉTUDIANTS,<br>LA BIÈRE FAIT AUSSI TRÈS BIEN L\'AFFAIRE POUR PARTAGER UN DÉBUT DE SOIRÉE À PETIT BUDGET.<br> OUBLIEZ L\'HAPPY HOUR, CHEZ NOUS, C\'EST BIÈRE PAS CHÈRE À VOLONTÉ TOUTE LA SOIRÉE !');
         $this->option_groups['default']->addOption('necklace', 'colliers hawaïens', 'À partir de 70€', 'Soirée à thème ou simple cadeau de bienvenue pour vos convives, pour les faire voyager jusqu\'au bout du monde le temps d\'une soirée !<br><br><span class="bold">Pack (35) : 70€ - Pack (55) : 110€ - Pack (70) : 140€</span>');
         $this->option_groups['default']->addOption('insurance', 'assurance annulation', '100€', 'Un imprévu vous oblige à annuler votre prestation quelques jours avant l\'événement ? Avec l\'assurance annulation, vous êtes entièrement remboursé, sans justificatif !');
         $this->option_groups['default']->addOption('karaoke', 'animation karaoké', '10€*', 'POUR LES FANS DE CÉLINE DION ET TOUS LES AUTRES, IL EST TEMPS DE FAIRE RESSORTIR VOS TALENTS DE CHANTEUR AVEC VOS AMIS GRÂCE À NOTRE KARAOKÉ !<br>(UNIQUEMENT DISPONIBLE DANS<br>CERTAINS VÉHICULES)');
@@ -245,7 +245,7 @@ class DefaultController extends AbstractController
         } else {
             return $this->redirectToRoute('index',);
         }
-        $amount = str_replace(',','.',$amount) * 100;
+        //$amount = str_replace(',','.',$amount * 100;
         $vars_post = array(
             'amount'		=> 	$amount,
             'description'	=> 	'BusDiscotheque by MyCarEvents',
