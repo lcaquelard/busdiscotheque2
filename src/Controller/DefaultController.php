@@ -187,10 +187,36 @@ class DefaultController extends AbstractController
      */
     public function options(): \Symfony\Component\HttpFoundation\Response
     {
+        $pictures = array(
+            "traiteur"  => array(
+                array('name' => 'pagnote_alpages', 'title' => 'Pagnote Alpages'),
+                array('name' => 'mini_wraps_usa', 'title' => 'Mini Wraps USA'),
+                array('name' => 'pagnote_scandinave', 'title' => 'Pagnote Scandinave'),
+                array('name' => 'mini_burger', 'title' => 'Mini Burger'),
+                array('name' => 'wraps_vegetariens', 'title' => 'Wraps Végétarien'),
+                array('name' => 'pagnote_francaise', 'title' => 'Pagnote Française'),
+                array('name' => 'pagnote_mini_gougere', 'title' => 'Pagnote Mini Gougère'),
+                array('name' => 'pagnote_gourmandise', 'title' => 'Pagnote Gourmandises'),
+                array('name' => 'pagnote_macaron', 'title' => 'Pagnote Macaron')
+            ),
+            "autres"   => array(
+                array('name' => 'batons_lumineux_led', 'title' => 'Bâtons Lumineux Led 🔵'),
+                array('name' => 'lunettes_lumineuses_led', 'title' => 'Lunettes lumineuses led 🟣'),
+                array('name' => 'bracelets_lumineux_led', 'title' => 'Bracelets Lumineux Led 🟡'),
+                array('name' => 'colliers_hawaiens', 'title' => 'Colliers Hawaïens 🟤'),
+                array('name' => 'photobooth', 'title' => 'Photobooth 🎞️Souriez vous êtes flashés ?📸'),
+                array('name' => 'pack_arcade_pac_man', 'title' => 'Pack Arcade Pac-Man 🕹🎮'),
+                array('name' => 'plus_belles_photos', 'title' => 'Faites vos plus belles photos 📸'),
+                array('name' => 'gateau_bonbons', 'title' => 'Gâteau De bonbon 🍬🍭'),
+                array('name' => 'pack_arcade_mortal_kombat', 'title' => 'Pack Arcade Mortal Kombat 🕹🎮'),
+                array('name' => 'decorez_bus', 'title' => 'Décorez le bus selon vos envies 😍'),
+            )
+        );
         return $this->render('default/options.html.twig', [
             'current_page'  => 'options',
             'route'         => '/options',
-            'groups'        => $this->option_groups
+            'groups'        => $this->option_groups,
+            'pictures'      => $pictures
         ]);
     }
     /**

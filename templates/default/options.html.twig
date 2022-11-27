@@ -44,15 +44,9 @@
     </section>
     <section id="traiteur_slider">
         <div class="slider">
-            <img src="{{ asset('build/images/photo/options/traiteur/1.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/traiteur/2.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/traiteur/3.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/traiteur/4.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/traiteur/5.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/traiteur/6.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/traiteur/7.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/traiteur/8.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/traiteur/9.webp') }}" alt="Image défilant horizontalement">
+            {% for picture in pictures['traiteur'] %}
+                <img src="{{ asset('build/images/photo/options/traiteur/'~picture['name']~'.webp') }}" alt="{{ picture['title'] }}">
+            {% endfor %}
         </div>
     </section>
     <section id="other_options" class="shadow">
@@ -78,16 +72,9 @@
     </section>
     <section id="other_options_slider">
         <div class="slider">
-            <img src="{{ asset('build/images/photo/options/autres/1.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/2.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/3.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/4.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/5.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/6.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/7.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/8.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/9.webp') }}" alt="Image défilant horizontalement">
-            <img src="{{ asset('build/images/photo/options/autres/10.webp') }}" alt="Image défilant horizontalement">
+            {% for picture in pictures['autres'] %}
+                <img src="{{ asset('build/images/photo/options/autres/'~picture['name']~'.webp') }}" alt="{{ picture['title'] }}">
+            {% endfor %}
         </div>
     </section>
 {% endblock %}
@@ -95,83 +82,23 @@
     <div class="modal traiteur" role="dialog" aria-modal="true" aria-label="Galerie de photos du traiteur agrandie">
         <div class="close"></div>
         <div class="slider side-content">
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/1.webp') }}" alt="Image défilant horizontalement">
-                <p>Pagnote Alpages</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/2.webp') }}" alt="Image défilant horizontalement">
-                <p>Mini Wraps USA</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/3.webp') }}" alt="Image défilant horizontalement">
-                <p>Pagnote Scandinave</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/4.webp') }}" alt="Image défilant horizontalement">
-                <p>Mini Burger</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/5.webp') }}" alt="Image défilant horizontalement">
-                <p>Wraps Végétarien</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/6.webp') }}" alt="Image défilant horizontalement">
-                <p>Pagnote Française</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/7.webp') }}" alt="Image défilant horizontalement">
-                <p>Pagnote Mini Gougère</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/8.webp') }}" alt="Image défilant horizontalement">
-                <p>Pagnote Gourmandises</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/traiteur/9.webp') }}" alt="Image défilant horizontalement">
-                <p>Pagnote Macaron</p>
-            </div>
+            {% for picture in pictures['traiteur'] %}
+                <div>
+                    <img src="{{ asset('build/images/photo/options/traiteur/'~picture['name']~'.webp') }}" alt="{{ picture['title'] }}">
+                    <p>{{ picture['title'] }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
     <div class="modal other_options" role="dialog" aria-modal="true" aria-label="Galerie de photos d'autres options agrandie">
         <div class="close"></div>
         <div class="slider side-content">
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/1.webp') }}" alt="Image défilant horizontalement">
-                <p>Bâtons Lumineux Led 🔵</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/2.webp') }}" alt="Image défilant horizontalement">
-                <p>Lunettes lumineuse led 🟣</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/3.webp') }}" alt="Image défilant horizontalement">
-                <p>Bracelets Lumineux Led 🟡</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/4.webp') }}" alt="Image défilant horizontalement">
-                <p>Colliers Hawaïens 🟤</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/5.webp') }}" alt="Image défilant horizontalement">
-                <p>Pack Arcade Pac Man 🕹🎮</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/6.webp') }}" alt="Image défilant horizontalement">
-                <p>Faites vos plus belles photos 📸</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/7.webp') }}" alt="Image défilant horizontalement">
-                <p>Gâteau De bonbon 🍬🍭</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/8.webp') }}" alt="Image défilant horizontalement">
-                <p>Pack Arcade Mortal Kombat 🕹🎮</p>
-            </div>
-            <div>
-                <img src="{{ asset('build/images/photo/options/autres/9.webp') }}" alt="Image défilant horizontalement">
-                <p>Décorez le bus selon vos envies 😍</p>
-            </div>
+            {% for picture in pictures['autres'] %}
+                <div>
+                    <img src="{{ asset('build/images/photo/options/autres/'~picture['name']~'.webp') }}" alt="{{ picture['title'] }}">
+                    <p>{{ picture['title'] }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
