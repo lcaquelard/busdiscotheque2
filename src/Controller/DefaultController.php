@@ -204,7 +204,7 @@ class DefaultController extends AbstractController
                 array('name' => 'lunettes_lumineuses_led', 'title' => 'Lunettes lumineuses led 🟣'),
                 array('name' => 'bracelets_lumineux_led', 'title' => 'Bracelets Lumineux Led 🟡'),
                 array('name' => 'colliers_hawaiens', 'title' => 'Colliers Hawaïens 🟤'),
-                array('name' => 'photobooth', 'title' => 'Photobooth 🎞️Souriez vous êtes flashés ?📸'),
+                array('name' => 'photobooth', 'title' => 'Photobooth 🎞️Souriez vous êtes flashés 📸'),
                 array('name' => 'pack_arcade_pac_man', 'title' => 'Pack Arcade Pac-Man 🕹🎮'),
                 array('name' => 'plus_belles_photos', 'title' => 'Faites vos plus belles photos 📸'),
                 array('name' => 'gateau_bonbons', 'title' => 'Gâteau De bonbon 🍬🍭'),
