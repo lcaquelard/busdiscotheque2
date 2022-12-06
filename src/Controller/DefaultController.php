@@ -49,7 +49,7 @@ class DefaultController extends AbstractController
 
         $this->option_groups['christmas'] = new OptionGroup('christmas', 'Nos offres de Noël', true);
         $this->option_groups['christmas']->addOption('christmas_hat', 'Chapeaux de Noël', 'À partir de 100€', 'Ils ont été sages cette année, soyez le Père Noël de vos convives et offrez leur ces jolis chapeaux, avant de monter à bord de votre traineau<br>Bus Discothèque !<br><br><span class="bold">Pack(35): 100€ - Pack(55): 150€ - Pack(70): 200€</span>');
-        $this->option_groups['christmas']->addOption('christmas_headclip', 'Serre-tête de Noël', 'À partir de 150€', 'QU\'EST-CE QUE SERAIT NOËL SANS LES CERFS POUR<br>TIRER LE TRAINEAU ?<br> EQUIPEZ VOS INVITÉS AVEC CET ACCESSOIRE ORIGINAL QUI SAURA RAVIR PETITS ET GRANDS.<br><br><span class="bold">Pack(35): 80€ - Pack(55): 120€ - Pack(70): 160€</span>');
+        $this->option_groups['christmas']->addOption('christmas_headclip', 'Serre-tête de Noël', 'À partir de 90€', 'QU\'EST-CE QUE SERAIT NOËL SANS LES CERFS POUR<br>TIRER LE TRAINEAU ?<br> EQUIPEZ VOS INVITÉS AVEC CET ACCESSOIRE ORIGINAL QUI SAURA RAVIR PETITS ET GRANDS.<br><br><span class="bold">Pack(35): 80€ - Pack(55): 120€ - Pack(70): 160€</span>');
         $this->option_groups['christmas']->addOption('christmas_pack', 'CHRISTMAS PACK', '200€', 'RIEN DE PLUS SACRÉE QUE LA MAGIE DE NOËL .<br>BUS DISCOTHEQUE VOUS OFFRE UNE AMBIANCE FÉÉRIQUE COMPLÈTE,<br>AVEC BALLONS, BOULES ET GUIRLANDES.<br>IL NE MANQUERA LES CADEAUX ET QUELQUES CHANTS DE NOËL POUR PASSER UNE NUIT EN ENFANCE !');
 
         $this->option_groups['default'] = new OptionGroup('default', 'Nos offres habituelles', true);
