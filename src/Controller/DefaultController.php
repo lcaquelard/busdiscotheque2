@@ -73,7 +73,7 @@ class DefaultController extends AbstractController
         $this->option_groups['default']->addOption('storage', 'entrepôt', '50€', 'VOUS AVEZ ÉGALEMENT LA POSSIBILITÉ DE DÉPOSER ALCOOLS ET BOISSONS DIRECTEMENT À NOTRE ENTREPÔT,<br>AFIN QUE NOUS PUISSIONS PRÉPARER AU MIEUX VOTRE BUS&nbsp;!');
         $this->option_groups['default']->addOption('coin_pusher', 'coin pusher machine à sous', '150€', 'DES JEUX DE FÊTE FORAINE À BORD D\'UN BUS DISCOTHEQUE, ÇA VOUS TENTE&nbsp;?<br>INSEREZ LES PIÈCES ET TENTEZ DE REMPORTER DE NOMBREUX LOTS DE PORTE CLEF&nbsp;!!');
         $this->option_groups['default']->addOption('frais_bouche', 'frais de bouche', 'gratuit', 'VOUS PENSEZ ÊTRE LE PHILIPPE ETSCHEBEST DE LA CUISINE&nbsp;?<br>DANS CE CAS, N\'HÉSITEZ PAS ET VENEZ FAIRE GOÛTER VOS PETITS PLATS À VOS CONVIVES&nbsp;!');
-        $this->option_groups['default']->addOption('droit_bouchon', 'droit de bouchon', 'gratuit', 'QUE DEMANDER DE PLUS QUAND ON PEUT PRENDRE APPORTER SES PROPRES CUVÉES&nbsp;?<br>AVEC BUS DISCOTHEQUE, APPORTER L\'ALCOOL QUE VOUS SOUHAITEZ SANS AUCUN FRAIS SUPPLEMENTAIRE&nbsp;!');
+        $this->option_groups['default']->addOption('droit_bouchon', 'droit de bouchon', 'gratuit', 'QUE DEMANDER DE PLUS QUAND ON PEUT PRENDRE SON PROPRE CUVÉ&nbsp;?<br>AVEC BUS DISCOTHEQUE, VENEZ AVEC VOTRE ALCOOL SANS AUCUN FRAIS SUPPLEMENTAIRE&nbsp;!');
     }
     /**'
      * @Route("/", name="index")
