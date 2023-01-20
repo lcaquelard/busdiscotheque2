@@ -25,7 +25,7 @@ class DefaultController extends AbstractController
 
     public function __construct(){
         $this->bus_types = array(
-            'mini'      => new BusType('Mini Bus', 9, 7, 290, self::default_options['mini'], 9, 1, "(sans dj)"),
+            'mini'      => new BusType('Mini Bus', 9, 7, 390, self::default_options['mini'], 9, 1, "(sans dj)"),
             'middle'    => new BusType('Middle Bus', 20, 10, 690, self::default_options['middle'], 20, 10, "(sans dj)"),
             'classic'   => new BusType('Classic Bus', 35, 12, 890, self::default_options['classic'], 35, 21),
             'double'    => new BusType('Double Bus', 55, 18, 1090, self::default_options['double'], 55, 36),
