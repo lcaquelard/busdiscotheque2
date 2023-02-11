@@ -16,7 +16,7 @@ class DefaultController extends AbstractController
         'middle'    => array('agent', 'bluetooth', 'carpet', 'soft', 'screen', 'fridge'),
         'classic'   => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
         'double'    => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
-        'terrasse'  => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
+//        'terrasse'  => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
         'super'    => array('dj', 'carpet', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke')
     );
 
@@ -29,7 +29,7 @@ class DefaultController extends AbstractController
             'middle'    => new BusType('Middle Bus', 20, 10, 790, self::default_options['middle'], 20, 10, "(sans dj)"),
             'classic'   => new BusType('Classic Bus', 35, 12, 990, self::default_options['classic'], 35, 21),
             'double'    => new BusType('Double Bus', 55, 18, 1190, self::default_options['double'], 55, 36),
-            'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1290, self::default_options['terrasse'], 55, 36,),
+ //           'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1290, self::default_options['terrasse'], 55, 36,),
             'super'     => new BusType('Super Double Bus', 70, 18, 1290, self::default_options['super'], 70, 36)
         );
 //        $this->bus_types["mini"]->addBus(   'mini bus disco',   'minibusdisco', 9,  3);
@@ -84,7 +84,8 @@ class DefaultController extends AbstractController
         return $this->render('default/index.html.twig', [
             'current_page'  => 'index',
             'route'         => '',
-            'meta_content'  => 'Busdiscothèque est le meilleur choix'
+            'meta_content'  => 'Busdiscothèque est le meilleur choix',
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -94,11 +95,10 @@ class DefaultController extends AbstractController
     public function bus(): \Symfony\Component\HttpFoundation\Response
     {
         $bus_types = $this->bus_types;
-        unset($bus_types['terrasse']);
         return $this->render('default/bus.html.twig', [
             'current_page' => 'bus',
             'route'         => '/bus',
-            'bus_types' => $bus_types
+            'bus_types' => $bus_types,
         ]);
     }
     /**
@@ -110,7 +110,8 @@ class DefaultController extends AbstractController
         return $this->render('default/bus_mini.html.twig', [
             'current_page' => 'bus_mini',
             'route'         => '/bus/mini',
-            'buses' => $this->bus_types['mini']->getBuses()
+            'buses' => $this->bus_types['mini']->getBuses(),
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -122,7 +123,8 @@ class DefaultController extends AbstractController
         return $this->render('default/bus_middle.html.twig', [
             'current_page' => 'bus_middle',
             'route'         => '/bus/middle',
-            'buses' => $this->bus_types['middle']->getBuses()
+            'buses' => $this->bus_types['middle']->getBuses(),
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -134,7 +136,8 @@ class DefaultController extends AbstractController
         return $this->render('default/bus_classic.html.twig', [
             'current_page' => 'bus_classic',
             'route'         => '/bus/classique',
-            'buses' => $this->bus_types['classic']->getBuses()
+            'buses' => $this->bus_types['classic']->getBuses(),
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -146,7 +149,8 @@ class DefaultController extends AbstractController
         return $this->render('default/bus_double.html.twig', [
             'current_page' => 'bus_double',
             'route'         => '/bus/double',
-            'buses' => $this->bus_types['double']->getBuses()
+            'buses' => $this->bus_types['double']->getBuses(),
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -158,7 +162,8 @@ class DefaultController extends AbstractController
         return $this->render('default/bus_super.html.twig', [
             'current_page' => 'bus_super',
             'route'         => '/bus/super_double',
-            'buses' => $this->bus_types['super']->getBuses()
+            'buses' => $this->bus_types['super']->getBuses(),
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -170,6 +175,7 @@ class DefaultController extends AbstractController
         return $this->render('default/program.html.twig', [
             'current_page' => 'program',
             'route'         => '/soirée',
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -221,7 +227,8 @@ class DefaultController extends AbstractController
             'current_page'  => 'options',
             'route'         => '/options',
             'groups'        => $this->option_groups,
-            'pictures'      => $pictures
+            'pictures'      => $pictures,
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -233,6 +240,7 @@ class DefaultController extends AbstractController
         return $this->render('default/booking.html.twig', [
             'current_page' => 'booking',
             'route'         => '/réservation',
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -244,6 +252,7 @@ class DefaultController extends AbstractController
         return $this->render('default/legal.html.twig', [
             'current_page' => 'legal',
             'route'         => '/mentions_légales',
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**
@@ -255,6 +264,7 @@ class DefaultController extends AbstractController
         return $this->render('default/cgv.html.twig', [
             'current_page' => 'cgv',
             'route'         => '/cgv',
+            'bus_types' => $this->bus_types,
         ]);
     }
 
@@ -309,6 +319,7 @@ class DefaultController extends AbstractController
                 'intent' => $intent,
                 'amount' => $amount / 100,
                 'current_page' => 'stripe',
+                'bus_types' => $this->bus_types,
             ]);
         } else {
             return $this->redirectToRoute('index');

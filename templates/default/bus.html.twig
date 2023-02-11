@@ -7,7 +7,7 @@
     <div id="buses">
         {% for type, bus in bus_types %}
         <section class="bus_range-frame" id="{{ type }}_bus">
-            <a href="{% if bus.isExternal() %}{{ bus.getTarget() }}{% else %}{{ path('bus_'~type) }}{% endif %}">
+            <a {% if bus.isExternal() %}target="_blank"{% endif %} href="{% if bus.isExternal() %}{{ bus.getTarget() }}{% else %}{{ path('bus_'~type) }}{% endif %}">
                 <div class="bus_range-content">
                     {% if bus.getSubtitle() != '' %}
                         <h4 class="bus_range-content-maintitle">{{ bus.getName() }}</h4>
