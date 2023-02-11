@@ -45,7 +45,6 @@ $(window).ready(function() {
   let id = $(this).closest(".slider").attr('id');
   let modal = $('.modal.'+id);
   let slider = modal.find('.slider');
-  console.log(slider);
   modal.addClass('active');
   if (slider.hasClass('slick-initialized')){
    slider.slick('slickGoTo', index, true);
