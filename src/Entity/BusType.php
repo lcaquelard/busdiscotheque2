@@ -26,23 +26,30 @@ class BusType
     private array $prices           = array();
     private array $buses            = array();
     private array $default_options  = array();
+    private bool $external          = false;
+    private string $target           = '';
 
-    public function __construct(string $name, int $size, int $length, int $price, array $default_options, int $size_max = NULL, int $size_min = NULL, string $subtitle = ''){
+    public function __construct(string $name, int $size, int $length, int $price, array $default_options, int $size_max = NULL, int $size_min = NULL, string $subtitle = '', bool $external = false, string $target = ''){
         $this->name             = $name;
         $this->subtitle         = $subtitle;
         $this->size             = $size;
         $this->size_max         = $size_max?:$this->size;
         $this->size_min         = $size_min?:$this->size_max;
         $this->length           = $length;
-        $this->prices           = array(
-            1 => $price,
-            2 => $price + 100,
-            3 => $price + 200,
-            4 => $price + 300,
-        );
-        if (count($default_options) > 0) {
-            foreach ($default_options as $option) {
-                $this->default_options[$option] = self::options[$option];
+        $this->external = $external;
+        if ($external === true){
+            $this->target = $target;
+        } else {
+            $this->prices = array(
+                1 => $price,
+                2 => $price + 100,
+                3 => $price + 200,
+                4 => $price + 300,
+            );
+            if (count($default_options) > 0) {
+                foreach ($default_options as $option) {
+                    $this->default_options[$option] = self::options[$option];
+                }
             }
         }
     }
@@ -156,5 +163,25 @@ class BusType
         if (array_key_exists($option, self::options)) {
             $this->default_options[$option] = self::options[$option];
         }
+    }
+
+    public function isExternal(): bool
+    {
+        return $this->external;
+    }
+
+    public function setExternal(bool $external)
+    {
+        $this->external = $external;
+    }
+
+    public function getTarget(): string
+    {
+        return $this->target;
+    }
+
+    public function setTarget(string $target)
+    {
+        $this->target = $target;
     }
 }
