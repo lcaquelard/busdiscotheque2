@@ -179,6 +179,18 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
+     * @Route("/nos-packs", name="packs")
+     * @return Response
+     */
+    public function packs(): \Symfony\Component\HttpFoundation\Response
+    {
+        return $this->render('default/packs.html.twig', [
+            'current_page' => 'packs',
+            'route'         => '/nos-packs',
+            'bus_types' => $this->bus_types,
+        ]);
+    }
+    /**
      * @Route("/prix", name="pricing")
      * @return Response
      */

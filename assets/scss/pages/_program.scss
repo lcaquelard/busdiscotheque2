@@ -90,6 +90,7 @@
       }
       &.video{
         width:100%;
+        height:auto;
         background-color:#000;
         display:flex;
         flex-direction: column;
@@ -118,6 +119,85 @@
       .arrow-next{
         width:80px;
         height:80px;
+      }
+    }
+    #after-reservation{
+      height:auto;
+      margin:20px 5px;
+      padding:30px 40px;
+      @media all and (max-width:$tablet_width){
+        padding:30px 15px;
+      }
+      h2{
+        text-transform:uppercase;
+        font-size:32px;
+        text-align:center;
+        .icon{
+          position:relative;
+          top:16px;
+        }
+      }
+      h3{
+        color:inherit;
+        text-transform:uppercase;
+        font-size:32px;
+        text-align:center;
+        .icon{
+          position:relative;
+          top:16px;
+        }
+      }
+      .icon{
+        display:inline-block;
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-size:contain;
+        height:60px;
+        width:140px;
+        &.arc-triomphe{background-image:url('../../images/icons/soiree/arc-triomphe.webp');}
+        &.bail{background-image:url('../../images/icons/soiree/bail.webp');}
+        &.bank{background-image:url('../../images/icons/soiree/bank.webp');}
+        &.bill{background-image:url('../../images/icons/soiree/bill.webp');}
+        &.check{background-image:url('../../images/icons/soiree/check.webp');}
+        &.deposit{background-image:url('../../images/icons/soiree/deposit.webp');}
+        &.event{background-image:url('../../images/icons/soiree/event.webp');}
+        &.music{background-image:url('../../images/icons/soiree/music.webp');}
+        &.now{background-image:url('../../images/icons/soiree/now.webp');}
+        &.opera-garnier{background-image:url('../../images/icons/soiree/opera-garnier.webp');}
+        &.palais-louvre{background-image:url('../../images/icons/soiree/palais-louvre.webp');}
+        &.softs{background-image:url('../../images/icons/soiree/softs.webp');}
+        &.tour-eiffel{background-image:url('../../images/icons/soiree/tour-eiffel.webp');}
+      }
+      p{
+        font-size:24px;
+        .icon{
+          position:relative;
+          top:12px;
+        }
+        .raised{
+          position:relative;
+          top:-40px;
+          .icon{
+            left:50px;
+            top:7px;
+            height:80px;
+            width:80px;
+          }
+        }
+      }
+      #monuments{
+        display:flex;
+        flex-direction:row;
+        align-items:flex-start;
+        justify-content: space-around;
+        width:100%;
+        height:45vw;
+        max-height:450px;
+        div{
+          flex-basis:20%;
+          height:100%;
+          background-position: center bottom;
+        }
       }
     }
   }

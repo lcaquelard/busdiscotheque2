@@ -1,0 +1,47 @@
+#packs{
+  margin:0 5px;
+  .pack{
+    width:100%;
+    h2{
+      font-family:"lulo clean", sans-serif;
+      text-transform:uppercase;
+      font-size:32px;
+    }
+    &-logos{
+      width:100%;
+      display:flex;
+      flex-direction:row;
+      gap:5px;
+    }
+    &-logo{
+      max-width:calc(100% / 16);
+      flex-basis:calc(100% / 16);
+      height:60px;
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:contain;
+      &.agent{background-image:url('../../images/icons/packs/agent.webp');}
+      &.arcade{background-image:url('../../images/icons/packs/arcade.webp');}
+      &.barman{background-image:url('../../images/icons/packs/barman.webp');}
+      &.bluetooth{background-image:url('../../images/icons/packs/bluetooth.webp');}
+      &.bubbles{background-image:url('../../images/icons/packs/bubbles.webp');}
+      &.carpet{background-image:url('../../images/icons/packs/carpet.webp');}
+      &.coat-check{background-image:url('../../images/icons/packs/coat-check.webp');}
+      &.cups{background-image:url('../../images/icons/packs/cups.webp');}
+      &.dj{background-image:url('../../images/icons/packs/dj.webp');}
+      &.driver{background-image:url('../../images/icons/packs/driver.webp');}
+      &.fridge{background-image:url('../../images/icons/packs/fridge.webp');}
+      &.ice{background-image:url('../../images/icons/packs/ice.webp');}
+      &.lights{background-image:url('../../images/icons/packs/lights.webp');}
+      &.screens{background-image:url('../../images/icons/packs/screens.webp');}
+      &.smoke{background-image:url('../../images/icons/packs/smoke.webp');}
+      &.softs{background-image:url('../../images/icons/packs/softs.webp');}
+      &.toilets{background-image:url('../../images/icons/packs/toilets.webp');}
+      &.towels{background-image:url('../../images/icons/packs/towels.webp');}
+    }
+    &-list{
+      font-size:18px;
+      color:#FFF;
+    }
+  }
+}
