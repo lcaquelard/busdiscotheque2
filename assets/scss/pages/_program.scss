@@ -113,8 +113,8 @@
         font-size:18px;
         line-height:20px;
         font-family: helvetica, sans-serif;
-        color:$program_color;
         text-align:center;
+        color:inherit;
       }
       .arrow-next{
         width:80px;
@@ -125,6 +125,8 @@
       height:auto;
       margin:20px 5px;
       padding:30px 40px;
+      color:#FFF;
+      background-color:rgba(0, 0, 0, .66);
       @media all and (max-width:$tablet_width){
         padding:30px 15px;
       }
@@ -132,10 +134,6 @@
         text-transform:uppercase;
         font-size:32px;
         text-align:center;
-        .icon{
-          position:relative;
-          top:16px;
-        }
       }
       h3{
         color:inherit;
@@ -172,7 +170,7 @@
         font-size:24px;
         .icon{
           position:relative;
-          top:12px;
+          top:25px;
         }
         .raised{
           position:relative;
