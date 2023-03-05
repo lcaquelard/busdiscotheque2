@@ -37,12 +37,14 @@
       }
       &.full-width{
         max-width:70%;
-        @include mobile-width();
         text-align:center;
         font-size:17px;
         font-weight:bold;
         margin:100px 0 70px;
         padding:30px 30px 0;
+        @media screen and (max-width:$tablet_width){
+          max-width:calc(100% - 60px);
+        }
         p{
           margin:5px 0;
           &:last-of-type{
@@ -57,8 +59,9 @@
       }
       &.half-width {
         max-width: 48.5%;
-        @include mobile-width();
         margin: 10px 0 0;
+        overflow:hidden;
+        @include mobile-width();
         &.column{
           >div {
             display: flex;
@@ -82,11 +85,6 @@
             top: 50px;
           }
         }
-      }
-      &.total-width{
-        min-width:100%;
-        background:none;
-        height:1px;
       }
       &.video{
         width:100%;
@@ -123,26 +121,51 @@
     }
     #after-reservation{
       height:auto;
+      width:$main_width - 90px;
+      max-width:calc(100% - 90px);
       margin:20px 5px;
       padding:30px 40px;
       color:#FFF;
       background-color:rgba(0, 0, 0, .66);
       @media all and (max-width:$tablet_width){
         padding:30px 15px;
+        max-width:calc(100% - 40px);
+      }
+      .kinky{
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-start;
+        gap:5px;
+        height:60px;
+        @media screen and (max-width:$mobile_width){
+          height:40px;
+        }
+        .text{
+          align-self:center;
+        }
+        .icon{
+          align-self:flex-start;
+        }
       }
       h2{
         text-transform:uppercase;
         font-size:32px;
+        line-height:40px;
         text-align:center;
+        @media screen and (max-width:$mobile_width){
+          font-size:16px;
+          line-height:20px;
+        }
       }
       h3{
         color:inherit;
         text-transform:uppercase;
         font-size:32px;
+        line-height:40px;
         text-align:center;
-        .icon{
-          position:relative;
-          top:16px;
+        @media screen and (max-width:$mobile_width){
+          font-size:16px;
+          line-height:20px;
         }
       }
       .icon{
@@ -152,6 +175,10 @@
         background-size:contain;
         height:60px;
         width:140px;
+        @media screen and (max-width:$mobile_width){
+          height:40px;
+          width:75px;
+        }
         &.arc-triomphe{background-image:url('../../images/icons/soiree/arc-triomphe.webp');}
         &.bail{background-image:url('../../images/icons/soiree/bail.webp');}
         &.bank{background-image:url('../../images/icons/soiree/bank.webp');}
@@ -168,19 +195,10 @@
       }
       p{
         font-size:24px;
-        .icon{
-          position:relative;
-          top:25px;
-        }
-        .raised{
-          position:relative;
-          top:-40px;
-          .icon{
-            left:50px;
-            top:7px;
-            height:80px;
-            width:80px;
-          }
+        line-height:30px;
+        @media screen and (max-width:$mobile_width){
+          font-size:15px;
+          line-height:18px;
         }
       }
       #monuments{
