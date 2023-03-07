@@ -25,15 +25,15 @@ class DefaultController extends AbstractController
 
     public function __construct(){
         $this->bus_types = array(
-//            'mini'      => new BusType('Mini Bus', 9, 7, 390, self::default_options['mini'], 9, 1, "(sans dj)", true, 'https://www.mini-bus-party-paris.fr'),
-            'mini'      => new BusType('Mini Bus', 9, 7, 390, self::default_options['mini'], 9, 1, "(sans dj)"),
+            'mini'      => new BusType('Mini Bus', 9, 7, 0, self::default_options['mini'], 9, 1, "(sans dj)", true, 'https://www.mini-bus-party-paris.fr'),
+//            'mini'      => new BusType('Mini Bus', 9, 7, 390, self::default_options['mini'], 9, 1, "(sans dj)"),
             'middle'    => new BusType('Middle Bus', 20, 10, 790, self::default_options['middle'], 20, 10, "(sans dj)"),
             'classic'   => new BusType('Classic Bus', 35, 12, 990, self::default_options['classic'], 35, 21),
             'double'    => new BusType('Double Bus', 55, 18, 1190, self::default_options['double'], 55, 36),
  //           'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1290, self::default_options['terrasse'], 55, 36,),
             'super'     => new BusType('Super Double Bus', 70, 18, 1290, self::default_options['super'], 70, 36)
         );
-        $this->bus_types["mini"]->addBus(   'mini bus disco',   'minibusdisco', 9,  3);
+//        $this->bus_types["mini"]->addBus(   'mini bus disco',   'minibusdisco', 9,  3);
         $this->bus_types["middle"]->addBus( 'mini boss',        'miniboss',     20, 3);
         $this->bus_types["classic"]->addBus('le sodade',        'sodade',       35, 3);
         $this->bus_types["classic"]->addBus('le poowood',       'poowood',      35, 3);
@@ -197,10 +197,14 @@ class DefaultController extends AbstractController
      */
     public function pricing(): \Symfony\Component\HttpFoundation\Response
     {
+        $bus_types = array();
+        foreach ($this->bus_types as $k => $bt){
+            if (!$bt->isExternal()) $bus_types[$k] = $bt;
+        }
         return $this->render('default/pricing.html.twig', [
             'current_page' => 'pricing',
             'route'         => '/prix',
-            'bus_types' => $this->bus_types
+            'bus_types' => $bus_types,
         ]);
     }
     /**
