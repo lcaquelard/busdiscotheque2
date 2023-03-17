@@ -5,7 +5,9 @@
             <a href="{{ path('bus') }}"><span>Nos bus</span></a>
             <ul class="drop">
                 {% for name, type in bus_types %}
+                    {% if type.isDisplayedPage() %}
                     <li{% if 'bus_' ~ name in current_path %} class="current"{% endif %}><a {% if type.isExternal() %}target="_blank"{% endif %} href="{% if type.isExternal() %}{{ type.getTarget() }}{% else %}{{ path('bus_' ~ name) }}{% endif %}"><span>{{ type.getName() }}</span></a></li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </li>

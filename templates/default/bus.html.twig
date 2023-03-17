@@ -5,7 +5,8 @@
     <img style="display:none;" src="{{ asset('build/images/background/index.webp')}}" />
     <h1>Nos différentes gammes de bus</h1>
     <div id="buses">
-        {% for type, bus in bus_types %}
+    {% for type, bus in bus_types %}
+        {% if bus.isDisplayedPage() %}
         <section class="bus_range-frame" id="{{ type }}_bus">
             <a {% if bus.isExternal() %}target="_blank"{% endif %} href="{% if bus.isExternal() %}{{ bus.getTarget() }}{% else %}{{ path('bus_'~type) }}{% endif %}">
                 <div class="bus_range-content">
@@ -20,6 +21,7 @@
                 </div>
             </a>
         </section>
-        {% endfor %}
+        {% endif %}
+    {% endfor %}
     </div>
 {% endblock %}

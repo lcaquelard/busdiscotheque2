@@ -26,20 +26,27 @@ class BusType
     private array $prices           = array();
     private array $buses            = array();
     private array $default_options  = array();
+    private bool $displayPage       = true;
+    private bool $displayPrice      = true;
     private bool $external          = false;
-    private string $target           = '';
+    private string $target          = '';
 
-    public function __construct(string $name, int $size, int $length, int $price, array $default_options, int $size_max = NULL, int $size_min = NULL, string $subtitle = '', bool $external = false, string $target = ''){
+    public function __construct(string $name, int $size, int $length, int $price, array $default_options, int $size_max = NULL, int $size_min = NULL, string $subtitle = '', bool $displayPrice = true, bool $displayPage = true, string $target = ''){
         $this->name             = $name;
         $this->subtitle         = $subtitle;
         $this->size             = $size;
         $this->size_max         = $size_max?:$this->size;
         $this->size_min         = $size_min?:$this->size_max;
         $this->length           = $length;
-        $this->external = $external;
-        if ($external === true){
-            $this->target = $target;
-        } else {
+        $this->displayPage      = $displayPage;
+        $this->displayPrice     = $displayPrice;
+        if ($displayPage === true){
+            if ($target != ''){
+                $this->external = true;
+                $this->target = $target;
+            }
+        }
+        if ($displayPrice === true){
             $this->prices = array(
                 1 => $price,
                 2 => $price + 100,
@@ -163,6 +170,26 @@ class BusType
         if (array_key_exists($option, self::options)) {
             $this->default_options[$option] = self::options[$option];
         }
+    }
+
+    public function isDisplayedPage(): bool
+    {
+        return $this->displayPage;
+    }
+
+    public function setDisplayPage(bool $displayPage)
+    {
+        $this->displayPage = $displayPage;
+    }
+
+    public function isDisplayedPrice(): bool
+    {
+        return $this->displayPrice;
+    }
+
+    public function setDisplayPrice(bool $displayPrice)
+    {
+        $this->displayPrice = $displayPrice;
     }
 
     public function isExternal(): bool
