@@ -30,7 +30,7 @@ class DefaultController extends AbstractController
             'middle'    => new BusType('Middle Bus', 20, 10, 790, self::default_options['middle'], 20, 10, "(sans dj)"),
             'classic'   => new BusType('Classic Bus', 35, 12, 990, self::default_options['classic'], 35, 21),
             'double'    => new BusType('Double Bus', 55, 18, 1190, self::default_options['double'], 55, 36),
-            'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1190, self::default_options['terrasse'], 55, 36, '', true, false),
+            'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1290, self::default_options['terrasse'], 55, 36, '', true, false),
             'super'     => new BusType('Super Double Bus', 70, 18, 1290, self::default_options['super'], 70, 36)
         );
 //        $this->bus_types["mini"]->addBus(   'mini bus disco',   'minibusdisco', 9,  3);
