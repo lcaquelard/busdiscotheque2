@@ -4,7 +4,7 @@
 {% block main %}
     <img style="display:none;" src="{{ asset('build/images/background/index.webp')}}" />
     {% for bus in buses %}
-        <section id="{{ bus.getShortname() }}" class="bus rev">
+        <article id="{{ bus.getShortname() }}" class="bus rev">
             <div class="front">
                 <div class="content">
                     <h3>{{ bus.getName() }}</h3>
@@ -22,7 +22,7 @@
                     <div class="zoom"></div>
                 </div>
             </div>
-        </section>
+        </article>
     {% endfor %}
 {% endblock %}
 {% block modals %}

@@ -65,7 +65,8 @@
     &.arcade{background-image:url(../../images/icons/bus/arcade.webp);background-position:-20px -25px;}
     &.bluetooth{background-image:url(../../images/icons/bus/bluetooth.webp);background-position: 6px -2px;background-size: 30px;}
     &.bubble{background-image:url(../../images/icons/bus/bubble.webp);background-position:-8px -17px;}
-    &.carpet{background-image:url(../../images/icons/bus/carpet.webp);background-position:3px top;}
+    &.carpet_b{background-image:url(../../images/icons/bus/carpet.webp);background-position:3px top;}
+    &.carpet_r{background-image:url(../../images/icons/bus/carpet.webp);background-position:3px top;}
     &.dj{background-image:url(../../images/icons/bus/dj.webp);background-position:9px top;}
     &.fridge{background-image:url(../../images/icons/bus/fridge.webp);background-position:8px top;}
     &.karaoke{background-image:url(../../images/icons/bus/karaoke.webp);background-position:8px top;}
@@ -105,6 +106,10 @@
     .front {background-image: url(../../images/photo/bus/classic/starlord/front.webp);}
     .back {background-image: url(../../images/photo/bus/classic/starlord/back.webp);}
   }
+  &#jeffline {
+    .front {background-image: url(../../images/photo/bus/classic/jeffline/front.webp);}
+    .back {background-image: url(../../images/photo/bus/classic/jeffline/back.webp);}
+  }
   &#condor {
     .front {background-image: url(../../images/photo/bus/double/condor/front.webp);}
     .back {background-image: url(../../images/photo/bus/double/condor/back.webp);}
@@ -120,6 +125,10 @@
   &#seven7 {
     .front {background-image: url(../../images/photo/bus/double/seven7/front.webp);}
     .back {background-image: url(../../images/photo/bus/double/seven7/back.webp);}
+  }
+  &#yoshi {
+    .front {background-image: url(../../images/photo/bus/double/yoshi/front.webp);}
+    .back {background-image: url(../../images/photo/bus/double/yoshi/back.webp);}
   }
   &#leviator {
     .front {background-image: url(../../images/photo/bus/super/leviator/front.webp);}

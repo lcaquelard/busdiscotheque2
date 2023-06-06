@@ -13,11 +13,11 @@ class DefaultController extends AbstractController
 {
     const default_options = array(
         'mini'      => array('karaoke', 'soft', 'fridge', 'screen', 'bluetooth'),
-        'middle'    => array('agent', 'bluetooth', 'carpet', 'soft', 'screen', 'fridge'),
-        'classic'   => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
-        'double'    => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
-        'terrasse'  => array('dj', 'carpet', 'soft', 'screen', 'fridge'),
-        'super'    => array('dj', 'carpet', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke')
+        'middle'    => array('agent', 'bluetooth', 'carpet_r', 'soft', 'screen', 'fridge'),
+        'classic'   => array('dj', 'carpet_r', 'soft', 'screen', 'fridge'),
+        'double'    => array('dj', 'carpet_r', 'soft', 'screen', 'fridge'),
+        'terrasse'  => array('dj', 'carpet_r', 'soft', 'screen', 'fridge'),
+        'super'    => array('dj', 'carpet_r', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke')
     );
 
     private $bus_types;
@@ -37,15 +37,17 @@ class DefaultController extends AbstractController
         $this->bus_types["middle"]->addBus( 'mini boss',        'miniboss',     20, 3);
         $this->bus_types["classic"]->addBus('le sodade',        'sodade',       35, 3);
         $this->bus_types["classic"]->addBus('le poowood',       'poowood',      35, 3);
-        $this->bus_types["classic"]->addBus('l\'ange c6',        'angec6',       35, 4);
+        $this->bus_types["classic"]->addBus('l\'ange c6',       'angec6',       35, 4);
         $this->bus_types["classic"]->addBus('le s linone',      'slinone',      35, 4);
         $this->bus_types["classic"]->addBus('le carnaval',      'carnaval',     35, 3);
         $this->bus_types["classic"]->addBus('le star-lord',     'starlord',     35, 4);
-        $this->bus_types["double"]->addBus( 'le condor',        'condor',       55, 6,  'double bus terrasse');
+        $this->bus_types["classic"]->addBus('le jeffline',      'jeffline',     35, 6);
+        $this->bus_types["double"]->addBus( 'le condor',        'condor',       55, 7,  'double bus terrasse', array('dj', 'carpet_b', 'soft', 'screen', 'fridge'));
         $this->bus_types["double"]->addBus( 'le big ben',       'bigben',       55, 6);
         $this->bus_types["double"]->addBus( 'le dark kiss',     'darkkiss',     55, 9);
         $this->bus_types["double"]->addBus( 'le seven 7',       'seven7',       55, 3);
-        $this->bus_types["super"]->addBus(  'le léviator',      'leviator',     70, 8);
+        $this->bus_types["double"]->addBus( 'le yoshi',         'yoshi',        55, 6);
+        $this->bus_types["super"]->addBus(  'le léviator',      'leviator',     70, 8, '', array('dj', 'carpet_b', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke'));
 
 
         $this->option_groups['christmas'] = new OptionGroup('christmas', 'Nos offres de Noël', false);
@@ -57,11 +59,14 @@ class DefaultController extends AbstractController
         $this->option_groups['default']->addOption('birthday_kid', 'pack anniversaire enfant', '150€', '1 BOX À BONBON, 3 BOUTEILLES DE CHAMPOMY ET UN <br><br> BUS REMPLI DE BALLONS POUR LE PLUS GRAND <br><br> BONHEUR DE VOS ENFANTS&nbsp;!');
         $this->option_groups['default']->addOption('birthday_adult', 'pack anniversaire adulte', '175€', '1 BOX À BONBON, 2 BOUTEILLES DE CHAMPAGNE <br><br> NICOLAS FEUILLATE ET UN BUS REMPLI DE BALLONS <br><br> POUR AJOUTER LA TOUCHE FINALE À VOTRE SOIRÉE&nbsp;!');
         $this->option_groups['default']->addOption('photobooth', 'Photobooth', 'À partir de 350€', 'CAPTUREZ LES MOMENTS MÉMORABLES DE VOTRE SOIRÉE EN UN SEUL CLIC ET PERSONNALISEZ VOS CLICHÉS AVEC NOTRE PHOTOBOOTH&nbsp;! EMOJIS, ARRIÈRE-PLAN SUR MESURE, FILTRES, TOUT EST BON POUR RENDRE CHAQUE PHOTO UNIQUE&nbsp;!<br><br><span class="bold">Pack(50): 350€ - Pack(100): 400€ - Pack(150): 450€</span>');
+        $this->option_groups['default']->addOption('pinata', 'piñata', '150€', 'Vous cherchez à ajouter une touche de joie et de festivités à votre événement&nbsp;?<br>Ne cherchez plus&nbsp;! Découvrez nos piñatas, le moyen idéal pour divertir vos invités et créer des souvenirs inoubliables&nbsp;!');
+        $this->option_groups['default']->addOption('balloons', 'ballonw personnalisés', '10€*', 'Apportez une explosion de couleurs à votre événement&nbsp;! Préparez-vous à transformer votre bus discotheque en un véritable paradis de couleur à votre goût&nbsp;!');
+        $this->option_groups['default']->addOption('redbull', 'redbull', '2.90€', 'Prêt à faire de votre soirée bus une expérience inoubliable&nbsp;? Partagez un redbull avec vos convives, la boisson ultime pour vous donner l\'énergie nécessaire afin de danser toute la nuit&nbsp;!');
         $this->option_groups['default']->addOption('glasses', 'lunettes lumineuses led', '180€', 'Illuminez la nuit parisienne avec des accessoires lumineux et capturez des moments inoubliables&nbsp;!<br><br><span class="bold">Pack (35) : 180€ - Pack (55) : 280€ - Pack (70) : 350€</span>');
         $this->option_groups['default']->addOption('sticks', 'bâtons lumineux led', '150€', 'Illuminez la nuit parisienne avec des accessoires lumineux et capturez des moments inoubliables&nbsp;!<br><br><span class="bold">Pack (35) : 150€ - Pack (55) : 200€ - Pack (70) : 250€</span>');
         $this->option_groups['default']->addOption('bracelets', 'bracelets lumineux led', '100€', 'Illuminez la nuit parisienne avec des accessoires lumineux et capturez des moments inoubliables&nbsp;!<br><br><span class="bold">Pack (35) : 100€ - Pack (55) : 150€ - Pack (70) : 200€</span>');
         $this->option_groups['default']->addOption('hostess', 'hôtesse', '150€', 'POUR ASSURER LA BONNE TENUE DU SERVICE TOUT AU LONG DE VOTRE SOIRÉE,<br>NOUS METTONS À VOTRE DISPOSITION L\'UNE DE NOS HÔTESSES POUR RÉPONDRE AUX BESOINS DE VOS CONVIVES, POUR VOUS GARANTIR PLUS DE SÉRENITÉ.');
-        $this->option_groups['default']->addOption('ballons', 'Votre age en ballon', '50€', 'PERSONNALISEZ VOTRE ÉVÉNEMENT JUSQU\'AU DERNIER DÉTAIL !<br><br>DE VOS 10 ANS À  VOS 100 ANS ANS,&nbsp;AJOUTEZ VOTRE AGE AVEC DEUX BALLONS CHIFFRÉS&nbsp;!');
+        $this->option_groups['default']->addOption('balloons_age', 'Votre age en ballon', '50€', 'PERSONNALISEZ VOTRE ÉVÉNEMENT JUSQU\'AU DERNIER DÉTAIL !<br><br>DE VOS 10 ANS À  VOS 100 ANS ANS,&nbsp;AJOUTEZ VOTRE AGE AVEC DEUX BALLONS CHIFFRÉS&nbsp;!');
         $this->option_groups['default']->addOption('coin_pusher', 'coin pusher machine à sous', '150€', 'DES JEUX DE FÊTE FORAINE À BORD D\'UN BUS DISCOTHEQUE, ÇA VOUS TENTE&nbsp;?<br>INSEREZ LES PIÈCES ET TENTEZ DE REMPORTER DE NOMBREUX LOTS DE PORTE CLEF&nbsp;!!');
         $this->option_groups['default']->addOption('champagne', 'Champagne', '39,90€ / bouteille', 'FAVORI DANS LES GRANDES OCCASIONS ,<br>LE CHAMPAGNE EST UN MUST HAVE DANS NOS BUS.<br>NOUS NOUS OCCUPONS DE VOUS FOURNIR TOUT AU LONG DE LA SOIRÉE GRÂCE À NOTRE CUVÉE PRESTIGE<br>NICOLAS FEUILLATE.');
         $this->option_groups['default']->addOption('wine', 'Vins', '19,90€ / bouteille', 'ROUGE, BLANC OU ROSÉ,<br>IL Y EN A POUR TOUS LES GOÛTS&nbsp;!<br>NOUS VOUS PROPOSONS ÉGALEMENT UNE SÉLECTION<br>DE VINS, POUR ACCOMPAGNER VOS PLATEAUX APÉRITIFS ET COMMENCER LA SOIRÉE TOUT EN DOUCEUR.');
@@ -82,11 +87,26 @@ class DefaultController extends AbstractController
      */
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
+        if (isset($_ENV['CANICULA'])){
+            $canicula = $_ENV['CANICULA'];
+        } else {
+            $canicula = false;
+        }
+        if (isset($_ENV['HOLIDAY_START']) && isset($_ENV['HOLIDAY_END'])){
+            $holiday_start = date('Y-m-d', strtotime($_ENV['HOLIDAY_START']));
+            $holiday_end = date('Y-m-d', strtotime($_ENV['HOLIDAY_END']));
+            $now = date('Y-m-d');
+            $holiday = ($now >= $holiday_start && $now <= $holiday_end);
+        } else {
+            $holiday = false;
+        }
         return $this->render('default/index.html.twig', [
             'current_page'  => 'index',
             'route'         => '',
             'meta_content'  => 'Busdiscothèque est le meilleur choix',
-            'bus_types' => $this->bus_types,
+            'bus_types'     => $this->bus_types,
+            'canicula'      => $canicula,
+            'holiday'      => $holiday,
         ]);
     }
     /**

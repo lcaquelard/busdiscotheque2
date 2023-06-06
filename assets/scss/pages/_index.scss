@@ -46,12 +46,13 @@
     }
     >div:nth-of-type(2){
       max-width:$main_width * 0.6;
+      @include mobile-width(calc(100% - 14px));
       margin-top:90px;
       background:url(../../images/video/video_index_still.webp);
       @include background-prs(top center, no-repeat, contain);
       @media screen and (max-width:$tablet_width){
         width:100%;
-        margin-top:0;
+        margin:0 auto;
       }
       video{
         width:100%;
@@ -102,6 +103,88 @@
     {
       height:100%;
       cursor:pointer;
+    }
+  }
+  #canicula{
+    padding:50px 0;
+    h2{
+      text-transform: uppercase;
+      font-size:24px;
+      @media screen and (max-width:$tablet_width){
+        font-size:20px;
+      }
+      @media screen and (max-width:$mobile_width){
+        font-size:16px;
+      }
+
+      &::before,&::after{
+        width:60px;
+        height:60px;
+        background-size:100%;
+        background-repeat:no-repeat;
+        background-position:center center;
+        content:'';
+        display:inline-block;
+        vertical-align: -33%;
+        @media screen and (max-width:$tablet_width){
+          width:50px;
+          height:50px;
+          vertical-align: -30%;
+        }
+        @media screen and (max-width:$mobile_width){
+          width:40px;
+          height:40px;
+          vertical-align: -27%;
+        }
+      }
+    }
+    .announcement{
+      padding-bottom:50px;
+      h2::before,
+      h2::after{
+        background-image:url('../../images/icons/canicula/hot.webp');
+      }
+    }
+    .refreshing_pack{
+      h2::before,
+      h2::after{
+        background-image:url('../../images/icons/canicula/cold.webp');
+      }
+      .elements{
+        display:flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap:20px;
+        >div{
+          h3{
+            text-transform:uppercase;
+            font-size:16px;
+            font-weight:bold;
+            @media screen and (max-width:$tablet_width){
+              font-size:13px;
+            }
+            @media screen and (max-width:$mobile_width){
+              font-size:10px;
+            }
+          }
+          .icon{
+            width:100%;
+            height:100px;
+            background-position:center top;
+            background-repeat:no-repeat;
+            background-size:contain;
+            @media screen and (max-width:$tablet_width){
+              font-size:85px;
+            }
+            @media screen and (max-width:$mobile_width){
+              height:70px;
+            }
+          }
+          &.ice .icon{background-image:url('../../images/icons/canicula/ice.webp');}
+          &.ventilator .icon{background-image:url('../../images/icons/canicula/ventilator.webp');}
+          &.water .icon{background-image:url('../../images/icons/canicula/water.webp');}
+        }
+      }
     }
   }
 }
