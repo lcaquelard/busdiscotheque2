@@ -146,9 +146,17 @@ class BusType
         return $this->buses;
     }
 
-    public function addBus(string $name, string $shortname, int $room, int $pictures, string $subtitle = '', $options = NULL)
+    public function addBus(string $name, string $shortname, int $room, int $pictures, string $subtitle = '', $specific_options = NULL)
     {
-        $this->buses[$shortname] = new Bus($name, $shortname, $room, $pictures, $subtitle, $options?:$this->default_options);
+        if (isset($specific_options) && count($specific_options) > 0) {
+            $options = array();
+            foreach ($specific_options as $option) {
+                $options[$option] = self::options[$option];
+            }
+        } else {
+            $options = $this->default_options;
+        }
+        $this->buses[$shortname] = new Bus($name, $shortname, $room, $pictures, $subtitle, $options);
     }
 
     public function removeBus(string $shortname)
