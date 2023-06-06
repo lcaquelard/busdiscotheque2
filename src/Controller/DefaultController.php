@@ -88,7 +88,7 @@ class DefaultController extends AbstractController
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
         if (isset($_ENV['CANICULA'])){
-            $canicula = $_ENV['CANICULA'];
+            $canicula = $_ENV['CANICULA'] ? true : false;
         } else {
             $canicula = false;
         }
