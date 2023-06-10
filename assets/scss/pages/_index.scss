@@ -4,6 +4,9 @@
   @include background-prs();
   main{
     align-self:stretch;
+    img{
+      max-width:100%;
+    }
   }
   .shadow {
     align-self: stretch;
