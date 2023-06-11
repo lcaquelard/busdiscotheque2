@@ -60,7 +60,7 @@
       &.half-width {
         max-width: 48.5%;
         margin: 10px 0 0;
-        overflow:hidden;
+        //overflow:hidden;
         @include mobile-width();
         &.column{
           >div {
