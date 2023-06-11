@@ -11,6 +11,23 @@ import '../scss/main.scss';
 import $ from 'jquery';
 
 $(window).ready(function() {
+
+ //Mobile phone navigation menu
+ $('#hamburger').on('click', function(e){
+  $('#mobile_nav').addClass('active');
+ });
+ $('#mobile_nav .close').on('click', function(e){
+  $('#mobile_nav').removeClass('active');
+ });
+ $('#mobile_nav .droppable .chevron').on('click', function(e){
+  const droppable = $(this).parent();
+  if (droppable.hasClass('active')) {
+   droppable.removeClass('active');
+  }else{
+   droppable.addClass('active');
+  }
+ });
+
  $('video').on('click', function(){
   if (this.paused) {
    $(this).parent().addClass('playing');

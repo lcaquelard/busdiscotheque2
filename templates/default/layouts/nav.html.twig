@@ -1,4 +1,5 @@
 <nav>
+    <div id="hamburger"></div>
     <ul>
         <li{% if 'index' in current_path %} class="current"{% endif %}><a href="{{ path('index') }}"></a></li>
         <li class="droppable{% if 'bus' in current_path %} current{% endif %}">

@@ -33,6 +33,7 @@
         {% include 'default/layouts/header.html.twig' %}
         <main>{% block main %}{% endblock %}</main>
         {% include 'default/layouts/footer.html.twig' %}
-    {% block modals %}{% endblock %}
+        {% block modals %}{% endblock %}
+        {% include 'default/layouts/mobile_nav.html.twig' %}
     </body>
 </html>

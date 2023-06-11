@@ -1,0 +1,117 @@
+
+#mobile_nav{
+  position:fixed;
+  top:0;bottom:0;left:0;
+  background-color:#F1F1F1;
+  visibility:hidden;
+  width:100%;
+  max-width:0;
+  transition:max-width ease-in-out .2s;
+  z-index:10;
+  overflow: hidden;
+  &.active{
+    visibility:visible;
+    max-width:100%;
+  }
+  .options{
+    height:70px;
+    .close {
+      background-image:url(../../images/icons/close.webp);
+      background-position: center center;
+      background-size:contain;
+      background-repeat:no-repeat;
+      width:40px;
+      height:40px;
+      margin:5px;
+      float:right;
+      cursor:pointer;
+    }
+  }
+  > .menu{
+    display:flex;
+    height: 100%;
+    flex-direction:column;
+    align-items: stretch;
+    width:100%;
+    margin:0;
+    letter-spacing:0;
+
+    > .item:nth-of-type(1)>a{
+        background-image:url(../../images/logo_dark.webp);
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:contain;
+    }
+    > .item{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      width:calc(100% - 50px);
+      background-color: #F1F1F1;
+      transition: all .6s;
+
+      a{
+        width:100%;
+        height:50px;
+        font-size:32px;
+        font-family:$nav_font;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+      }
+
+      .icons{
+        //display:none;
+      }
+
+      &.droppable{
+        position:relative;
+        .chevron{
+          display:inline-block;
+          content:">";
+          color:#000;
+          position:absolute;
+          right:-35px;
+          top:5px;
+          transition:transform .2s;
+          line-height:40px;
+          font-size:40px;
+          cursor:pointer;
+        }
+        .drop{
+          background-color:#F1F1F1;
+          //transform:scale(0, 0);
+          max-height:0;
+          transition: all ease-in-out .3s;
+          min-width:100%;
+          padding-left:50px;
+          overflow:hidden;
+          .item{
+            background-color:#F1F1F1;
+            border-left:1px solid #000;
+            width:100%;
+            &.current{
+              color:#FFF;
+              background-color:#323232;
+            }
+          }
+        }
+        &.active{
+          .chevron{
+            transform:rotate(90deg);
+          }
+          >.drop{
+            max-height:1000px;
+            //transform:scale(1, 1);
+          }
+        }
+      }
+
+      &.current>a{
+        background-color:#323232;
+        color: #FFF;
+      }
+    }
+  }
+}
