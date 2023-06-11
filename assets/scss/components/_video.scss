@@ -3,6 +3,7 @@
   >div.overlay{
     pointer-events: none;
     background-image:url(../../images/icons/play.webp);
+    z-index:1;
     @include background-prs(center center, no-repeat, 15%);
     @include position();
   }
