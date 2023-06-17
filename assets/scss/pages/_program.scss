@@ -28,6 +28,13 @@
           font-size:13px;
           padding:15px;
         }
+        img{
+          overflow:initial;
+          word-break:initial;
+          @media screen and (max-width:$tablet-width){
+            max-width:380px;
+          }
+        }
       }
       &.column{
         display:flex;
