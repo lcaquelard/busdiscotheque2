@@ -16,8 +16,8 @@ class DefaultController extends AbstractController
         'middle'    => array('agent', 'bluetooth', 'carpet_r', 'soft', 'screen', 'fridge'),
         'classic'   => array('dj', 'carpet_r', 'soft', 'screen', 'fridge'),
         'double'    => array('dj', 'carpet_r', 'soft', 'screen', 'fridge'),
-        'terrasse'  => array('dj', 'carpet_r', 'soft', 'screen', 'fridge'),
-        'super'    => array('dj', 'carpet_r', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke')
+        'terrasse'  => array('dj', 'carpet_b', 'soft', 'screen', 'fridge'),
+        'super'    => array('dj', 'carpet_b', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke')
     );
 
     private $bus_types;
