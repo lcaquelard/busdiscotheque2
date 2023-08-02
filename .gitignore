@@ -1,3 +1,7 @@
+# Voluminous video files
+
+/assets/images/video/media/*
+
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*
