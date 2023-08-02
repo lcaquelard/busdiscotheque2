@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% set title = "Médias : Nos photos et vidéos" %}
+{% set meta_description = "Observez des exemples de nos prestations avec des photos et vidéos de nos super soirées en bus !" %}
+{% block main %}
+    <h1>Media</h1>
+    <section id="video">
+        <h2>Vidéos</h2>
+        {% for video in medias['videos'] %}
+            <div class="row">
+                <h3>{{ video.title }}</h3>
+                <div class="content">
+                    {% for content in video['content'] %}
+                        <div class="video"><div class="overlay"></div><video loop><source src="{{ asset('build/images/video/media/'~content['name']~'.mp4') }}" type="video/mp4"/></video></div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}

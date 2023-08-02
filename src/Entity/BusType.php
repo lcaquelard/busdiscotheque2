@@ -53,6 +53,7 @@ class BusType
                 2 => $price + 100,
                 3 => $price + 200,
                 4 => $price + 300,
+                5 => $price + 400,
             );
             if (count($default_options) > 0) {
                 foreach ($default_options as $option) {

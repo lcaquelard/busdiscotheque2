@@ -29,9 +29,9 @@ class DefaultController extends AbstractController
 //            'mini'      => new BusType('Mini Bus', 9, 7, 390, self::default_options['mini'], 9, 1, "(sans dj)"),
             'middle'    => new BusType('Middle Bus', 20, 10, 790, self::default_options['middle'], 20, 10, "(sans dj)"),
             'classic'   => new BusType('Classic Bus', 35, 12, 990, self::default_options['classic'], 35, 21),
-            'double'    => new BusType('Double Bus', 55, 18, 1190, self::default_options['double'], 55, 36),
-            'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1290, self::default_options['terrasse'], 55, 36, '', true, false),
-            'super'     => new BusType('Super Double Bus', 70, 18, 1290, self::default_options['super'], 70, 36)
+            'double'    => new BusType('Double Bus', 55, 18, 1290, self::default_options['double'], 55, 36),
+            'terrasse'  => new BusType('Double Bus Terrasse', 55, 18, 1390, self::default_options['terrasse'], 55, 36, '', true, false),
+            'super'     => new BusType('Super Double Bus', 70, 18, 1390, self::default_options['super'], 70, 36)
         );
 //        $this->bus_types["mini"]->addBus(   'mini bus disco',   'minibusdisco', 9,  3);
         $this->bus_types["middle"]->addBus( 'mini boss',        'miniboss',     20, 3);
@@ -59,7 +59,8 @@ class DefaultController extends AbstractController
         $this->option_groups['default']->addOption('birthday_kid', 'pack anniversaire enfant', '150€', '1 BOX À BONBON, 3 BOUTEILLES DE CHAMPOMY ET UN <br><br> BUS REMPLI DE BALLONS POUR LE PLUS GRAND <br><br> BONHEUR DE VOS ENFANTS&nbsp;!');
         $this->option_groups['default']->addOption('birthday_adult', 'pack anniversaire adulte', '175€', '1 BOX À BONBON, 2 BOUTEILLES DE CHAMPAGNE <br><br> NICOLAS FEUILLATE ET UN BUS REMPLI DE BALLONS <br><br> POUR AJOUTER LA TOUCHE FINALE À VOTRE SOIRÉE&nbsp;!');
         $this->option_groups['default']->addOption('photobooth', 'Photobooth', 'À partir de 350€', 'CAPTUREZ LES MOMENTS MÉMORABLES DE VOTRE SOIRÉE EN UN SEUL CLIC ET PERSONNALISEZ VOS CLICHÉS AVEC NOTRE PHOTOBOOTH&nbsp;! EMOJIS, ARRIÈRE-PLAN SUR MESURE, FILTRES, TOUT EST BON POUR RENDRE CHAQUE PHOTO UNIQUE&nbsp;!<br><br><span class="bold">Pack(50): 350€ - Pack(100): 400€ - Pack(150): 450€</span>');
-        $this->option_groups['default']->addOption('pinata', 'piñata', '150€', 'Vous cherchez à ajouter une touche de joie et de festivités à votre événement&nbsp;?<br>Ne cherchez plus&nbsp;! Découvrez nos piñatas, le moyen idéal pour divertir vos invités et créer des souvenirs inoubliables&nbsp;!');
+        //$this->option_groups['default']->addOption('pinata', 'piñata', '150€', 'Vous cherchez à ajouter une touche de joie et de festivités à votre événement&nbsp;?<br>Ne cherchez plus&nbsp;! Découvrez nos piñatas, le moyen idéal pour divertir vos invités et créer des souvenirs inoubliables&nbsp;!');
+        $this->option_groups['default']->addOption('spinner', 'SPINNER 360', '(À venir)', "Explorez de nouvelles dimensions avec notre photobooth 360&nbsp;! Plongez dans un monde de divertissement où vos souvenirs prennent vie et vos événements sont gravés dans l'éternité&nbsp;!");
         $this->option_groups['default']->addOption('balloons', 'ballons personnalisés', '100€', 'Apportez une explosion de couleurs à votre événement&nbsp;! Préparez-vous à transformer votre bus discotheque en un véritable paradis de couleur à votre goût&nbsp;!');
         $this->option_groups['default']->addOption('redbull', 'redbull', '2.90€', 'Prêt à faire de votre soirée bus une expérience inoubliable&nbsp;? Partagez un redbull avec vos convives, la boisson ultime pour vous donner l\'énergie nécessaire afin de danser toute la nuit&nbsp;!');
         $this->option_groups['default']->addOption('glasses', 'lunettes lumineuses led', '180€', 'Illuminez la nuit parisienne avec des accessoires lumineux et capturez des moments inoubliables&nbsp;!<br><br><span class="bold">Pack (35) : 180€ - Pack (55) : 280€ - Pack (70) : 350€</span>');
@@ -264,7 +265,74 @@ class DefaultController extends AbstractController
             'route'         => '/options',
             'groups'        => $this->option_groups,
             'pictures'      => $pictures,
-            'bus_types' => $this->bus_types,
+            'bus_types'     => $this->bus_types,
+        ]);
+    }
+    /**
+     * @Route("/media", name="media")
+     * @return Response
+     */
+    public function media(): \Symfony\Component\HttpFoundation\Response
+    {
+        $medias = array(
+            'videos' => array(
+                array(
+                    'title'     => 'Nos packs anniversaire / photobooth / ballons',
+                    'content'   => array(
+                        array('name'=>'pack_1_anniversaire','title'=>'Pack anniversaire'),
+                        array('name'=>'pack_2_anniversaire&noel','title'=>'Pack anniversaire Noël'),
+                        array('name'=>'pack_3_anniversaire&ballons','title'=>'Pack anniversaire & ballons'),
+                        array('name'=>'pack_4_anniversaire&photobooth','title'=>'Pack anniversaire et Photobooth'),
+                    ),
+                ),
+                array(
+                    'title'     => 'Présentation bus',
+                    'content'   => array(
+                        array('name'=>'bus_1_yoshi','title'=>'BUS YOSHI'),
+                        array('name'=>'bus_2_jeffline','title'=>'BUS JEFFLINE'),
+                        array('name'=>'bus_3_condor','title'=>'BUS CONDOR'),
+                    )
+                ),
+                array(
+                    'title'     => 'Notre dancefloor',
+                    'content'   => array(
+                        array('name'=>'interieur_bus_1','title'=>'Bus intérieur 1'),
+                        array('name'=>'interieur_bus_2','title'=>'Bus intérieur 2'),
+                        array('name'=>'interieur_bus_3','title'=>'Bus intérieur 3'),
+                    )
+                ),
+                array(
+                    'title'     => 'Nos ambiances',
+                    'content'   => array(
+                        array('name'=>'ambiance_1','title'=>'Ambiance 1'),
+                        array('name'=>'ambiance_2','title'=>'Ambiance 2'),
+                        array('name'=>'ambiance_3','title'=>'Ambiance 3'),
+                    )
+                ),
+                array(
+                    'title'     => 'Un regard extérieur',
+                    'content'   => array(
+                        array('name'=>'exterieur_1','title'=>'Extérieur 1'),
+                        array('name'=>'exterieur_2','title'=>'Extérieur 2'),
+                        array('name'=>'exterieur_3','title'=>'Extérieur 3'),
+                    )
+                ),
+                array(
+                    'title'     => 'Pour plus de fun',
+                    'content'   => array(
+                        array('name'=>'fatal_1','title'=>'Fatal 1'),
+                        array('name'=>'fatal_2','title'=>'Fatal 2'),
+                        array('name'=>'fatal_3','title'=>'Fatal 3'),
+                    )
+                ),
+            ),
+            'photos' => array()
+        );
+        return $this->render('default/media.html.twig', [
+            'current_page'  => 'media',
+            'route'         => '/media',
+            'medias'      => $medias,
+            'bus_types'     => $this->bus_types,
         ]);
     }
     /**
