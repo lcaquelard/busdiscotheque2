@@ -277,7 +277,8 @@ class DefaultController extends AbstractController
         $medias = array(
             'videos' => array(
                 array(
-                    'title'     => 'Nos packs anniversaire / photobooth / ballons',
+                    //'title'     => 'Nos packs anniversaire / photobooth / ballons',
+                    'title'     => 'Nos packs',
                     'content'   => array(
                         array('name'=>'pack_1_anniversaire','title'=>'Pack anniversaire'),
                         array('name'=>'pack_2_anniversaire&noel','title'=>'Pack anniversaire Noël'),
@@ -286,7 +287,7 @@ class DefaultController extends AbstractController
                     ),
                 ),
                 array(
-                    'title'     => 'Présentation bus',
+                    'title'     => 'Présentation des bus',
                     'content'   => array(
                         array('name'=>'bus_1_yoshi','title'=>'BUS YOSHI'),
                         array('name'=>'bus_2_jeffline','title'=>'BUS JEFFLINE'),
@@ -318,7 +319,7 @@ class DefaultController extends AbstractController
                     )
                 ),
                 array(
-                    'title'     => 'Pour plus de fun',
+                    'title'     => 'Pour plus de fun !',
                     'content'   => array(
                         array('name'=>'fatal_1','title'=>'Fatal 1'),
                         array('name'=>'fatal_2','title'=>'Fatal 2'),
