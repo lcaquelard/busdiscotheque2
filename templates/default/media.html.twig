@@ -10,7 +10,7 @@
                 <h3>{{ video.title }}</h3>
                 <div class="content">
                     {% for content in video['content'] %}
-                        <div class="video"><div class="overlay"></div><video preload="metadata" loop><source src="/{{ asset('build/images/video/media/'~content['name']~'.mp4') }}" type="video/mp4"/></video></div>
+                        <div class="video"><div class="overlay"></div><video preload="metadata" loop><source src="{{ asset('build/images/video/media/'~content['name']~'.mp4') }}" type="video/mp4"/></video></div>
                     {% endfor %}
                 </div>
             </div>
