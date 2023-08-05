@@ -11,7 +11,6 @@ import '../scss/main.scss';
 import $ from 'jquery';
 
 $(window).ready(function() {
-
  //Mobile phone navigation menu
  $('#hamburger').on('click', function(e){
   $('#mobile_nav').addClass('active');
@@ -38,7 +37,6 @@ $(window).ready(function() {
   }
  });
 
-
  $('#index #party.slider').slick({
   infinite: true,
   slidesToShow: 5,
@@ -57,6 +55,7 @@ $(window).ready(function() {
    }
   ],
  });
+
  $('#index #party.slider img.slick-slide').on('click', function(){
   let index = $(this).data('slick-index');
   let id = $(this).closest(".slider").attr('id');
@@ -75,6 +74,7 @@ $(window).ready(function() {
    });
   }
  });
+
  $('#options main section .slider').slick({
   infinite: true,
   slidesToShow: 6,
@@ -92,24 +92,7 @@ $(window).ready(function() {
    }
   ],
  }).css('opacity',1);
- $('#options main section .slider img.slick-slide').on('click', function(){
-  let index = $(this).data('slick-index');
-  let id = $(this).closest("section").attr('id').replace('_slider','');
-  let modal = $('.modal.'+id);
-  let slider = modal.find('.slider');
-  modal.addClass('active');
-  if (slider.hasClass('slick-initialized')){
-   slider.slick('slickGoTo', index, true);
-  } else {
-   slider.slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    swipeToSlide: true,
-    initialSlide: index,
-   });
-  }
- });
+
  $('section.bus').on('click', function(){
   let id = $(this).attr('id');
   let modal = $('.modal.'+id);
@@ -128,6 +111,35 @@ $(window).ready(function() {
    });
   }
  });
+
+ $('#options main section .slider img.slick-slide').on('click', function(){
+  let index = $(this).data('slick-index');
+  let id = $(this).closest("section").attr('id').replace('_slider','');
+  let modal = $('.modal.'+id);
+  let slider = modal.find('.slider');
+  modal.addClass('active');
+  if (slider.hasClass('slick-initialized')){
+   slider.slick('slickGoTo', index, true);
+  } else {
+   slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    swipeToSlide: true,
+    initialSlide: index,
+   });
+  }
+ });
+ //
+ // $('#media .row .toggle.show').on('click', function(){
+ //  const row = $(this).parent('.row');
+ //  row.removeClass('hidden');
+ // });
+ //
+ // $('#media .row .toggle.hide').on('click', function(){
+ //  const row = $(this).parent();
+ //  row.addClass('hidden');
+ // });
 
  $('.modal .close').on('click', function(){
   $(this).parent().removeClass('active');

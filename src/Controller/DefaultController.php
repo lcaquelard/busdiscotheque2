@@ -281,9 +281,9 @@ class DefaultController extends AbstractController
                     'title'     => 'Nos packs anniversaire / photobooth / ballons',
                     'content'   => array(
                         array('name'=>'pack_1_anniversaire','title'=>'Pack anniversaire'),
-                        array('name'=>'pack_2_anniversaire&noel','title'=>'Pack anniversaire Noël'),
-                        array('name'=>'pack_3_anniversaire&ballons','title'=>'Pack anniversaire & ballons'),
-                        array('name'=>'pack_4_anniversaire&photobooth','title'=>'Pack anniversaire et Photobooth'),
+                        array('name'=>'pack_2_anniversaire_noel','title'=>'Pack anniversaire Noël'),
+                        array('name'=>'pack_3_anniversaire_ballons','title'=>'Pack anniversaire & ballons'),
+                        array('name'=>'pack_4_anniversaire_photobooth','title'=>'Pack anniversaire et Photobooth'),
                     ),
                 ),
                 array(
@@ -297,9 +297,9 @@ class DefaultController extends AbstractController
                 array(
                     'title'     => 'Notre dancefloor',
                     'content'   => array(
-                        array('name'=>'interieur_bus_1','title'=>'Bus intérieur 1'),
-                        array('name'=>'interieur_bus_2','title'=>'Bus intérieur 2'),
-                        array('name'=>'interieur_bus_3','title'=>'Bus intérieur 3'),
+                        array('name'=>'dancefloor_1','title'=>'Bus intérieur 1'),
+                        array('name'=>'dancefloor_2','title'=>'Bus intérieur 2'),
+                        array('name'=>'dancefloor_3','title'=>'Bus intérieur 3'),
                     )
                 ),
                 array(

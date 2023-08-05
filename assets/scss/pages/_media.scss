@@ -28,15 +28,38 @@
           font-size: 20px;
         }
       }
+      .toggle{
+        color:#FFF;
+        margin-left:120px;
+        cursor:pointer;
+        &.show{
+          display:none;
+        }
+        &.hide{
+          display:block;
+        }
+      }
 
       .content {
         width: 100%;
+        overflow:hidden;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         gap: 15px;
         @media all and (max-width: $mobile_width) {
           flex-direction: column;
+        }
+        .class{
+          @include background-prs(top center, no-repeat, contain);
+        }
+      }
+      &.hidden {
+        .content {
+          height: 0;
+        }
+        .toggle.show{
+          display:block;
         }
       }
     }
