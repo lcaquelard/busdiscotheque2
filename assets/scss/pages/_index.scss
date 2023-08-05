@@ -52,7 +52,7 @@
       max-width:$main_width * 0.6;
       @include mobile-width(calc(100% - 14px));
       margin-top:90px;
-      background:url(../../images/video/video_index_still.webp);
+      //background:url(../../images/video/video_index.webp);
       @include background-prs(top center, no-repeat, contain);
       @media screen and (max-width:$tablet_width){
         width:100%;
