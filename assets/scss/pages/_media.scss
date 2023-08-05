@@ -50,7 +50,7 @@
         @media all and (max-width: $mobile_width) {
           flex-direction: column;
         }
-        .class{
+        .video{
           @include background-prs(top center, no-repeat, contain);
         }
       }
