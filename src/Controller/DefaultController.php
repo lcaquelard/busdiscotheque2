@@ -278,7 +278,7 @@ class DefaultController extends AbstractController
             'videos' => array(
                 array(
                     //'title'     => 'Nos packs anniversaire / photobooth / ballons',
-                    'title'     => 'Nos packs',
+                    'title'     => 'Nos packs anniversaire / photobooth / ballons',
                     'content'   => array(
                         array('name'=>'pack_1_anniversaire','title'=>'Pack anniversaire'),
                         array('name'=>'pack_2_anniversaire&noel','title'=>'Pack anniversaire Noël'),

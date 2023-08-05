@@ -46,7 +46,7 @@
                     <tr>
                         <td>{{ i }}h</td>
                         {% for bus_type in bus_types %}
-                            <td>{{ bus_type.getPrice(i) }}€</td>
+                            <td>{% if i != 5 %}{{ bus_type.getPrice(i) }}{% else %}{{ bus_type.getPrice(i) + 300 }}{% endif %}€</td>
                         {% endfor %}
                     </tr>
                 {% endfor %}
@@ -57,7 +57,7 @@
             Pour toute demande de devis spécifique et pour tout supplément, veuillez nous contacter ci-dessous.
         </p>
     </section>
-    <section id="crypto" class="shadow dark">
+    <!--section id="crypto" class="shadow dark">
         <div>
             <div class="description">
                 <p class="big">
@@ -78,5 +78,5 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section-->
 {% endblock %}
