@@ -8,13 +8,84 @@
       max-width:100%;
     }
   }
-  .shadow {
-    align-self: stretch;
-    text-align: center;
-    background-color: rgba(24, 24, 24, 0.78);
-    color: #FFF;
-    justify-content: center;
+  section{
     width:100%;
+    max-width:1000px;
+    &.shadow {
+      align-self: stretch;
+      text-align: center;
+      background-color: rgba(24, 24, 24, 0.78);
+      color: #FFF;
+      max-width:100%;
+      >div {
+        width:100%;
+        max-width:1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &#information > div{
+        display:flex;
+        flex-direction:row;
+        @media screen and (max-width:$tablet_width){
+          flex-direction:column;
+        }
+
+        >div:nth-of-type(1){
+          max-width:$main_width * 0.4;
+          @include mobile-width(calc(100% - 14px));
+          display:flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding:0 7px;
+        }
+        >div:nth-of-type(2){
+          max-width:$main_width * 0.6;
+          width:100%;
+          @include mobile-width(calc(100% - 14px));
+          margin-top:90px;
+          background:url(../../images/video/video_index.webp);
+          @include background-prs(top center, no-repeat, contain);
+          @media screen and (max-width:$tablet_width){
+            max-width:none;
+            margin:0 auto;
+          }
+          video{
+            width:100%;
+          }
+        }
+        .contact{
+          display:flex;
+          flex-direction: column;
+
+          &-tel{
+            font-size:20px;
+          }
+          &-holiday{
+            color:#F22A00;
+            background-color:rgba(0,0,0,.35)
+          }
+          &-form{
+            display:flex;
+            justify-content:space-between;
+            input,textarea {
+              color: #1A2DF3;
+              &:hover{
+                background-color: rgba(26, 45, 243, 0.4);
+              }
+              &.half{
+                width:47%;
+              }
+              &.full{
+                width:100%;
+              }
+            }
+          }
+        }
+      }
+    }
 
     p {
       max-width: $main_width;
@@ -27,69 +98,6 @@
         text-shadow: 0 0 5px #FFF;
       }
     }
-  }
-  .column{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .bothsides{
-    display:flex;
-    flex-direction:row;
-    @media screen and (max-width:$tablet_width){
-      flex-direction:column;
-    }
-
-    >div:nth-of-type(1){
-      max-width:$main_width * 0.4;
-      @include mobile-width(calc(100% - 14px));
-      display:flex;
-      flex-direction: column;
-      justify-content: space-around;
-      padding:0 7px;
-    }
-    >div:nth-of-type(2){
-      max-width:$main_width * 0.6;
-      @include mobile-width(calc(100% - 14px));
-      margin-top:90px;
-      background:url(../../images/video/video_index.webp);
-      @include background-prs(top center, no-repeat, contain);
-      @media screen and (max-width:$tablet_width){
-        width:100%;
-        margin:0 auto;
-      }
-      video{
-        width:100%;
-      }
-    }
-  }
-  .contact{
-     display:flex;
-     flex-direction: column;
-
-     &-tel{
-       font-size:20px;
-     }
-    &-holiday{
-      color:#F22A00;
-      background-color:rgba(0,0,0,.35)
-    }
-     &-form{
-       display:flex;
-       justify-content:space-between;
-       input,textarea {
-         color: #1A2DF3;
-         &:hover{
-           background-color: rgba(26, 45, 243, 0.4);
-         }
-         &.half{
-           width:47%;
-         }
-         &.full{
-           width:100%;
-         }
-       }
-     }
   }
   #party.slider{
     width:100%;

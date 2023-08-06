@@ -7,14 +7,16 @@
     <h1>Bus Discothèque Paris</h1>
     {% if holiday == true %}
     {% endif %}
-    <section class="shadow column">
-        <h2>LUXURY PRIVATE PARTY BUS</h2>
-        <p>
-            Avec <a href="{{ path('bus') }}">ses véhicules</a> entièrement réaménagés et son concept totalement inédit, Bus Discotheque Paris offre un décor prestigieux pour la tenue de vos événements les plus marquants. En privatisant l'un des bus de notre flotte, c’est une visite inédite de la capitale que vous vous offrirez le temps d’une soirée, en réunissant tous les éléments pour faire votre bonheur : vos proches, vos musiques préférées, un verre à la main, Paris !
-        </p>
-        <p>
-            Fondé il y a plus de 10 ans, Bus Discotheque révolutionne la fête mondaine parisienne en <a href="{{ path('pricing') }}">vous offrant</a> une expérience inoubliable entièrement à votre image, pour que vos yeux scintillent comme les milliers de lumières de la Tour Eiffel...
-        </p>
+    <section id="intro" class="shadow">
+        <div>
+            <h2>LUXURY PRIVATE PARTY BUS</h2>
+            <p>
+                Avec <a href="{{ path('bus') }}">ses véhicules</a> entièrement réaménagés et son concept totalement inédit, Bus Discotheque Paris offre un décor prestigieux pour la tenue de vos événements les plus marquants. En privatisant l'un des bus de notre flotte, c’est une visite inédite de la capitale que vous vous offrirez le temps d’une soirée, en réunissant tous les éléments pour faire votre bonheur : vos proches, vos musiques préférées, un verre à la main, Paris !
+            </p>
+            <p>
+                Fondé il y a plus de 10 ans, Bus Discotheque révolutionne la fête mondaine parisienne en <a href="{{ path('pricing') }}">vous offrant</a> une expérience inoubliable entièrement à votre image, pour que vos yeux scintillent comme les milliers de lumières de la Tour Eiffel...
+            </p>
+        </div>
     </section>
     <section id="party" class="slider">
         <img src="{{ asset('build/images/photo/index/small/1.webp') }}" alt="Image défilant horizontalement">
@@ -48,55 +50,59 @@
         <img src="{{ asset('build/images/photo/index/small/29.webp') }}" alt="Image défilant horizontalement">
         <img src="{{ asset('build/images/photo/index/small/30.webp') }}" alt="Image défilant horizontalement">
     </section>
-    <section class="shadow bothsides">
+    <section id="information" class="shadow">
         <div>
-            <h3>Votre soirée commence ici !</h3>
-            <p>Bus Discotheque Paris est à l'écoute de toutes vos demandes et vous propose de <a href="{{ path('options') }}">personnaliser</a> entièrement votre programme. Plus d'infos sur le déroulé complet de <a href="{{ path('program') }}">votre soirée</a> !</p>
+            <div>
+                <h3>Votre soirée commence ici !</h3>
+                <p>Bus Discotheque Paris est à l'écoute de toutes vos demandes et vous propose de <a href="{{ path('options') }}">personnaliser</a> entièrement votre programme. Plus d'infos sur le déroulé complet de <a href="{{ path('program') }}">votre soirée</a> !</p>
 
-            <p class="contact">
-                <span class="contact-booking"><a href="{{ path('booking') }}">Réservation</a></span>
-                <span class="contact-tel">01 89 47 07 40</span>
-                {% if "now"|date('m-d') >= '08-01' and "now"|date('m-d') <= '08-31' %}
-                <span class="contact-holiday">Notre réception étant en vacances entre le <span class="bold">1er et le 25 août</span>, il n'est pas possible de faire de réservation par téléphone entre ces dates. Vous recevrez en revanche toujours une réponse personnalisée en nous joignant par email.</span>
-                {% endif %}
-                <span class="contact-open">Du lundi au samedi de 10h à 19h</span>
-                <span class="contact-email">commercial@busdiscotheque.com</span>
-                <span class="contact-social-message">Retrouvez nous sur nos réseaux sociaux !</span>
-            </p>
+                <p class="contact">
+                    <span class="contact-booking"><a href="{{ path('booking') }}">Réservation</a></span>
+                    <span class="contact-tel">01 89 47 07 40</span>
+                    {% if "now"|date('m-d') >= '08-01' and "now"|date('m-d') <= '08-31' %}
+                        <span class="contact-holiday">Notre réception étant en vacances entre le <span class="bold">1er et le 25 août</span>, il n'est pas possible de faire de réservation par téléphone entre ces dates. Vous recevrez en revanche toujours une réponse personnalisée en nous joignant par email.</span>
+                    {% endif %}
+                    <span class="contact-open">Du lundi au samedi de 10h à 19h</span>
+                    <span class="contact-email">commercial@busdiscotheque.com</span>
+                    <span class="contact-social-message">Retrouvez nous sur nos réseaux sociaux !</span>
+                </p>
+            </div>
+            <div class="video"><div class="overlay"></div><video preload="auto" poster="{{ asset('build/images/videos/video_index.webp') }}" loop><source src="{{ asset('build/images/video/video_index.mp4') }}" type="video/mp4"/></video></div>
         </div>
-        <div class="video"><div class="overlay"></div><video preload="auto" poster="{{ asset('build/images/videos/video_index.webp') }}" loop><source src="{{ asset('build/images/video/video_index.mp4') }}" type="video/mp4"/></video></div>
     </section>
     {% if canicula == true %}
-    <section id="canicula" class="shadow column">
-        <div class="announcement">
-            <h2>message canicule</h2>
-            <p>
-                Madame, Monsieur,<br>
-                <br>
-                Conscients des fortes vagues de chaleur et sachant que certains de nos véhicules ne sont pas climatisés, Bus Discothèque s'engage à mettre les bouchées doubles pour vous raffraichir durant tout votre événement&nbsp;!<br>
-                <br>
-                Nous prenons donc les choses en mains en mettant à votre disposition, et bien sûr <strong>sans frais supplémentaires</strong>, des solutions pour contrer au mieux cette canicule.
-            </p>
-        </div>
-        <div class="refreshing_pack">
-            <h2>pack rafraichissant</h2>
-            <div class="elements">
-                <div class="ice">
-                    <h3>bac à glaçons</h3>
-                    <div class="icon">
+    <section id="canicula" class="shadow">
+        <div>
+            <div class="announcement">
+                <h2>message canicule</h2>
+                <p>
+                    Madame, Monsieur,<br>
+                    <br>
+                    Conscients des fortes vagues de chaleur et sachant que certains de nos véhicules ne sont pas climatisés, Bus Discothèque s'engage à mettre les bouchées doubles pour vous raffraichir durant tout votre événement&nbsp;!<br>
+                    <br>
+                    Nous prenons donc les choses en mains en mettant à votre disposition, et bien sûr <strong>sans frais supplémentaires</strong>, des solutions pour contrer au mieux cette canicule.
+                </p>
+            </div>
+            <div class="refreshing_pack">
+                <h2>pack rafraichissant</h2>
+                <div class="elements">
+                    <div class="ice">
+                        <h3>bac à glaçons</h3>
+                        <div class="icon">
 
+                        </div>
                     </div>
-                </div>
-                <div class="ventilator">
-                    <h3>ventilateurs</h3>
-                    <div class="icon">
+                    <div class="ventilator">
+                        <h3>ventilateurs</h3>
+                        <div class="icon">
 
+                        </div>
                     </div>
-                </div>
-                <div class="water">
-                    <h3>vaporisateur</h3>
-                    <div class="icon">
+                    <div class="water">
+                        <h3>vaporisateur</h3>
+                        <div class="icon">
 
+                        </div>
                     </div>
                 </div>
             </div>

@@ -130,16 +130,6 @@ $(window).ready(function() {
    });
   }
  });
- //
- // $('#media .row .toggle.show').on('click', function(){
- //  const row = $(this).parent('.row');
- //  row.removeClass('hidden');
- // });
- //
- // $('#media .row .toggle.hide').on('click', function(){
- //  const row = $(this).parent();
- //  row.addClass('hidden');
- // });
 
  $('.modal .close').on('click', function(){
   $(this).parent().removeClass('active');
