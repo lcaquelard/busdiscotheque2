@@ -316,6 +316,7 @@ class DefaultController extends AbstractController
                         array('name'=>'exterieur_1','title'=>'Extérieur 1'),
                         array('name'=>'exterieur_2','title'=>'Extérieur 2'),
                         array('name'=>'exterieur_3','title'=>'Extérieur 3'),
+                        array('name'=>'exterieur_4','title'=>'Extérieur 4'),
                     )
                 ),
                 array(

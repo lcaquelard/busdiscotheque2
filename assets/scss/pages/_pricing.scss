@@ -1,14 +1,11 @@
 #pricing{
-  #fullscreen-bg{
+  /*#fullscreen-bg{
     top:-1500px;
-  }
+  }*/
   main{
     align-self:stretch;
     section{
       color:#FAFAFA;
-      width: 100%;
-      display:flex;
-      align-items:center;
       &.shadow{
         background-color: rgba(0,0,0,.37);
         &.dark{
@@ -16,6 +13,9 @@
         }
       }
       &#prices {
+        width: 100%;
+        display:flex;
+        align-items:center;
         margin: 40px 0 0;
         flex-direction:column;
         > * {
@@ -58,6 +58,30 @@
           to {
             margin-left: 0;
           }
+        }
+      }
+      &#better_offer{
+        margin:80px 0;
+        h2{
+          text-align:center;
+          margin:0 0 40px;
+          padding:0 50px;
+          font-size:25px;
+          &::before,&::after{
+            background-image:url('../../images/icons/cash.webp');
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            content: "";
+            display: inline-block;
+            height: 60px;
+            vertical-align: -33%;
+            width: 60px;
+            margin:0 30px;
+          }
+        }
+        p{
+          font-size:18px;
         }
       }
       &#crypto{
