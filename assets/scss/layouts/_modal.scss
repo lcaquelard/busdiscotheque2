@@ -50,36 +50,46 @@ div.modal{
       height:100%;
       .slick-track {
         display: flex !important;
-        align-items:flex-start;
+        align-items:center;
         height:100%;
         .slick-slide {
-          height: auto;
+          height: 100%;
           max-height:100%;
           object-fit:contain;
+          > img {
+            max-height:100%;
+          }
         }
       }
     }
     &.side-content {
-      .slick-slide {
-        display: flex;
-        @media all and (max-width: $mobile_width) {
-          flex-direction: column;
-        }
-        > img {
-          width: 54%;
+      .slick-track {
+        display: flex !important;
+        align-items:flex-start;
+        height:100%;
+        .slick-slide {
+          display: flex;
           @media all and (max-width: $mobile_width) {
-            width: 100%
+            flex-direction: column;
           }
-        }
-        > p {
-          padding-top: 200px;
-          width: calc(46% - 50px);
-          @media all and (max-width: $mobile_width) {
-            padding-top: 0;
-            width: 100%
+
+          > img {
+            width: 54%;
+            @media all and (max-width: $mobile_width) {
+              width: 100%
+            }
           }
-          font-size: 28px;
-          text-align: center;
+
+          > p {
+            padding-top: 200px;
+            width: calc(46% - 50px);
+            @media all and (max-width: $mobile_width) {
+              padding-top: 0;
+              width: 100%
+            }
+            font-size: 28px;
+            text-align: center;
+          }
         }
       }
     }

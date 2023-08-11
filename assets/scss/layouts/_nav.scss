@@ -19,7 +19,7 @@ nav {
         background-image:url(../../images/logo.webp);
       }*/
     }
-    > li > a{
+    > li a{
       padding:10px 0 0;
     }
   }
@@ -40,6 +40,9 @@ nav {
       li{
         border-left:none;
         height:30px;
+        a {
+          padding:5px 0 0;
+        }
       }
     }
 
