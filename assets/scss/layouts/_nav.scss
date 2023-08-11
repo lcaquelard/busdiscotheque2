@@ -19,6 +19,9 @@ nav {
         background-image:url(../../images/logo.webp);
       }*/
     }
+    > li a{
+      padding:15px 0 0;
+    }
   }
   li{
     background-color: #F1F1F1;
@@ -69,7 +72,6 @@ nav {
         display:inline-block;
         height:100%;
         width:100%;
-        padding:20px 0;
         vertical-align:middle;
       }
     }

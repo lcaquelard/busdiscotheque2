@@ -105,7 +105,7 @@ $(window).ready(function() {
    {
     breakpoint:600,
     settings:{
-     slidesToShow:3
+     slidesToShow:1
     }
    }
   ],

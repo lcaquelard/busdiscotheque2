@@ -1,8 +1,13 @@
 #photo{
   section{
+    width:100%;
+    max-width:$main_width;
+    @media all and (max-width:$tablet_width) {
+      max-width:100%;
+    }
     h2{
       width:100%;
-      max-width:$main_width;
+      max-width:100%;
       text-align:center;
     }
     div.slider{

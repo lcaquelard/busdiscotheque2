@@ -276,18 +276,18 @@ class DefaultController extends AbstractController
     {
         $photos = array(
             array(
-                'name'  => 'groupe_exterieur',
-                'title' => 'Groupe extérieur',
-                'count' => 18
-            ),
-            array(
                 'name'  => 'interieur',
-                'title' => 'Photo Intérieur',
+                'title' => 'Nos photos d\'intérieur',
                 'count' => 20
             ),
             array(
-                'name'  => 'noir_blanc',
-                'title' => 'Noir & Blanc',
+                'name'  => 'exterieur',
+                'title' => 'Nos photos d\'extérieur',
+                'count' => 18
+            ),
+            array(
+                'name'  => 'vintage',
+                'title' => 'Nos photos vintage',
                 'count' => 20
             ),
         );
