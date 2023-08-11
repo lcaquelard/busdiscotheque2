@@ -41,7 +41,7 @@ div.modal{
     }
     .slick-prev, .slick-next {
       @media all and (max-width: $mobile_width) {display: none !important;}
-      @include background-prs();
+      @include background-prs(center center, no-repeat, contain);
       &:before {content: "";}
     }
     .slick-prev {background-image: url(../../images/icons/prev.webp);}
