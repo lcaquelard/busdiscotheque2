@@ -136,9 +136,6 @@ $(window).ready(function() {
   let modal = $('#'+id);
   let slider = modal.find('.slider');
   modal.addClass('active');
-  if (slider.hasClass('slick-initialized')){
-   slider.slick('slickGoTo', index, true);
-  } else {
    slider.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -146,7 +143,6 @@ $(window).ready(function() {
     swipeToSlide: true,
     initialSlide: index,
    });
-  }
  });
 
  $('#photo main section .slider img.slick-slide').on('click', function(){
@@ -163,7 +159,6 @@ $(window).ready(function() {
     slidesToScroll: 1,
     infinite: true,
     swipeToSlide: true,
-    initialSlide: index,
    });
   }
  });

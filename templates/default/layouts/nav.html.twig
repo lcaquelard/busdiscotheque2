@@ -1,7 +1,7 @@
 <nav>
     <div id="hamburger"></div>
     <ul>
-        <li{% if 'index' in current_path %} class="current"{% endif %}><a href="{{ path('index') }}"></a></li>
+        <li{% if 'index' in current_path %} class="current"{% endif %}><span><a href="{{ path('index') }}"></a></span></li>
         <li class="droppable{% if 'bus' in current_path %} current{% endif %}">
             <span><a href="{{ path('bus') }}">Nos bus</a></span>
             <ul class="drop">
