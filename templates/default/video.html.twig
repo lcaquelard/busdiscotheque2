@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% set title = "Nos vidéos" %}
+{% set meta_description = "Observez nos soirées folles en bus discothèques comme si vous y étiez grace à nos galeries vidéos !" %}
+{% block main %}
+    <h1>Videos</h1>
+    {% for video in videos %}
+        <section>
+            <h2>{{ video.title }}</h2>
+            <div class="content">
+                {% for content in video['content'] %}
+                    <div class="video" style="background-image:url({{ asset('build/images/video/media/still/'~content['name']~'.webp') }});"><div class="overlay"></div><video loop poster="{{ asset('build/images/video/media/still/'~content['name']~'.webp') }}"><source src="{{ asset('build/images/video/media/video/'~content['name']~'.mp4') }}" type="video/mp4"/></video></div>
+                {% endfor %}
+            </div>
+        </section>
+    {% endfor %}
+
+{% endblock %}

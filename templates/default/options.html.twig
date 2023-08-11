@@ -79,7 +79,7 @@
     </section>
 {% endblock %}
 {% block modals %}
-    <div class="modal traiteur" role="dialog" aria-modal="true" aria-label="Galerie de photos du traiteur agrandie">
+    <div id="traiteur_modal" class="modal" role="dialog" aria-modal="true" aria-label="Galerie de photos du traiteur agrandie">
         <div class="close"></div>
         <div class="slider side-content">
             {% for picture in pictures['traiteur'] %}

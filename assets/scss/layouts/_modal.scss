@@ -6,6 +6,9 @@ div.modal{
   background:#FFF;
   z-index:1;
   overflow:hidden;
+  &.dark{
+    background-color:#000;
+  }
   .close{
     @include background-prs();
     background-image: url(../../images/icons/close.webp);

@@ -5,21 +5,28 @@
     <div class="menu">
         <div class="item{% if 'index' in current_path %} current{% endif %}"><a href="{{ path('index') }}"></a></div>
         <div class="item droppable active{% if 'bus' in current_path %} current{% endif %}">
-            <a href="{{ path('bus') }}"><span>Nos bus</span></a>
+            <span><a href="{{ path('bus') }}">Nos bus</a></span>
             <div class="chevron">></div>
             <div class="drop">
                 {% for name, type in bus_types %}
                     {% if type.isDisplayedPage() %}
-                        <div class="item{% if 'bus_' ~ name in current_path %} current{% endif %}"><a {% if type.isExternal() %}target="_blank"{% endif %} href="{% if type.isExternal() %}{{ type.getTarget() }}{% else %}{{ path('bus_' ~ name) }}{% endif %}"><span>{{ type.getName() }}</span></a></div>
+                        <div class="item{% if 'bus_' ~ name in current_path %} current{% endif %}"><span><a {% if type.isExternal() %}target="_blank"{% endif %} href="{% if type.isExternal() %}{{ type.getTarget() }}{% else %}{{ path('bus_' ~ name) }}{% endif %}">{{ type.getName() }}</a></span></div>
                     {% endif %}
                 {% endfor %}
             </div>
         </div>
-        <div class="item{% if 'program' in current_path %} current{% endif %}"><a href="{{ path('program') }}"><span>Votre soirée</span></a></div>
-        <div class="item{% if 'packs' in current_path %} current{% endif %}"><a href="{{ path('packs') }}"><span>Nos packs</span></a></div>
-        <div class="item{% if 'pricing' in current_path %} current{% endif %}"><a href="{{ path('pricing') }}"><span>Tarifs</span></a></div>
-        <div class="item{% if 'options' in current_path %} current{% endif %}"><a href="{{ path('options') }}"><span>Options</span></a></div>
-        <div class="item{% if 'media' in current_path %} current{% endif %}"><a href="{{ path('media') }}"><span>Media</span></a></div>
-        <div class="item{% if 'booking' in current_path %} current{% endif %}"><a href="{{ path('booking') }}"><span>Devis</span></a></div>
+        <div class="item{% if 'program' in current_path %} current{% endif %}"><span><a href="{{ path('program') }}">Votre soirée</a></span></div>
+        <div class="item{% if 'packs' in current_path %} current{% endif %}"><span><a href="{{ path('packs') }}">Nos packs</a></span></div>
+        <div class="item{% if 'pricing' in current_path %} current{% endif %}"><span><a href="{{ path('pricing') }}">Tarifs</a></span></div>
+        <div class="item{% if 'options' in current_path %} current{% endif %}"><span><a href="{{ path('options') }}">Options</a></span></div>
+        <div class="item droppable active{% if 'media' in current_path %} current{% endif %}">
+            <span>Media</span>
+            <div class="chevron">></div>
+            <div class="drop">
+                <div class="item{% if 'photo' == current_path %} current{% endif %}"><span><a href="{{ path('photo') }}">Photos</a></span></div>
+                <div class="item{% if 'video' == current_path %} current{% endif %}"><span><a href="{{ path('video') }}">Videos</a></span></div>
+            </div>
+        </div>
+        <div class="item{% if 'booking' in current_path %} current{% endif %}"><span><a href="{{ path('booking') }}">Devis</a></span></div>
     </div>
 </div>

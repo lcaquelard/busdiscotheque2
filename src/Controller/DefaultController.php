@@ -269,71 +269,97 @@ class DefaultController extends AbstractController
         ]);
     }
     /**
-     * @Route("/media", name="media")
+     * @Route("/photo", name="photo")
      * @return Response
      */
-    public function media(): \Symfony\Component\HttpFoundation\Response
+    public function photo(): \Symfony\Component\HttpFoundation\Response
     {
-        $medias = array(
-            'videos' => array(
-                array(
-                    //'title'     => 'Nos packs anniversaire / photobooth / ballons',
-                    'title'     => 'Nos packs anniversaire / photobooth / ballons',
-                    'content'   => array(
-                        array('name'=>'pack_1_anniversaire','title'=>'Pack anniversaire'),
-                        array('name'=>'pack_2_anniversaire_noel','title'=>'Pack anniversaire Noël'),
-                        array('name'=>'pack_3_anniversaire_ballons','title'=>'Pack anniversaire & ballons'),
-                        array('name'=>'pack_4_anniversaire_photobooth','title'=>'Pack anniversaire et Photobooth'),
-                    ),
-                ),
-                array(
-                    'title'     => 'Présentation des bus',
-                    'content'   => array(
-                        array('name'=>'bus_1_yoshi','title'=>'BUS YOSHI'),
-                        array('name'=>'bus_2_jeffline','title'=>'BUS JEFFLINE'),
-                        array('name'=>'bus_3_condor','title'=>'BUS CONDOR'),
-                    )
-                ),
-                array(
-                    'title'     => 'Notre dancefloor',
-                    'content'   => array(
-                        array('name'=>'dancefloor_1','title'=>'Bus intérieur 1'),
-                        array('name'=>'dancefloor_2','title'=>'Bus intérieur 2'),
-                        array('name'=>'dancefloor_3','title'=>'Bus intérieur 3'),
-                    )
-                ),
-                array(
-                    'title'     => 'Nos ambiances',
-                    'content'   => array(
-                        array('name'=>'ambiance_1','title'=>'Ambiance 1'),
-                        array('name'=>'ambiance_2','title'=>'Ambiance 2'),
-                        array('name'=>'ambiance_3','title'=>'Ambiance 3'),
-                    )
-                ),
-                array(
-                    'title'     => 'Un regard extérieur',
-                    'content'   => array(
-                        array('name'=>'exterieur_1','title'=>'Extérieur 1'),
-                        array('name'=>'exterieur_2','title'=>'Extérieur 2'),
-                        array('name'=>'exterieur_3','title'=>'Extérieur 3'),
-                        array('name'=>'exterieur_4','title'=>'Extérieur 4'),
-                    )
-                ),
-                array(
-                    'title'     => 'Pour plus de fun !',
-                    'content'   => array(
-                        array('name'=>'fatal_1','title'=>'Fatal 1'),
-                        array('name'=>'fatal_2','title'=>'Fatal 2'),
-                        array('name'=>'fatal_3','title'=>'Fatal 3'),
-                    )
+        $photos = array(
+            array(
+                'name'  => 'groupe_exterieur',
+                'title' => 'Groupe extérieur',
+                'count' => 18
+            ),
+            array(
+                'name'  => 'interieur',
+                'title' => 'Photo Intérieur',
+                'count' => 20
+            ),
+            array(
+                'name'  => 'noir_blanc',
+                'title' => 'Noir & Blanc',
+                'count' => 20
+            ),
+        );
+        return $this->render('default/photo.html.twig', [
+            'current_page'  => 'photo',
+            'route'         => '/photo',
+            'photos'      => $photos,
+            'bus_types'     => $this->bus_types,
+        ]);
+    }
+    /**
+     * @Route("/video", name="video")
+     * @return Response
+     */
+    public function video(): \Symfony\Component\HttpFoundation\Response
+    {
+        $videos = array(
+            array(
+                'title'     => 'Nos packs anniversaire / photobooth / ballons',
+                'content'   => array(
+                    array('name'=>'pack_1_anniversaire','title'=>'Pack anniversaire'),
+                    array('name'=>'pack_2_anniversaire_noel','title'=>'Pack anniversaire Noël'),
+                    array('name'=>'pack_3_anniversaire_ballons','title'=>'Pack anniversaire & ballons'),
+                    array('name'=>'pack_4_anniversaire_photobooth','title'=>'Pack anniversaire et Photobooth'),
                 ),
             ),
-            'photos' => array()
+            array(
+                'title'     => 'Présentation des bus',
+                'content'   => array(
+                    array('name'=>'bus_1_yoshi','title'=>'BUS YOSHI'),
+                    array('name'=>'bus_2_jeffline','title'=>'BUS JEFFLINE'),
+                    array('name'=>'bus_3_condor','title'=>'BUS CONDOR'),
+                )
+            ),
+            array(
+                'title'     => 'Notre dancefloor',
+                'content'   => array(
+                    array('name'=>'dancefloor_1','title'=>'Bus intérieur 1'),
+                    array('name'=>'dancefloor_2','title'=>'Bus intérieur 2'),
+                    array('name'=>'dancefloor_3','title'=>'Bus intérieur 3'),
+                )
+            ),
+            array(
+                'title'     => 'Nos ambiances',
+                'content'   => array(
+                    array('name'=>'ambiance_1','title'=>'Ambiance 1'),
+                    array('name'=>'ambiance_2','title'=>'Ambiance 2'),
+                    array('name'=>'ambiance_3','title'=>'Ambiance 3'),
+                )
+            ),
+            array(
+                'title'     => 'Un regard extérieur',
+                'content'   => array(
+                    array('name'=>'exterieur_1','title'=>'Extérieur 1'),
+                    array('name'=>'exterieur_2','title'=>'Extérieur 2'),
+                    array('name'=>'exterieur_3','title'=>'Extérieur 3'),
+                    array('name'=>'exterieur_4','title'=>'Extérieur 4'),
+                )
+            ),
+            array(
+                'title'     => 'Pour plus de fun !',
+                'content'   => array(
+                    array('name'=>'fatal_1','title'=>'Fatal 1'),
+                    array('name'=>'fatal_2','title'=>'Fatal 2'),
+                    array('name'=>'fatal_3','title'=>'Fatal 3'),
+                )
+            ),
         );
-        return $this->render('default/media.html.twig', [
-            'current_page'  => 'media',
-            'route'         => '/media',
-            'medias'      => $medias,
+        return $this->render('default/video.html.twig', [
+            'current_page'  => 'video',
+            'route'         => '/video',
+            'videos'      => $videos,
             'bus_types'     => $this->bus_types,
         ]);
     }

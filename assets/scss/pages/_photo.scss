@@ -1,0 +1,26 @@
+#photo{
+  section{
+    h2{
+      width:100%;
+      max-width:$main_width;
+      text-align:center;
+    }
+    div.slider{
+      opacity:0;
+      width:100%;
+      max-width:$main_width;
+      @include mobile-width();
+      @media all and (max-width:$tablet_width){
+        .slick-prev,.slick-next{
+          display:none !important;
+        }
+      }
+      img.slick-slide{
+        width:480px;
+        height:480px;
+        object-fit:cover;
+        cursor:pointer;
+      }
+    }
+  }
+}

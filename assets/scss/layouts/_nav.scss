@@ -43,7 +43,7 @@ nav {
     &.current,
     &:hover{
       background-color:#323232;
-      > a {
+      > span {
         color: #FFF;
       }
     }
@@ -52,7 +52,7 @@ nav {
       visibility:visible;
     }
 
-    a{
+    span{
       width:100%;
       height:100%;
       font-size:20px;
@@ -61,8 +61,16 @@ nav {
       flex-direction:column;
       justify-content:center;
       align-items:center;
+      text-align:center;
       @media screen and (max-width:$tablet_width){
         font-size:17px;
+      }
+      >a {
+        display:inline-block;
+        height:100%;
+        width:100%;
+        padding:20px 0;
+        vertical-align:middle;
       }
     }
     @media screen and (max-width:$mobile_width){

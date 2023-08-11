@@ -93,13 +93,31 @@ $(window).ready(function() {
   ],
  }).css('opacity',1);
 
+ $('#photo main section .slider').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  speed: 300,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  swipeToSlide:true,
+  responsive: [
+   {
+    breakpoint:600,
+    settings:{
+     slidesToShow:3
+    }
+   }
+  ],
+ }).css('opacity',1);
+
  $('section.bus').on('click', function(){
   let id = $(this).attr('id');
   let modal = $('.modal.'+id);
   let slider = modal.find('.slider');
   modal.addClass('active');
   if (slider.hasClass('slick-initialized')){
-   slider.slick();
+   slider.slick('slickGoTo', 1, true);
   } else {
    //let slidestoshow = (slider.hasClass('h-size-35') || slider.hasClass('h-size-50')) ? 2 : 1;
    slider.slick({
@@ -114,8 +132,27 @@ $(window).ready(function() {
 
  $('#options main section .slider img.slick-slide').on('click', function(){
   let index = $(this).data('slick-index');
-  let id = $(this).closest("section").attr('id').replace('_slider','');
-  let modal = $('.modal.'+id);
+  let id = $(this).closest("section").attr('id').replace('_slider','_modal');
+  let modal = $('#'+id);
+  let slider = modal.find('.slider');
+  modal.addClass('active');
+  if (slider.hasClass('slick-initialized')){
+   slider.slick('slickGoTo', index, true);
+  } else {
+   slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    swipeToSlide: true,
+    initialSlide: index,
+   });
+  }
+ });
+
+ $('#photo main section .slider img.slick-slide').on('click', function(){
+  let index = $(this).data('slick-index');
+  let id = $(this).closest("section").attr('id').replace('_slider','_modal');
+  let modal = $('#'+id);
   let slider = modal.find('.slider');
   modal.addClass('active');
   if (slider.hasClass('slick-initialized')){

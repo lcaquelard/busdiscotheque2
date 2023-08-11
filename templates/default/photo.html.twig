@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% set title = "Nos photos" %}
+{% set meta_description = "Nos galeries photos n'attendent que vous, explorez nos contenus pour vous faire une idée !" %}
+{% block main %}
+    <h1>Photos</h1>
+    {% for galery in photos %}
+        <section id="{{ galery.name }}_slider">
+            <h2>{{ galery.title }}</h2>
+            <div class="slider">
+                {% for i in 1..galery.count %}
+                    <img src="{{ asset('build/images/photo/photo/'~galery.name~'/'~i~'.webp') }}" alt="Photo de la galerie {{ galery.title }}">
+                {% endfor %}
+            </div>
+        </section>
+    {% endfor %}
+
+{% endblock %}
+
+{% block modals %}
+    {% for galery in photos %}
+        <div id="{{ galery.name }}_modal" class="modal dark" role="dialog" aria-modal="true" aria-label="Galerie de photos du traiteur agrandie">
+            <div class="close"></div>
+            <div class="slider">
+                {% for i in 1..galery.count %}
+                    <div>
+                        <img src="{{ asset('build/images/photo/photo/'~galery.name~'/'~i~'.webp') }}" alt="Photo de la galerie {{ galery.title }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
