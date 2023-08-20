@@ -3,7 +3,7 @@
         <div class="close"></div>
     </div>
     <div class="menu">
-        <div class="item{% if 'index' in current_path %} current{% endif %}"><a href="{{ path('index') }}"></a></div>
+        <div class="item{% if 'index' in current_path %} current{% endif %}"><span><a href="{{ path('index') }}"></a></span></div>
         <div class="item droppable active{% if 'bus' in current_path %} current{% endif %}">
             <span><a href="{{ path('bus') }}">Nos bus</a></span>
             <div class="chevron">></div>
