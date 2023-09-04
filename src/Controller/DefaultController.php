@@ -467,7 +467,7 @@ class DefaultController extends AbstractController
     {
         $amount = $request->query->get('amount');
         if (!(isset($amount) && is_numeric($amount))){
-            $amount = 1;
+            $amount = 100;
         }
         return $this->redirectToRoute('stripe',array('amount' => $amount));
     }
