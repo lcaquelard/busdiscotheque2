@@ -315,6 +315,15 @@ class DefaultController extends AbstractController
                 ),
             ),
             array(
+                'title'     => 'Spinner 360',
+                'content'   => array(
+                    array('name'=>'spinner_1','title'=>'Spinner 360'),
+                    array('name'=>'spinner_2','title'=>'Spinner 360'),
+                    array('name'=>'spinner_3','title'=>'Spinner 360'),
+                    array('name'=>'spinner_4','title'=>'Spinner 360'),
+                )
+            ),
+            array(
                 'title'     => 'Présentation des bus',
                 'content'   => array(
                     array('name'=>'bus_1_yoshi','title'=>'BUS YOSHI'),

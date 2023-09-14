@@ -9,10 +9,14 @@
     @include sandwich('../../images/icons/engagement/earth.png');
   }
   h1{
-    margin:30px 0;
+    font-size:24px;
   }
   #our_engagement{
     h2{
+      text-align:center;
+      @media screen and (max-width:$mobile_width){
+        font-size:14px;
+      }
       &::after{
         @include affix();
         background-image:url('../../images/icons/engagement/seed1.png');
@@ -43,6 +47,10 @@
       @include sandwich('../../images/icons/engagement/tree.png');
     }
     h2{
+      text-align:center;
+      @media screen and (max-width:$mobile_width){
+        font-size:14px;
+      }
     }
     p{
 

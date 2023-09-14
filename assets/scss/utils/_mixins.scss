@@ -35,13 +35,6 @@
   flex-direction: row;
   align-items: center;
 
-  @media screen and (max-width:$mobile_width){
-    flex-direction: column;
-    h1,h2 {
-      margin: 0;
-    }
-  }
-
   &::before,&::after {
     background-image:url($image);
     background-position: 50%;
@@ -53,5 +46,15 @@
     margin: 0 30px;
     display:block;
     content:" ";
+  }
+
+  @media screen and (max-width:$mobile_width){
+    flex-direction: column;
+    h1,h2 {
+      margin: 0;
+    }
+    &::after{
+      content:none;
+    }
   }
 }
