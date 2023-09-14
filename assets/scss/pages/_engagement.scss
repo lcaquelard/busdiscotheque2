@@ -1,0 +1,95 @@
+#engagement{
+  section{
+    width:calc(100% - 20px);
+    max-width:$main_width;
+    color:#FFF;
+    margin:10px;
+  }
+  .sandwich{
+    @include sandwich('../../images/icons/engagement/earth.png');
+  }
+  h1{
+    margin:30px 0;
+  }
+  #our_engagement{
+    h2{
+      &::after{
+        @include affix();
+        background-image:url('../../images/icons/engagement/seed1.png');
+      }
+    }
+    ul{
+      li{
+        margin: 10px 0;
+        font-size: 20px;
+        &.affix{
+          &::after{
+            @include affix(60px, -80%);
+            margin-left:5px;
+          }
+          &.recycling::after{background-image:url('../../images/icons/engagement/recycling.png');}
+          &.earth::after{background-image:url('../../images/icons/engagement/earth1.png');}
+          &.seed::after{background-image:url('../../images/icons/engagement/seed2.png');}
+          &.papercup::after{background-image:url('../../images/icons/engagement/papercup.png');}
+          &.solar::after{background-image:url('../../images/icons/engagement/solar.png');}
+          &.e-car::after{background-image:url('../../images/icons/engagement/e-car.png');}
+          &.eco::after{background-image:url('../../images/icons/engagement/eco.png');}
+        }
+      }
+    }
+  }
+  #reforest{
+    .sandwich{
+      @include sandwich('../../images/icons/engagement/tree.png');
+    }
+    h2{
+    }
+    p{
+
+    }
+    #icons {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      div {
+        height:20vw;
+        max-height: 300px;
+        flex-basis: 20%;
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:contain;
+
+        &#phrase {background-image: url('../../images/icons/engagement/phrase.png');}
+        &#eco2 {background-image: url('../../images/icons/engagement/eco2.png');}
+        &#earth2 {background-image: url('../../images/icons/engagement/earth2.png');}
+        &#earth3 {background-image: url('../../images/icons/engagement/earth3.png');}
+      }
+    }
+    #process{
+      width:100%;
+      max-width:$main_width;
+      display:flex;
+      flex-wrap:wrap;
+
+      >div{
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:contain;
+        flex-basis:50%;
+        height:20vw;
+        max-height:200px;
+        &:nth-of-type(1){background-image:url('../../images/icons/engagement/step_1.png');}
+        &:nth-of-type(2){background-image:url('../../images/icons/engagement/step_2.png');}
+        &:nth-of-type(3){background-image:url('../../images/icons/engagement/step_3.png');}
+        &:nth-of-type(4){background-image:url('../../images/icons/engagement/step_4.png');}
+        @media screen and (max-width:$mobile_width){
+          flex-basis:100%;
+          max-height:200px;
+          height:40vw;
+        }
+      }
+    }
+  }
+}

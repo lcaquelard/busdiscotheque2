@@ -50,12 +50,12 @@ class DefaultController extends AbstractController
         $this->bus_types["super"]->addBus(  'le léviator',      'leviator',     70, 8, '', array('dj', 'carpet_b', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke'));
 
 
-        $this->option_groups['christmas'] = new OptionGroup('christmas', 'Nos offres de Noël', false);
+        $this->option_groups['christmas'] = new OptionGroup('christmas', 'Nos offres de Noël', true);
         $this->option_groups['christmas']->addOption('christmas_hat', 'Chapeaux de Noël', 'À partir de 100€', 'Ils ont été sages cette année, soyez le Père Noël de vos convives et offrez leur ces jolis chapeaux, avant de monter à bord de votre traineau<br>Bus Discothèque&nbsp;!<br><br><span class="bold">Pack(35): 100€ - Pack(55): 150€ - Pack(70): 200€</span>');
         $this->option_groups['christmas']->addOption('christmas_headclip', 'Serre-tête de Noël', 'À partir de 90€', 'QU\'EST-CE QUE SERAIT NOËL SANS LES CERFS POUR<br>TIRER LE TRAINEAU&nbsp;?<br> EQUIPEZ VOS INVITÉS AVEC CET ACCESSOIRE ORIGINAL QUI SAURA RAVIR PETITS ET GRANDS.<br><br><span class="bold">Pack(35): 90€ - Pack(55): 120€ - Pack(70): 180€</span>');
         $this->option_groups['christmas']->addOption('christmas_pack', 'CHRISTMAS PACK', '200€', 'RIEN DE PLUS SACRÉE QUE LA MAGIE DE NOËL .<br>BUS DISCOTHEQUE VOUS OFFRE UNE AMBIANCE FÉÉRIQUE COMPLÈTE,<br>AVEC BALLONS, BOULES ET GUIRLANDES.<br>IL NE MANQUERA LES CADEAUX ET QUELQUES CHANTS DE NOËL POUR PASSER UNE NUIT EN ENFANCE&nbsp;!');
 
-        $this->option_groups['default'] = new OptionGroup('default', '', true);
+        $this->option_groups['default'] = new OptionGroup('default', 'Nos offres habituelles', true);
         $this->option_groups['default']->addOption('birthday_kid', 'pack anniversaire enfant', '150€', '1 BOX À BONBON, 3 BOUTEILLES DE CHAMPOMY ET UN <br><br> BUS REMPLI DE BALLONS POUR LE PLUS GRAND <br><br> BONHEUR DE VOS ENFANTS&nbsp;!');
         $this->option_groups['default']->addOption('birthday_adult', 'pack anniversaire adulte', '175€', '1 BOX À BONBON, 2 BOUTEILLES DE CHAMPAGNE <br><br> NICOLAS FEUILLATE ET UN BUS REMPLI DE BALLONS <br><br> POUR AJOUTER LA TOUCHE FINALE À VOTRE SOIRÉE&nbsp;!');
         $this->option_groups['default']->addOption('photobooth', 'Photobooth', 'À partir de 350€', 'CAPTUREZ LES MOMENTS MÉMORABLES DE VOTRE SOIRÉE EN UN SEUL CLIC ET PERSONNALISEZ VOS CLICHÉS AVEC NOTRE PHOTOBOOTH&nbsp;! EMOJIS, ARRIÈRE-PLAN SUR MESURE, FILTRES, TOUT EST BON POUR RENDRE CHAQUE PHOTO UNIQUE&nbsp;!<br><br><span class="bold">Pack(50): 350€ - Pack(100): 400€ - Pack(150): 450€</span>');
@@ -361,6 +361,18 @@ class DefaultController extends AbstractController
             'route'         => '/video',
             'videos'      => $videos,
             'bus_types'     => $this->bus_types,
+        ]);
+    }
+    /**
+     * @Route("/engagement", name="engagement")
+     * @return Response
+     */
+    public function engagement(): \Symfony\Component\HttpFoundation\Response
+    {
+        return $this->render('default/engagement.html.twig', [
+            'current_page' => 'engagement',
+            'route'         => '/engagement',
+            'bus_types' => $this->bus_types,
         ]);
     }
     /**

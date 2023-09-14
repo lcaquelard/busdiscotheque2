@@ -12,11 +12,17 @@
                 {% endfor %}
             </ul>
         </li>
-        <li{% if 'program' in current_path %} class="current"{% endif %}><span><a href="{{ path('program') }}">Votre soirée</a></span></li>
-        <li{% if 'packs' in current_path %} class="current"{% endif %}><span><a href="{{ path('packs') }}">Nos packs</a></span></li>
-        <li{% if 'pricing' in current_path %} class="current"{% endif %}><span><a href="{{ path('pricing') }}">Tarifs</a></span></li>
-        <li{% if 'options' in current_path %} class="current"{% endif %}><span><a href="{{ path('options') }}">Options</a></span></li>
-        <li class="droppable{% if 'media' in current_path %} current{% endif %}">
+        <li class="droppable{% if current_path in ['program', 'engagement'] %} current{% endif %}">
+            <span>Votre événement</span>
+            <ul class="drop">
+                <li{% if 'program' == current_path %} class="current"{% endif %}><span><a href="{{ path('program') }}">Votre soirée</a></span></li>
+                <li{% if 'engagement' == current_path %} class="current"{% endif %}><span><a href="{{ path('engagement') }}">Notre engagement</a></span></li>
+            </ul>
+        </li>
+        <li{% if 'packs' == current_path %} class="current"{% endif %}><span><a href="{{ path('packs') }}">Packs</a></span></li>
+        <li{% if 'pricing' == current_path %} class="current"{% endif %}><span><a href="{{ path('pricing') }}">Tarifs</a></span></li>
+        <li{% if 'options' == current_path %} class="current"{% endif %}><span><a href="{{ path('options') }}">Options</a></span></li>
+        <li class="droppable{% if current_path in ['photo', 'video'] %} current{% endif %}">
             <span>Media</span>
             <ul class="drop">
                 <li{% if 'photo' == current_path %} class="current"{% endif %}><span><a href="{{ path('photo') }}">Photos</a></span></li>

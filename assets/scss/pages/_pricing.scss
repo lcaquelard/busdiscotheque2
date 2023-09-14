@@ -65,38 +65,54 @@
         display:flex;
         flex-direction: column;
         align-items:center;
-        .between {
-          display:flex;
-          flex-direction:row;
-          align-items:center;
-          h2 {
-            text-align: center;
-            padding: 0 50px;
-            font-size: 25px;
-            @media all and (max-width: $tablet_width) {
-              font-size: 18px;
-              padding: 0;
-            }
-            @media all and (max-width: $mobile_width) {
-              font-size: 14px;
-              padding: 0;
-            }
-          }
 
-          .icon {
-            background-image: url('../../images/icons/cash.webp');
-            background-position: 50%;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            height: 60px;
-            max-width: 60px;
-            min-width: 60px;
-            margin: 0 30px;
+        h2 {
+          @include sandwich('../../images/icons/cash.webp');
+          text-align: center;
+          padding: 0 50px;
+          font-size: 25px;
+          @media all and (max-width: $tablet_width) {
+            font-size: 18px;
+            padding: 0;
+          }
+          @media all and (max-width: $mobile_width) {
+            font-size: 14px;
+            padding: 0;
           }
         }
+
         p{
           font-size:18px;
           padding:0 50px;
+        }
+      }
+      &#promotions{
+        h2{
+          text-align:center;
+        }
+        p{
+          padding:0 10px;
+        }
+      }
+      #promos{
+        width:100%;
+        max-width:$main_width;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:space-around;
+        gap:25px;
+        >div{
+          max-width:calc((100% - 100px) / 3);
+          @media screen and (max-width:$mobile_width){
+            max-width:calc(100% - 50px);
+          }
+
+          h3{
+            letter-spacing:-3px;
+            font-size:15px;
+            text-align:center;
+            border-bottom:1px solid #FFF;
+          }
         }
       }
       &#crypto{

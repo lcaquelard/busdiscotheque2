@@ -28,6 +28,7 @@
         "nodejs": "^0.0.0",
         "normalize-scss": "^7.0.1",
         "slick-carousel": "^1.8.1",
+        "uuid": "^7.0.3",
         "yarn": "^1.22.17"
     }
 }

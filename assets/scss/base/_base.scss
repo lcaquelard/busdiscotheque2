@@ -29,13 +29,13 @@ h1,h2,h3,h4,h5,h6{
 
 h1{
   font-size:19px;
-  line-height:60px;
+  line-height:40px;
   text-align:center;
 }
 
 h2{
   font-size:19px;
-  line-height:60px
+  line-height:40px
 }
 
 h3{
@@ -47,5 +47,5 @@ h3{
 .red{color:#F22A00}
 
 .bold{font-weight:bold;}
-
+.center{text-align:center;}
 .uppercase{text-transform:uppercase;}

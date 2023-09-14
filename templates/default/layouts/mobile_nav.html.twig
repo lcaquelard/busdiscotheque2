@@ -1,10 +1,10 @@
 <div id="mobile_nav">
     <div class="options">
-        <div class="close"></div>
+        <div class="close">X</div>
     </div>
     <div class="menu">
         <div class="item{% if 'index' in current_path %} current{% endif %}"><span><a href="{{ path('index') }}"></a></span></div>
-        <div class="item droppable active{% if 'bus' in current_path %} current{% endif %}">
+        <div class="item droppable{% if 'bus' in current_path %} active{% endif %}">
             <span><a href="{{ path('bus') }}">Nos bus</a></span>
             <div class="chevron">></div>
             <div class="drop">
@@ -15,11 +15,18 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="item{% if 'program' in current_path %} current{% endif %}"><span><a href="{{ path('program') }}">Votre soirée</a></span></div>
+        <div class="item droppable{% if current_path in ['program', 'engagement'] %} active{% endif %}">
+            <span class="">Votre événement</span>
+            <div class="chevron">></div>
+            <ul class="drop">
+                <div class="item{% if 'program' == current_path %} current{% endif %}"><span><a href="{{ path('program') }}">Votre soirée</a></span></div>
+                <div class="item{% if 'engagement' == current_path %} current{% endif %}"><span><a href="{{ path('engagement') }}">Notre engagement</a></span></div>
+            </ul>
+        </div>
         <div class="item{% if 'packs' in current_path %} current{% endif %}"><span><a href="{{ path('packs') }}">Nos packs</a></span></div>
         <div class="item{% if 'pricing' in current_path %} current{% endif %}"><span><a href="{{ path('pricing') }}">Tarifs</a></span></div>
         <div class="item{% if 'options' in current_path %} current{% endif %}"><span><a href="{{ path('options') }}">Options</a></span></div>
-        <div class="item droppable active{% if 'media' in current_path %} current{% endif %}">
+        <div class="item droppable{% if current_path in ['photo', 'video'] %} active{% endif %}">
             <span>Media</span>
             <div class="chevron">></div>
             <div class="drop">

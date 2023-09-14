@@ -1,14 +1,14 @@
-
 #mobile_nav{
   position:fixed;
   top:0;bottom:0;left:0;
-  background-color:#F1F1F1;
+  background-color:#000;
   visibility:hidden;
   width:100%;
   max-width:0;
   transition:max-width ease-in-out .2s;
   z-index:10;
-  overflow: hidden;
+  color:#FFF;
+  overflow:scroll;
   &.active{
     visibility:visible;
     max-width:100%;
@@ -16,15 +16,15 @@
   .options{
     height:70px;
     .close {
-      background-image:url(../../images/icons/close.webp);
-      background-position: center center;
-      background-size:contain;
-      background-repeat:no-repeat;
       width:40px;
       height:40px;
       margin:5px;
       float:right;
       cursor:pointer;
+      color:#FFF;
+      font-size:40px;
+      position:absolute;
+      right:0;
     }
   }
   > .menu{
@@ -32,13 +32,13 @@
     height: 100%;
     flex-direction:column;
     align-items: stretch;
-    width:100%;
-    margin:0;
+    width:calc(100% - 100px);
+    margin:0 0 0 80px;
     letter-spacing:0;
 
     > .item:nth-of-type(1)>span{
-        background-image:url(../../images/logo_dark.webp);
-        background-position:center;
+        background-image:url(../../images/logo.webp);
+        background-position:left center;
         background-repeat:no-repeat;
         background-size:contain;
     }
@@ -47,8 +47,8 @@
       flex-direction:row;
       flex-wrap:wrap;
       width:calc(100% - 50px);
-      background-color: #F1F1F1;
       transition: all .6s;
+      margin:10px 0;
 
       span{
         width:100%;
@@ -58,8 +58,6 @@
         display:flex;
         flex-direction:column;
         justify-content:center;
-        align-items:center;
-        text-align:center;
         >a {
           display:inline-block;
           width:100%;
@@ -76,7 +74,6 @@
         .chevron{
           display:inline-block;
           content:">";
-          color:#000;
           position:absolute;
           right:-35px;
           top:5px;
@@ -86,7 +83,6 @@
           cursor:pointer;
         }
         .drop{
-          background-color:#F1F1F1;
           //transform:scale(0, 0);
           max-height:0;
           transition: all ease-in-out .3s;
@@ -94,12 +90,10 @@
           padding-left:50px;
           overflow:hidden;
           .item{
-            background-color:#F1F1F1;
-            border-left:1px solid #000;
             width:100%;
             &.current{
-              color:#FFF;
-              background-color:#323232;
+              font-weight:bold;
+              text-shadow:1px 1px 10px #FFF;
             }
           }
         }
@@ -109,14 +103,12 @@
           }
           >.drop{
             max-height:1000px;
-            //transform:scale(1, 1);
           }
         }
       }
-
-      &.current>a{
-        background-color:#323232;
-        color: #FFF;
+      &.current{
+        font-weight:bold;
+        text-shadow:1px 1px 10px #FFF;
       }
     }
   }
