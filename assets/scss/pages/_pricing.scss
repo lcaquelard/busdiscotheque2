@@ -113,56 +113,8 @@
             text-align:center;
             border-bottom:1px solid #FFF;
           }
-        }
-      }
-      &#crypto{
-        margin:0;
-        font-size:18px;
-        line-height:35px;
-        justify-content: center;
-        >div {
-          display:flex;
-          flex-flow:row wrap;
-          justify-content: center;
-          align-items:center;
-          width:$main_width;
-          @media all and (max-width: $tablet_width) {
-            width: 100%;
-            p {
-              padding: 10px;
-            }
-          }
-          .description {
-            width: calc(100% - 325px);
-            @include mobile-width();
-            .big {
-              font-size: 25px;
-            }
-          }
-          .bonus {
-            width: 100%;
-            padding-right: 120px;
-            background-image: url(../../images/icons/champagne.webp);
-            @include background-prs(right 5px center, no-repeat, 100px);
-          }
-          .icons {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            max-width: 325px;
-            min-height:100px;
-            @media screen and (max-width:$tablet_width){
-              height: 20vw;
-            }
-            div {
-              max-height: 100px;
-              flex: 1 1 100px;
-              content:"&nbsp;";
-              @include background-prs(center center, no-repeat, contain);
-              &.bitcoin {background-image: url(../../images/icons/bitcoin.webp);}
-              &.ethereum {background-image: url(../../images/icons/ethereum.webp);}
-              &.shiba {background-image: url(../../images/icons/shiba.webp);}
-            }
+          img{
+            width:100%;
           }
         }
       }
