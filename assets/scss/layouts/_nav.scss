@@ -78,7 +78,7 @@ nav {
         vertical-align:middle;
       }
     }
-    @media screen and (max-width:$mobile_width){
+    @media all and (max-width:$tablet_width) {
       visibility:hidden;
       max-height:0;
     }
@@ -95,7 +95,7 @@ nav {
     background-position:center center;
     background-repeat:no-repeat;
     background-size:contain;
-    @media screen and (min-width:$mobile_width){
+    @media all and (min-width:$tablet_width) {
       visibility:hidden;
       max-height:0;
     }

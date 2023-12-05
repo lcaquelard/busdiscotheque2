@@ -30,6 +30,7 @@
         "normalize-scss": "^7.0.1",
         "slick-carousel": "^1.8.1",
         "uuid": "^7.0.3",
+        "webpack": "^5.1.0",
         "yarn": "^1.22.17"
     }
 }
