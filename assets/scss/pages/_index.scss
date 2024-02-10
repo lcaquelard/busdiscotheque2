@@ -117,6 +117,50 @@
       cursor:pointer;
     }
   }
+  #biofuel{
+    margin-top:30px;
+    h3{
+
+    }
+    p{
+      text-align: center;
+      width:100%;
+      margin:0 auto;
+    }
+    div.logos{
+      display:flex;
+      flex-flow: row nowrap;
+      .icon{
+        background-size:contain;
+        background-position:center center;
+        background-repeat:no-repeat;
+        content:"&nbsp;";
+      }
+      &.head{
+        .icon{
+          min-width: calc((100% / 3);
+          height: calc(100vw / 3);
+          max-height: 320px;
+        }
+      }
+      &.year{
+        width:100%;
+        height:calc(100vw / 6);
+        max-height:120px;
+        .icon {
+          min-width:100%;
+          min-height:100%;
+        }
+      }
+      &.foot{
+        .icon {
+          min-width: calc((100% / 5);
+          height: calc(100vw / 5);
+          max-height: 184px;
+        }
+      }
+    }
+  }
   #canicula{
     padding:50px 0;
     h2{

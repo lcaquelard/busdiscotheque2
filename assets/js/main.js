@@ -11,6 +11,14 @@ import '../scss/main.scss';
 import $ from 'jquery';
 
 $(window).ready(function() {
+ //Automatic insert of picture into a div
+ $('div.icon').each(function(i) {
+  if ($(this).data('src')){
+   $(this).css('background-image', 'url('+$(this).data('src')+')');
+   $(this).removeAttr('data-src');
+  }
+ });
+
  //Mobile phone navigation menu
  $('#hamburger').on('click', function(e){
   $('#mobile_nav').addClass('active');
