@@ -6,9 +6,9 @@ bus:
     path: /bus
     controller: App\Controller\DefaultController::bus
 
-bus_mini:
-    path: /bus/mini
-    controller: App\Controller\DefaultController::bus_mini
+#bus_mini:
+#    path: /bus/mini
+#    controller: App\Controller\DefaultController::bus_mini
 
 bus_middle:
     path: /bus/middle
