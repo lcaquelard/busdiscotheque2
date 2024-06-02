@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     const default_options = array(
-        'mini'      => array('karaoke', 'soft', 'fridge', 'screen', 'bluetooth'),
+//        'mini'      => array('karaoke', 'soft', 'fridge', 'screen', 'bluetooth'),
         'middle'    => array('agent', 'bluetooth', 'carpet_r', 'soft', 'screen', 'fridge'),
         'classic'   => array('dj', 'carpet_r', 'soft', 'screen', 'fridge'),
         'double'    => array('dj', 'carpet_r', 'soft', 'screen', 'fridge'),
@@ -25,7 +25,7 @@ class DefaultController extends AbstractController
 
     public function __construct(){
         $this->bus_types = array(
-            'mini'      => new BusType('Mini Bus', 9, 7, 0, self::default_options['mini'], 9, 1, "(sans dj)", false,true, 'https://www.mini-bus-party-paris.fr'),
+//            'mini'      => new BusType('Mini Bus', 9, 7, 0, self::default_options['mini'], 9, 1, "(sans dj)", false,true, 'https://www.mini-bus-party-paris.fr'),
 //            'mini'      => new BusType('Mini Bus', 9, 7, 390, self::default_options['mini'], 9, 1, "(sans dj)"),
             'middle'    => new BusType('Middle Bus', 20, 10, 790, self::default_options['middle'], 20, 10, "(sans dj)"),
             'classic'   => new BusType('Classic Bus', 35, 12, 990, self::default_options['classic'], 35, 21),
@@ -122,19 +122,19 @@ class DefaultController extends AbstractController
             'bus_types' => $this->bus_types,
         ]);
     }
-    /**
-     * @Route("/bus/mini", name="bus_mini")
-     * @return Response
-     */
-    public function bus_mini(): \Symfony\Component\HttpFoundation\Response
-    {
-        return $this->render('default/bus_mini.html.twig', [
-            'current_page' => 'bus_mini',
-            'route'         => '/bus/mini',
-            'buses' => $this->bus_types['mini']->getBuses(),
-            'bus_types' => $this->bus_types,
-        ]);
-    }
+//    /**
+//     * @Route("/bus/mini", name="bus_mini")
+//     * @return Response
+//     */
+//    public function bus_mini(): \Symfony\Component\HttpFoundation\Response
+//    {
+//        return $this->render('default/bus_mini.html.twig', [
+//            'current_page' => 'bus_mini',
+//            'route'         => '/bus/mini',
+//            'buses' => $this->bus_types['mini']->getBuses(),
+//            'bus_types' => $this->bus_types,
+//        ]);
+//    }
     /**
      * @Route("/bus/middle", name="bus_middle")
      * @return Response
