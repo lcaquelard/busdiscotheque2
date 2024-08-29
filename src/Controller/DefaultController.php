@@ -47,7 +47,7 @@ class DefaultController extends AbstractController
         $this->bus_types["double"]->addBus( 'le dark kiss',     'darkkiss',     55, 9);
         $this->bus_types["double"]->addBus( 'le seven 7',       'seven7',       55, 3);
         $this->bus_types["double"]->addBus( 'le yoshi',         'yoshi',        55, 6);
-        $this->bus_types["super"]->addBus(  'le léviator',      'leviator',     70, 8, '', array('dj', 'carpet_b', 'soft', 'screen', 'fridge', 'arcade', 'bubble', 'smoke'));
+        $this->bus_types["super"]->addBus(  'le léviator',      'leviator',     70, 8, '', array('dj', 'carpet_b', 'soft', 'screen', 'fridge'));
 
 
         $this->option_groups['christmas'] = new OptionGroup('christmas', 'Nos offres de Noël', true);
